@@ -2,10 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user';
 import { EndPoints } from './settings';
+import { ConfigurationService } from './config.service';
 
 @Injectable()
 export class UserService {
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient,
+        private configService: ConfigurationService) { }
 
     getAll() {
         return this.http.get<User[]>(EndPoints.userController.getAllUsers);
@@ -16,11 +18,13 @@ export class UserService {
     }
 
     register(user: User) {
-        return this.http.post(EndPoints.userController.register, user);
+        let endpoint = this.configService.RootUrl() + EndPoints.userController.register
+        return this.http.post(endpoint, user);
     }
 
     update(user: User) {
-        return this.http.put(EndPoints.userController.update + user.id, user);
+        let endpoint = this.configService.RootUrl() + EndPoints.userController.update
+        return this.http.put(endpoint + user.id, user);
     }
 
     delete(id: number) {

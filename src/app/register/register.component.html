@@ -1,0 +1,47 @@
+<div style="width: 250px;">
+        <div class="Mauss-Form-Title">
+                Register
+        </div>
+</div><br>
+    <div class="form-group">
+        <div class="Mauss-label" for="firstName">First Name</div>
+        <input class="Mauss-input" type="text" [formControl]="registerForm.controls['firstName']" /><br>
+        <div *ngIf="submitted && f.firstName.errors">
+            <div class="Mauss-error" *ngIf="f.firstName.errors.required">First Name is required</div>
+        </div>
+    </div><br>
+    <div class="form-group">
+        <div class="Mauss-label" for="lastName">Last Name</div>
+        <input class="Mauss-input" type="text" [formControl]="registerForm.controls['lastName']" /><br>
+        <div *ngIf="submitted && f.lastName.errors">
+            <div class="Mauss-error" *ngIf="f.lastName.errors.required">Last Name is required</div>
+        </div>
+    </div><br>
+    <div class="form-group">
+        <div class="Mauss-label" for="email">E-mail</div>
+        <input class="Mauss-input" type="text" [formControl]="registerForm.controls['email']"  /><br>
+        <div *ngIf="submitted && f.email.errors">
+            <div class="Mauss-error" *ngIf="f.email.errors.required">Email is required</div>
+        </div>
+    </div><br>
+    <div class="form-group">
+        <div class="Mauss-label" for="password">Password</div>
+        <input class="Mauss-input" type="password" [formControl]="registerForm.controls['password']"  /><br>
+        <div *ngIf="submitted && f.password.errors">
+            <div class="Mauss-error" *ngIf="f.password.errors.required">Password is required</div>
+            <div class="Mauss-error" *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+        </div>
+    </div><br>
+    <div class="form-group">
+            <div class="Mauss-label" for="password">Confirm Password</div>
+            <input class="Mauss-input" type="password" [formControl]="registerForm.controls['password2']"  /><br>
+            <div *ngIf="submitted && f.password2.errors">
+                <div class="Mauss-error" *ngIf="f.password2.errors.required">Password is required</div>
+                <div class="Mauss-error" *ngIf="f.password2.errors.minlength">Password must be at least 6 characters</div>
+                <div class="Mauss-error" *ngIf="f.password2.errors.mustMatch">Passwords must match</div>
+            </div>
+        </div><br>
+    <div class="form-group">
+        <button style="width: 100%;" mat-button class="Mauss-Button" [disabled]="loading" (click)="onSubmit()">Register</button>
+        <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+    </div>

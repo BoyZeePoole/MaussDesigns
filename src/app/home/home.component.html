@@ -1,34 +1,43 @@
 <div class="wrapper">
   <div class="box header">
-    <mat-toolbar color="primary">
-      <button mat-icon-button [matMenuTriggerFor]="menu">
-          <mat-icon>menu</mat-icon>
-      </button>
-      <mat-menu #menu="matMenu"  color="primary">
-        <a mat-menu-item  *ngFor="let item of routes" routerLink="{{item.route}}"  >
-          <span>{{item.title}}</span>
-        </a>
-      </mat-menu>
-      <span>{{app.Title}}</span>
-    </mat-toolbar>
+        <div style="padding: 12px 0 0 50px; text-align: left;height: 50px;">
+            <input class="Mauss-input" placeholder="Search" type="text" [(ngModel)]="searchText">
+            <div class="social-container">
+                <span>{{userName}}</span> &nbsp;
+                <span class="social icon-facebook"></span>
+                <span class="social icon-twitter"></span>
+                <span class="social icon-instagram"></span>
+                <span class="social icon-pinterest2"></span>
+            </div>
+        </div>
+       
+        <div style="vertical-align: middle; height: 100px;padding-left: 50px; text-align: left; background: #F4F0F3">
+            <div style="float:left;vertical-align: middle;padding-top: 18px;">
+                <div style="line-height: 100%"><a [routerLink]="['/home']"  routerLinkActive="active"><span style="font-size: 60px;" class="icon-Mauss-Logo"></span></a>{{app.Title}}</div>
+                
+            </div>
+            <app-link-menu [menuData]="routes"></app-link-menu>
+         </div>   
+      
   </div>
-  <div class="box sidebar">Sidebar</div>
-  <div class="box content">Content
-    <br /> The four arrows are inline images inside the content area.
-    <br /> The four arrows are inline images inside the content area.
-    <br /> The four arrows are inline images inside the content area.
-    <br /> The four arrows are inline images inside the content area.
-    <br /> The four arrows are inline images inside the content area.
-    <br /> The four arrows are inline images inside the content area.
-    <br /> The four arrows are inline images inside the content area.
-    <br /> The four arrows are inline images inside the content area.
-    <br /> The four arrows are inline images inside the content area.
-    <br /> The four arrows are inline images inside the content area.
-    <br /> The four arrows are inline images inside the content area.
-    <img src="http://gridbyexample.com/examples/code/arrow-top-left.png" alt="top left" class="topleft" />
-    <img src="http://gridbyexample.com/examples/code/arrow-top-right.png" alt="top right" class="topright" />
-    <img src="http://gridbyexample.com/examples/code/arrow-bottom-left.png" alt="bottom left" class="bottomleft" />
-    <img src="http://gridbyexample.com/examples/code/arrow-bottom-right.png" alt="bottom right" class="bottomright" />
+  <div class="content">
+    
+    <router-outlet></router-outlet>
+    <app-dashboard *ngIf="isHome==true" [gridData]="products | filter : searchText"></app-dashboard>
   </div>
-  <div class="box footer">Footer</div>
+  <div class="box footer">
+    <app-subscribe></app-subscribe>
+    <!-- <div class="extreme-footer"> -->
+      <div class="social-container-footer">
+        <span class="social icon-fb_icon"></span>
+        <span class="social icon-twitter_icon"></span>
+        <span class="social icon-instagram_icon"></span>
+        <span class="social icon-pinterest_icon"></span>
+        <br><br>
+        <span style="font-size: 12px;">
+            Copyright &copy; Mauss-designs 2018. All rights reserved
+          </span>
+          <br><br>
+      </div>    
+  </div>
 </div>

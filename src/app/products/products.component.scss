@@ -1,8 +1,21 @@
-.example-container {
-    display: flex;
-    flex-direction: column;
+// .example-container {
+//     display: flex;
+//     flex-direction: column;
+//     margin: 20px;
+//   }
+  
+//   .example-container > * {
+//     width: 40%;
+//     margin: 0px auto;
+//   }
+//   .mat-raised-button{
+//     width: 300px;
+//   }
+@import '../variables.scss';
+
+  .image-style{
+    width: 300px;
+    border: 1px solid grey;
+    background: #999;
   }
   
-  .example-container > * {
-    width: 100%;
-  }

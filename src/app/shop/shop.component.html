@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <div class="header-left">
+    <div class="header-left-container">
+      <div class="Mauss-Form-Title">
+       {{pageTitle}}
+      </div>
+    </div>    
+  </div>
+  <div class="header">
+    <div>
+      {{pageContent}}
+    </div>
+   </div>
+   <div class="content-center">
+      <div class="grid-container">
+          <div *ngFor="let category of categories;" class="grid-item">
+              <a [routerLink]="['/home', category.refId]" class="category-link">
+                  <div class="box">
+                      <span class="shop-box {{category.icon}}"></span>
+                     <div class="box-footer">
+                         <div>{{category.description}}</div>
+                     </div>
+                   </div>
+              </a>              
+          </div>          
+        </div>     
+    </div>
+</div>  

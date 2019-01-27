@@ -1,0 +1,107 @@
+@import '../fonts.scss';
+
+.header {
+    grid-area: header;
+    div{
+        font-size: 12px;
+        padding-top: 14px;
+    }
+  }
+  .header-left {
+    grid-area: header-left;
+  }
+  .header-left-container{
+    width: 200px;
+    height: 80px;
+    /*margin-left: 130px;*/
+}
+  .content-left {
+    grid-area: content-left;
+    height: 300px;
+  }
+  .content-center {
+    grid-area: content-center;
+    text-align: center;
+  }
+  .content-right {
+    text-align: center;
+    grid-area: content-right;
+  }
+.box{
+    background: #F4F0F3;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    color: #000;
+    margin: 0px auto;
+    position: relative;
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    border-radius: 4px;
+}
+.category-link{
+  text-decoration: none;
+}
+.box-footer{
+    position: absolute;
+    bottom: 12px;
+    width: auto;
+    // border: 2px solid #999;
+    width: 180px;
+    margin: 10px;
+    // border-radius: 5px;
+    height: 25px;
+    font-size: 12px;
+    div{
+        text-align: center;
+        padding-top: 4px;
+    }
+}
+.shop-box{
+    font-size: 50px;
+    position: relative;
+    top: 30%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+$break-small: 600px;
+.wrapper {
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: auto auto auto auto;
+    grid-template-areas:
+    "header-left  header  header header"  
+    "content-center content-center content-center content-center";
+    background-color: #fff;
+    color: #444;
+    @media screen and (max-width: 600px) {
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: auto auto auto;
+      grid-template-areas:
+      "header-left header header header"  
+      "content-center content-center content-center";
+      background-color: #fff;
+      color: #444;
+    }
+
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    // background-color: #2196F3;
+    padding: 10px;
+    @media screen and (max-width: 600px) {
+      grid-template-columns: auto auto;
+      // background-color: #2196F3;
+      padding: 4px;
+    }
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    // border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+

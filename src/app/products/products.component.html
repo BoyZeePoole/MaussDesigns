@@ -1,8 +1,40 @@
 <div class="example-container">
-  <mat-form-field>
-    <input matInput placeholder="Description">
-  </mat-form-field>
-  <mat-form-field>
-    <input matInput placeholder="Image">
-  </mat-form-field>
+  <div>
+      <span class="Mauss-label">Description</span><br>
+      <input  class="Mauss-input" [formControl]="personForm.controls['description']" placeholder="Description">     
+  <br><br>
+   <span class="Mauss-label">Tags</span><br>
+    <input class="Mauss-input" [formControl]="personForm.controls['tags']" placeholder="Tags">
+    <input 
+      id="image"
+      style="display: none;"
+      type="file"
+      multiple
+      (change)="onFileChanged($event)" 
+      #fileInput /><br>    
+        <div class="image-style">
+         
+        </div><br>
+        <ng-container *ngIf="filesSelected">
+            <!-- <div *ngFor="let file of allFiles"> -->
+              <img *ngFor="let file of imageSrc" style="width: 300px; height: 300px" src="{{file}}" id="output_image"/>
+            <!-- </div> -->
+          </ng-container>  
+      <button class="Mauss-Button" mat-raised-button (click)="fileInput.click()" color="primary">Select File</button>
+    </div>&nbsp;
+    <div><br>
+      <span class="Mauss-label">Group</span><br />      
+      <div>
+        <div *ngFor="let group of fields; let i=index" class="form-check form-check">
+        <div *ngIf="fields">
+            <dynamic-form-builder (onSubmit)="save('group', $event)" [buttonText]="'Submit'" [fields]="fields"></dynamic-form-builder>
+        </div>
+            <!-- <input type='checkbox' [formControl]="personForm.controls['group']"/> {{groups[i].description}} -->
+           <!-- <input [formControl]="personForm.controls['group']" class="Mauss-input" type="checkbox" id="inlineCheckbox1" value="{{opt.refId}}" />
+           {{opt.description}}</label> -->
+        </div>
+      </div>
+    </div>
+      <!-- <button class="Mauss-Button" mat-raised-button color="primary" (click)="save(personForm.value)">Save</button> -->
+  
 </div>

@@ -1,0 +1,18 @@
+<div style="text-align: center; margin-bottom: 12px;">
+  <span style="font-size: 13px">Subscribe to our newsletter and always be the first to hear about what is happening.</span>
+</div>
+<div style="margin: 19px; background: #FFF; width: 350px; margin: 0 auto; border-radius: 5px;">
+  <div>
+    <label class="Mauss-label">Email address</label><br>
+    <input class="Mauss-input" [formControl]="subscribeForm.controls['email']"  style="width: 94%" placeholder="Enter your email address">
+    <div *ngIf="submitted && f.email.errors">
+      <div class="Mauss-error" *ngIf="f.email.errors.required">Email is required</div>
+  </div><br><br>
+    <button class="Mauss-Button" style="width: 98%" mat-raised-button (click)="save(true)">Subscribe</button>
+    &nbsp;
+    <div style="font-size: 12px;text-align:center ">
+      <a (click)="save(false)">Un-subscribe</a>
+    </div>
+  </div>
+   <br/><br>
+</div> 

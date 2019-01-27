@@ -1,14 +1,14 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, OnChanges } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { AlertService } from '../services/alert.service';
 
 @Component({
-    selector: 'alert',
+    selector: 'app-alert',
     templateUrl: 'alert.component.html'
 })
 
-export class AlertComponent implements OnInit, OnDestroy {
+export class AlertComponent implements OnInit, OnDestroy, OnChanges {
     private subscription: Subscription;
     message: any;
 
@@ -19,7 +19,11 @@ export class AlertComponent implements OnInit, OnDestroy {
             this.message = message; 
         });
     }
-
+    ngOnChanges(){
+        this.subscription = this.alertService.getMessage().subscribe(message => { 
+            this.message = message; 
+        });
+    }
     ngOnDestroy() {
         this.subscription.unsubscribe();
     }

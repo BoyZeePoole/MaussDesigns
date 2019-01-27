@@ -1,0 +1,22 @@
+<div class="example-container">
+  <mat-form-field>
+    <input matInput [formControl]="personForm.controls['firstname']" placeholder="First Name">
+    <mat-error >
+      First Name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [formControl]="personForm.controls['surname']" placeholder="Surname">
+    <mat-error >
+      Surname is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [formControl]="personForm.controls['email']" placeholder="Email">
+    <mat-error >
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <br />
+  <button class="Mauss-Button" mat-raised-button (click)="save(personForm.value)" color="primary">Submit</button>
+</div>

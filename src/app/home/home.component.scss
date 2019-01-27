@@ -1,16 +1,30 @@
+@import '../fonts.scss';
+
 body {
   margin: 0px;
+  background-color: var(--main-color);
 }
 
 .sidebar {
   grid-area: sidebar;
+  background-color: var(--main-color);
 }
 
 .content {
   grid-area: content;
-  position: relative;
+  padding: 20px 150px 20px 350px;
+  min-height: 340px;
 }
-
+.content > div > a {
+  padding: 0 20px 0 20px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.router-link {
+   /*color: white;*/
+   text-decoration: none;
+   padding-left: 50px;
+  }
 .header {
   grid-area: header;
 }
@@ -21,50 +35,50 @@ body {
 
 .wrapper {
         display: grid;
-    grid-gap: 10px;
+        grid-gap: 10px;
         grid-template-columns: auto auto auto;
         grid-template-areas:
-        "header  header  header"
-        "sidebar content content"
+        "header  header  header"  
+        "content content content"
         "footer  footer  footer";
         background-color: #fff;
-        color: #444;
+        color: #444;       
     }
 
 
 .box {
-  background-color: #444;
-  color: #fff;
-  border-radius: 5px;
-  padding: 50px;
-  font-size: 150%;
+  color: #000;
 }
 
-.header,
+
 .footer {
-  background-color: #999;
+  border-top: solid 1px rgb(241, 238, 238);
+  /*background-color: #95959e;*/
+  // padding: 0 100px 12px 150px;
+  /*color: #fff;*/
 }
-
-.topleft {
-  position: absolute;
-  top: 0;
-  left: 0;
+.social-container {
+  padding-top: 12px;
+  font-size:12px;
+  width: 300px;
+  float: right;
+  span {
+    padding-left: 14px;
+  }
 }
-
-.topright {
-  position: absolute;
-  top: 0;
-  right: 0;
+.extreme-footer{
+  background: #f5f4f5;  
+ /* width: 100%;*/
+  border: 1px solid red;
 }
-
-.bottomleft {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
-.bottomright {
-  position: absolute;
-  bottom: 0;
-  right: 0;
+.social-container-footer {
+  background: #f5f4f5;  
+  padding-top: 30px;
+  font-size:12px;
+  height: 111px;
+  span {
+    padding-left: 24px;
+  }
+  text-align: center;
+  width: 100%;
 }
