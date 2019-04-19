@@ -43,12 +43,17 @@ export const EndPoints = {
 export const MenuRoutes: Object[] = [{
     icon: 'home',
     route: '/home/shop',
-    title: 'Shop'    
+    title: 'About'    
   }, {
-    icon: 'Products',
-    route: '/',
-    title: 'Gallery',
+    icon: 'dashboard',
+    route: '/home/dashboard',
+    title: 'Pépinière',
   }, {
+    icon: 'ClientProfile',
+    route: 'clientprofile',
+    title: 'Customize',
+  },
+  {
     icon: 'ClientProfile',
     route: 'clientprofile',
     title: 'Contact us',
@@ -56,14 +61,6 @@ export const MenuRoutes: Object[] = [{
     icon: 'icon-Basket_icon',
     route: 'login',
     title: '',
-  }, {
-    icon: 'icon-heart',
-    route: 'login',
-    title: '',
-  }, {
-    icon: 'icon-bird',
-    route: 'registerlogin',
-    title: 'Log in / Register',
   }
 ];
 

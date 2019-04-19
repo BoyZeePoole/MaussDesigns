@@ -1,4 +1,6 @@
-<div class="wrapper">
+
+
+<!-- <div class="wrapper">
   <div class="box header">
         <div style="padding: 12px 0 0 50px; text-align: left;height: 50px;">
             <input class="Mauss-input" placeholder="Search" type="text" [(ngModel)]="searchText">
@@ -13,12 +15,14 @@
        
         <div style="vertical-align: middle; height: 100px;padding-left: 50px; text-align: left; background: #F4F0F3">
             <div style="float:left;vertical-align: middle;padding-top: 18px;">
-                <div style="line-height: 100%"><a [routerLink]="['/home']"  routerLinkActive="active"><span style="font-size: 60px;" class="icon-Mauss-Logo"></span></a>{{app.Title}}</div>
-                
+                <div style="line-height: 100%">
+                  <a style="color: #000;text-decoration: none;" [routerLink]="['/home']"  routerLinkActive="active">
+                    <span style="font-size: 30px" class="icon-mauss-logo-02"></span>
+                  </a>
+                </div>                
             </div>
             <app-link-menu [menuData]="routes"></app-link-menu>
-         </div>   
-      
+         </div>      
   </div>
   <div class="content">
     
@@ -27,7 +31,7 @@
   </div>
   <div class="box footer">
     <app-subscribe></app-subscribe>
-    <!-- <div class="extreme-footer"> -->
+    <!-- <div class="extreme-footer"> 
       <div class="social-container-footer">
         <span class="social icon-fb_icon"></span>
         <span class="social icon-twitter_icon"></span>
@@ -39,5 +43,26 @@
           </span>
           <br><br>
       </div>    
+  </div>
+</div> -->
+<div class="wrapper">
+  <div class="sidebar">
+    <a style="color: #000;text-decoration: none;" [routerLink]="['/home']"  routerLinkActive="active">
+      <span style="font-size: 30px" class="icon-mauss-logo-02"></span>
+    </a>
+    <app-link-menu [menuData]="routes"></app-link-menu>
+  </div>
+  <div class="content">
+    <div class="main">
+        <router-outlet></router-outlet>
+    </div>
+    
+  </div>
+  <div class="sidebar-right">
+    <input class="Mauss-input" style="width:140px;" placeholder="Search" type="text" [(ngModel)]="searchText">
+    <br><br><br><br>
+    <a class="router-link" [routerLink]="['/home/registerlogin']"  routerLinkActive="active">
+      Login/Register
+    </a>
   </div>
 </div>

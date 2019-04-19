@@ -52,28 +52,30 @@ $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
   font-family: segoeui;
   font-weight: bold;
   font-size: 14px;
-  border-bottom: 1px solid #999;
+  // border-bottom: 1px solid #999;
   padding: 8px 0 8px 0;
 }
 .Mauss-Button{
-  background-color: #A01878 !important;
+  background-color: #000 !important;
   border-radius: 8px !important;
   font-family: segoeui;
   color: #FFF;
   font-size: 11px;
+  width:unset !important;
 }
 .Mauss-label {
   font-size:10px;
   margin-bottom: 8px;  
 }
 .Mauss-input{
-  border: solid 1px #F4F0F3;
+  border: solid 1px rgb(124, 121, 123);
   outline: none;
   padding-left: 20px;
   height: 30px;
-  border-radius: 10px;
+  border-radius: 4px;
   width: 220px;
   color:#A01878;
+  background: #f5f4f5;
 }
 .Mauss-error {
   padding-top: 5px;
@@ -81,7 +83,7 @@ $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
   font-size: 10px;
   font-style: italic;
 }
-
-
-
+.mat-sidenav-container, .mat-sidenav-content, .mat-tab-body-content {
+  transform: none !important;
+}
   

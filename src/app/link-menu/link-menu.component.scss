@@ -2,9 +2,8 @@
 .header-menu{
     vertical-align: middle; 
     height: 100%;
-    float: right;
     padding-top: 52px;
-    padding-right: 108px;
+    // padding-right: 108px;
     /*padding-left: 710px;*/
     font-size: 14px;
     a{
@@ -24,5 +23,6 @@
   .router-link {
     /*color: white;*/
     text-decoration: none;
-    padding-left: 50px;
+    padding: 15px 0 0 0;
+      display: block;
    }

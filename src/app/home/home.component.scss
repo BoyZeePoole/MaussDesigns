@@ -6,14 +6,16 @@ body {
 }
 
 .sidebar {
-  grid-area: sidebar;
-  background-color: var(--main-color);
+  padding: 100px 20px 0px 100px;
+  &-right {
+    padding: 100px 10px 0px 10px;;
+  } 
 }
 
 .content {
-  grid-area: content;
-  padding: 20px 150px 20px 350px;
+  padding: 50px;
   min-height: 340px;
+  background-color: #F4F0F3 ;
 }
 .content > div > a {
   padding: 0 20px 0 20px;
@@ -23,7 +25,7 @@ body {
 .router-link {
    /*color: white;*/
    text-decoration: none;
-   padding-left: 50px;
+   padding: 5px 0 0 0;
   }
 .header {
   grid-area: header;
@@ -36,16 +38,16 @@ body {
 .wrapper {
         display: grid;
         grid-gap: 10px;
-        grid-template-columns: auto auto auto;
-        grid-template-areas:
-        "header  header  header"  
-        "content content content"
-        "footer  footer  footer";
+        grid-template-columns: 280px auto 200px;
         background-color: #fff;
         color: #444;       
     }
 
-
+.main{
+  background: #F4F0F3 url('../../assets/background_image.png');
+  width: 915px;
+  height: 1000px;
+}
 .box {
   color: #000;
 }

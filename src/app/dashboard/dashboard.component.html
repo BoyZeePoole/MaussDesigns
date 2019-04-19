@@ -1,6 +1,7 @@
-  <!-- <p>
+  <p>
   <mat-grid-list cols="6"  rowHeight="2:2">
     <mat-grid-tile *ngFor="let product of products" >
+        <a [routerLink]="['/home/productdetail', product.refId]" class="category-link">
       <img *ngIf = "product.imageName.indexOf('mp4') === -1" style="width: 200px; height: 200px;" [src]="getImage(product)" />
       <video *ngIf = "product.imageName.indexOf('mp4') !== -1"  controls>
         <source [src]="getImage(product)" type="video/mp4">
@@ -9,18 +10,7 @@
       <mat-grid-tile-footer>
         {{product.description}}
       </mat-grid-tile-footer>
+        </a>
     </mat-grid-tile>    
   </mat-grid-list>
-</p> -->
-
-<div class="grid-container">
-    <div *ngFor="let product of products" class="grid-item">
-        <a [routerLink]="['/home/productdetail', product.refId]" class="category-link">
-          <img *ngIf = "product.imageName.indexOf('mp4') === -1" style="width: 200px; height: 200px;" [src]="getImage(product)" />
-          <video *ngIf = "product.imageName.indexOf('mp4') !== -1"  style="width: 200px; height: 200px;" controls>
-            <source [src]="getImage(product)" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </a>
-    </div>          
-  </div>     
+</p>
