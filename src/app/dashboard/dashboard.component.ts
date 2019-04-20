@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { PubSubService } from '../services/pup-sub.service';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -15,9 +17,11 @@ export class DashboardComponent implements OnInit, OnChanges {
   groupId: any;
   constructor(private productService: ProductService,
               private router: Router,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private pubsubService: PubSubService) {
     this.groupId = route.snapshot.params['refId'];
     this.getAllProducts();
+    pubsubService.setHome(false);
    }
   ngOnChanges() {
     //this.products = this.gridData;

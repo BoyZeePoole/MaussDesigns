@@ -31,7 +31,7 @@
   </div>
   <div class="box footer">
     <app-subscribe></app-subscribe>
-    <!-- <div class="extreme-footer"> 
+    <div class="extreme-footer"> 
       <div class="social-container-footer">
         <span class="social icon-fb_icon"></span>
         <span class="social icon-twitter_icon"></span>
@@ -50,13 +50,20 @@
     <a style="color: #000;text-decoration: none;" [routerLink]="['/home']"  routerLinkActive="active">
       <span style="font-size: 30px" class="icon-mauss-logo-02"></span>
     </a>
-    <app-link-menu [menuData]="routes"></app-link-menu>
+    <div class="sidebar-content">
+        <app-link-menu [menuData]="routes"></app-link-menu>
+    </div>
+    <div class="sidebar-footer">
+        <span class="icon-facebook"></span>
+        <span class="icon-instagram"></span>
+        <span class="icon-pinterest2"></span>
+        </div>
+        
   </div>
   <div class="content">
-    <div class="main">
-        <router-outlet></router-outlet>
-    </div>
-    
+        <router-outlet>
+          
+        </router-outlet>    
   </div>
   <div class="sidebar-right">
     <input class="Mauss-input" style="width:140px;" placeholder="Search" type="text" [(ngModel)]="searchText">
@@ -65,4 +72,25 @@
       Login/Register
     </a>
   </div>
+  <div class="footer1"></div>
+  <div class="footer2">
+    <div>
+      <app-subscribe></app-subscribe>
+    </div>  
+    
+    <div class="social-container-footer">
+      <span class="icon-facebook"></span>
+      <span class="icon-instagram"></span>
+      <span class="icon-pinterest2"></span>
+      <br><br>
+      <span style="font-size: 12px;">
+          Copyright &copy; Mauss-designs 2018. All rights reserved
+        </span>
+        <br><br>
+      </div>
+
+
+  </div>
+  <div class="footer3"></div>
+
 </div>

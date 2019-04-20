@@ -6,10 +6,31 @@ body {
 }
 
 .sidebar {
-  padding: 100px 20px 0px 100px;
+  position: relative;
+  padding-top: 100px;
+  /* 20px 0px 100px;*/
+  text-align: center;
+  &-content {
+    margin: 0 auto;
+    text-align: left;
+    width: 120px;
+  }
   &-right {
     padding: 100px 10px 0px 10px;;
   } 
+  &-footer {
+    // border: 1px solid green;
+    position: absolute;
+    bottom: 10px;
+    padding-top: 30px;
+    font-size:12px;
+    // height: 111px;
+    width: 100%;
+    span {
+      padding-left: 24px;
+    }
+  // text-align: center;
+  }
 }
 
 .content {
@@ -27,20 +48,16 @@ body {
    text-decoration: none;
    padding: 5px 0 0 0;
   }
-.header {
-  grid-area: header;
-}
-
-.footer {
-  grid-area: footer;
-}
 
 .wrapper {
-        display: grid;
-        grid-gap: 10px;
-        grid-template-columns: 280px auto 200px;
-        background-color: #fff;
-        color: #444;       
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 280px auto 200px;
+  grid-template-areas:
+        "sidebar content sidebar-right"
+        "footer1 footer2 footer3";
+  background-color: #fff;
+  color: #444;       
     }
 
 .main{
@@ -51,12 +68,10 @@ body {
 .box {
   color: #000;
 }
-
-
-.footer {
-  border-top: solid 1px rgb(241, 238, 238);
+.footer2 {
+  background-color: #F4F0F3 ;
   /*background-color: #95959e;*/
-  // padding: 0 100px 12px 150px;
+  padding: 15px;
   /*color: #fff;*/
 }
 .social-container {
@@ -71,10 +86,8 @@ body {
 .extreme-footer{
   background: #f5f4f5;  
  /* width: 100%;*/
-  border: 1px solid red;
 }
 .social-container-footer {
-  background: #f5f4f5;  
   padding-top: 30px;
   font-size:12px;
   height: 111px;
@@ -82,5 +95,5 @@ body {
     padding-left: 24px;
   }
   text-align: center;
-  width: 100%;
+  // width: 100%;
 }

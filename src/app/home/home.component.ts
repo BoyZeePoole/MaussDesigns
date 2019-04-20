@@ -2,7 +2,7 @@ import { Component, OnInit, OnChanges } from '@angular/core';
 import { MenuRoutes } from '../services/settings';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ApplicationSettings } from '../services/settings';
-
+import { PubSubService } from '../services/pup-sub.service';
 
 @Component({
   selector: 'app-home',
@@ -18,15 +18,19 @@ export class HomeComponent implements OnInit, OnChanges{
   userName: string;
   groupId: any;
   constructor(private router: Router,
-              private route: ActivatedRoute) { 
-
+              private route: ActivatedRoute,
+              private pubsubService: PubSubService) { 
       let currentUser = JSON.parse(localStorage.getItem('currentUser'));
       if(currentUser != null && currentUser.rights !== undefined && currentUser.rights.title != ''){
           this.routes = currentUser.rights;
       }
+      this.pubsubService.isHome.subscribe(
+        data => {
+          this.isHome = data;
+        }
+      );
   }
   ngOnChanges() {
-    // this.getAllProducts();
   }
   ngOnInit() {
     if(localStorage.currentUser != undefined){
