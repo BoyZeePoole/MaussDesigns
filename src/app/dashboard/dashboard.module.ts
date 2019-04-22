@@ -3,15 +3,18 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
 import {MaterialModule} from '../app.material.module';
 import { routing } from './dashboard.routing';
+import { FilterPipe } from '../filter.pipe';
 
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
-    routing
+    routing,
   ],
   declarations: [
-    DashboardComponent
+    DashboardComponent,
+    FilterPipe
+
   ],
   providers: [
   ]

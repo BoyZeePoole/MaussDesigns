@@ -19,7 +19,7 @@ import { ProductService} from './services/product.service';
 import { SubscribeService } from './services/subscribe.service';
 // import { DashboardComponent } from './dashboard/dashboard.component';
 import { SubscribeComponent } from './subscribe/subscribe.component';
-import { FilterPipe } from './filter.pipe';
+// import { FilterPipe } from './filter.pipe';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { PubSubService} from './services/pup-sub.service';
 
@@ -31,7 +31,7 @@ import { PubSubService} from './services/pup-sub.service';
     LinkMenuComponent,
     // DashboardComponent,
     SubscribeComponent,
-    FilterPipe,
+    // FilterPipe,
   ],
   imports: [
     BrowserModule,

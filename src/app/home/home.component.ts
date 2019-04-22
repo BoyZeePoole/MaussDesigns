@@ -24,13 +24,11 @@ export class HomeComponent implements OnInit, OnChanges{
       if(currentUser != null && currentUser.rights !== undefined && currentUser.rights.title != ''){
           this.routes = currentUser.rights;
       }
-      this.pubsubService.isHome.subscribe(
-        data => {
-          this.isHome = data;
-        }
-      );
   }
   ngOnChanges() {
+  }
+  doSearch(search: string){
+    this.pubsubService.setSearchString(search);
   }
   ngOnInit() {
     if(localStorage.currentUser != undefined){

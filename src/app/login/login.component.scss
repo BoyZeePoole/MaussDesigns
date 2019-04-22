@@ -1,8 +1,20 @@
+@import "../fonts.scss";
 .example-container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}
+.bla-bla {
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+.login {
+  width: 340px;
+  @media screen and (min-width: $break-medium) {
+    width: 350px;
+    padding-left: 20px;
   }
-  
-  .example-container > * {
-    width: 100%;
-  }
+}

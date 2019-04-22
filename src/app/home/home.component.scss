@@ -1,4 +1,4 @@
-@import '../fonts.scss';
+@import "../fonts.scss";
 
 body {
   margin: 0px;
@@ -6,37 +6,62 @@ body {
 }
 
 .sidebar {
-  position: relative;
-  padding-top: 100px;
-  /* 20px 0px 100px;*/
+  padding-top: 25px;
   text-align: center;
   &-content {
     margin: 0 auto;
-    text-align: left;
-    width: 120px;
+    padding-left: 18px;
   }
   &-right {
-    padding: 100px 10px 0px 10px;;
-  } 
+    text-align: center;
+    padding-top: 20px;
+  }
   &-footer {
-    // border: 1px solid green;
-    position: absolute;
-    bottom: 10px;
-    padding-top: 30px;
-    font-size:12px;
-    // height: 111px;
+    font-size: 12px;
     width: 100%;
     span {
-      padding-left: 24px;
+      padding-left: 18px;
     }
-  // text-align: center;
+    // text-align: center;
   }
+  @media screen and (min-width: $break-medium) {
+    position: relative;
+    padding-top: 100px;
+    text-align: center;
+    &-content {
+      margin: 0 auto;
+      text-align: left;
+      width: 120px;
+    }
+    &-right {
+      padding: 100px 10px 0px 10px;
+    }
+    &-footer {
+      // border: 1px solid green;
+      position: absolute;
+      bottom: 10px;
+      padding-top: 30px;
+      font-size: 12px;
+      // height: 111px;
+      width: 100%;
+      span {
+        padding-left: 24px;
+      }
+      // text-align: center;
+    }
+  }
+  
 }
 
 .content {
-  padding: 50px;
+  padding: 5px;
   min-height: 340px;
-  background-color: #F4F0F3 ;
+  background-color: #f4f0f3;
+
+  @media screen and (max-width: $break-small) {
+    padding: 50px;
+    min-height: 340px;
+  }
 }
 .content > div > a {
   padding: 0 20px 0 20px;
@@ -44,24 +69,50 @@ body {
   text-decoration: none;
 }
 .router-link {
-   /*color: white;*/
-   text-decoration: none;
-   padding: 5px 0 0 0;
+  /*color: white;*/
+  text-decoration: none;
+  padding: 5px 0 0 0;
+}
+
+.profile-pic {
+  float: left;
+  width: 250px;
+  @media screen and (max-width: $break-small) {
+    width: 100px;
+    float: none;
   }
+  @media screen and (min-width: $break-large) {
+    float: right;
+  }
+}
 
 .wrapper {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: 280px auto 200px;
-  grid-template-areas:
-        "sidebar content sidebar-right"
-        "footer1 footer2 footer3";
-  background-color: #fff;
-  color: #444;       
-    }
+  grid-template-columns: auto;
+  @media screen and (min-width: $break-medium) {
+    display: grid;
+    grid-gap: 2px;
+    grid-template-columns: 140px auto 180px;
+    grid-template-areas:
+      "sidebar content sidebar-right"
+      "footer1 footer2 footer3";
+  }
+  @media screen and (min-width: $break-large) {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 280px auto 200px;
+    grid-template-areas:
+      "sidebar content sidebar-right"
+      "footer1 footer2 footer3";
+  }
 
-.main{
-  background: #F4F0F3 url('../../assets/background_image.png');
+  background-color: #fff;
+  color: #444;
+}
+
+.main {
+  background: #f4f0f3 url("../../assets/background_image.png");
   width: 915px;
   height: 1000px;
 }
@@ -69,27 +120,27 @@ body {
   color: #000;
 }
 .footer2 {
-  background-color: #F4F0F3 ;
+  background-color: #f4f0f3;
   /*background-color: #95959e;*/
   padding: 15px;
   /*color: #fff;*/
 }
 .social-container {
   padding-top: 12px;
-  font-size:12px;
+  font-size: 12px;
   width: 300px;
   float: right;
   span {
     padding-left: 14px;
   }
 }
-.extreme-footer{
-  background: #f5f4f5;  
- /* width: 100%;*/
+.extreme-footer {
+  background: #f5f4f5;
+  /* width: 100%;*/
 }
 .social-container-footer {
   padding-top: 30px;
-  font-size:12px;
+  font-size: 12px;
   height: 111px;
   span {
     padding-left: 24px;

@@ -13,23 +13,31 @@ export class DashboardComponent implements OnInit, OnChanges {
   products: any;
   randomProduct: any;
   //@Input() gridData : any; 
-
+  breakpoint:number;
   groupId: any;
+  searchText: string;
   constructor(private productService: ProductService,
               private router: Router,
               private route: ActivatedRoute,
               private pubsubService: PubSubService) {
     this.groupId = route.snapshot.params['refId'];
     this.getAllProducts();
-    pubsubService.setHome(false);
+    this.pubsubService.getSearchstring.subscribe(
+      data => {
+        this.searchText = data;
+      }
+    );
    }
   ngOnChanges() {
     //this.products = this.gridData;
     this.getAllProducts();
   }
   ngOnInit() {
-    //this.products = this.gridData
+    this.breakpoint = (window.innerWidth <= 400) ? 2 : 4;
     this.getAllProducts();
+  }
+  onResize(event) {
+    this.breakpoint = (event.target.innerWidth <= 400) ? 2 : 4;
   }
   getImage(product){
     if(product){

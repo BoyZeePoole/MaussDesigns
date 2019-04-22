@@ -47,12 +47,13 @@
 </div> -->
 <div class="wrapper">
   <div class="sidebar">
-    <a style="color: #000;text-decoration: none;" [routerLink]="['/home']"  routerLinkActive="active">
+    <a style="color: #000;text-decoration: none;" [routerLink]="['/home/splash']"  routerLinkActive="active">
       <span style="font-size: 30px" class="icon-mauss-logo-02"></span>
     </a>
     <div class="sidebar-content">
         <app-link-menu [menuData]="routes"></app-link-menu>
     </div>
+    <br />
     <div class="sidebar-footer">
         <span class="icon-facebook"></span>
         <span class="icon-instagram"></span>
@@ -66,10 +67,10 @@
         </router-outlet>    
   </div>
   <div class="sidebar-right">
-    <input class="Mauss-input" style="width:140px;" placeholder="Search" type="text" [(ngModel)]="searchText">
-    <br><br><br><br>
+    <input class="Mauss-input" style="width:140px;" placeholder="Search" type="text" [(ngModel)]="searchText" (ngModelChange)="doSearch($event)" >
+    <br><br>
     <a class="router-link" [routerLink]="['/home/registerlogin']"  routerLinkActive="active">
-      Login/Register
+      Log in / Register
     </a>
   </div>
   <div class="footer1"></div>

@@ -1,18 +1,19 @@
-
-.top-section{
-    height: 140px;
-    // border: 1px solid green;
-}
+$break-small: 320px;
+$break-large: 1200px;
 
 .left{
-    // margin-top: 140px;
-    // border: 1px solid red;
-    float: left; 
-    padding-left: 40px;
+    float: none; 
+    padding-left: 2px;
+    @media screen and (min-width: $break-large) {
+        float: left;
+        padding-left: 40px;
+      }
 }
 .right{
-    // margin-top: 140px;
-    // border: 1px solid red;
-    float: 
-    right; padding-right: 150px;
+    float: none; 
+    padding-right: 2px;
+    @media screen and (min-width: $break-large) {
+        float: right;
+        padding-right: 40px;
+      }
 }

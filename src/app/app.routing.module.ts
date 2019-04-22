@@ -6,6 +6,7 @@ export const routes: Routes = [
   
  { path: 'home', component:  HomeComponent,
     children: [
+      { path: 'splash', loadChildren: './splash/splash.module#SplashModule'},
       { path: 'products', loadChildren: './products/products.module#ProductsModule'},
       { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule'},
       { path: 'clientprofile', loadChildren: './client-profile/client-profile.module#ClientProfileModule'},
@@ -24,7 +25,7 @@ export const routes: Routes = [
   //     { path: 'productdetail/:refId', loadChildren: './product-detail/product-detail.module#ProductDetailModule'}
   //   ]
   // },
-{ path: '', redirectTo: 'home', pathMatch: 'full' }
+{ path: '', redirectTo: 'home/splash', pathMatch: 'full' }
 ];
 
 @NgModule({

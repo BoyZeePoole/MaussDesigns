@@ -1,16 +1,41 @@
-  <p>
-  <mat-grid-list cols="6"  rowHeight="2:2">
-    <mat-grid-tile *ngFor="let product of products" >
+<div class="top-section">
+  [replace with animated images...]
+</div>
+<div class="Mauss-Form-Title">
+    Pépinière
+</div><br>
+
+<main class="grid" >
+  <div *ngFor="let product of (products | filter: searchText)">
+    <div class="poloriod">
         <a [routerLink]="['/home/productdetail', product.refId]" class="category-link">
-      <img *ngIf = "product.imageName.indexOf('mp4') === -1" style="width: 200px; height: 200px;" [src]="getImage(product)" />
-      <video *ngIf = "product.imageName.indexOf('mp4') !== -1"  controls>
+          <img *ngIf="product.imageName.indexOf('mp4') === -1" [src]="getImage(product)" />
+          <video *ngIf="product.imageName.indexOf('mp4') !== -1" controls>
+            <source [src]="getImage(product)" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <mat-grid-tile-footer>
+            {{product.description}} <br/>
+            {{product.price}}
+          </mat-grid-tile-footer>
+        </a>
+    </div>      
+  </div>
+</main>
+
+<!-- 
+<mat-grid-list [cols]="breakpoint" rowHeight="2:2" (window:resize)="onResize($event)">
+  <mat-grid-tile *ngFor="let product of (products | filter: searchText)">
+    <a [routerLink]="['/home/productdetail', product.refId]" class="category-link">
+      <img *ngIf="product.imageName.indexOf('mp4') === -1" style="width: 200px; height: 200px;"
+        [src]="getImage(product)" />
+      <video *ngIf="product.imageName.indexOf('mp4') !== -1" controls>
         <source [src]="getImage(product)" type="video/mp4">
         Your browser does not support the video tag.
       </video>
       <mat-grid-tile-footer>
         {{product.description}}
       </mat-grid-tile-footer>
-        </a>
-    </mat-grid-tile>    
-  </mat-grid-list>
-</p>
+    </a>
+  </mat-grid-tile>
+</mat-grid-list> -->
