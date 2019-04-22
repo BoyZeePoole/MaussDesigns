@@ -52,12 +52,27 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 .unicorn-dark-theme {
   @include angular-material-theme($dark-theme);
 }
+.Mauss-Page-Header {
+  height: 20px;
+  padding-left: 10px;
+  @media screen and (min-width: $break-medium) {
+    padding-left: 40px;
+    height: 186px;
+  }
+}
+.page {
+  padding-left: 10px;
+  @media screen and (min-width: $break-medium) {
+    padding-left: 40px;
+  }
+}
+
 .Mauss-Form-Title {
   font-family: segoeui;
   font-weight: bold;
   font-size: 14px;
-  // border-bottom: 1px solid #999;
-  padding: 8px 0 8px 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 .Mauss-Button {
   background-color: #000 !important;
@@ -98,11 +113,4 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 .mat-sidenav-content,
 .mat-tab-body-content {
   transform: none !important;
-}
-
-.top-section{
-  height: 20px;
-  @media screen and (min-width: $break-large) {
-      height: 186px;
-    }    
 }
