@@ -11,11 +11,16 @@ import { FieldStructure } from '../models';
 })
 export class CustomizeComponent implements OnInit {
   customizeForm: FormGroup;
+  loading = false;
+  submitted = false;
   selectedFile: File;
   allFiles: string [] = [];
   filesSelected: boolean = false;
   fields : FieldStructure[] = [];
   @ViewChild('fileInput') fileInput: ElementRef;
+  color:any;
+  color1:any;
+  color2:any;
 
   imageSrc = [];
   onFileChanged(event) {
@@ -39,12 +44,17 @@ export class CustomizeComponent implements OnInit {
     }
   }
   constructor( private fb: FormBuilder) { }
-
+  get f() { return this.customizeForm.controls; }
   ngOnInit() {
     this.customizeForm = this.fb.group({
       theme: ['', Validators.required],
-      color: ['', Validators.required]
+      color: [null],
+      color1: [null],
+      color2: [null]
   });
+  }
+  onSubmit() {
+    this.submitted = true;
   }
 
 }

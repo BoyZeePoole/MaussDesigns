@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from "./home/home.component";
-
+import { AuthGuard } from './guards/auth.guard';
 export const routes: Routes = [
   
  { path: 'home', component:  HomeComponent,
@@ -10,7 +10,7 @@ export const routes: Routes = [
       { path: 'products', loadChildren: './products/products.module#ProductsModule'},
       { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule'},
       { path: 'gallery', loadChildren: './gallery/gallery.module#GalleryModule'},
-      { path: 'customize', loadChildren: './customize/customize.module#CustomizeModule'},
+      { path: 'customize', loadChildren: './customize/customize.module#CustomizeModule', canActivate: [AuthGuard] },
       { path: 'clientprofile', loadChildren: './client-profile/client-profile.module#ClientProfileModule'},
       { path: 'registerlogin', loadChildren: './login-register-container/login-register-container.module#LoginRegisterContainerModule'},
       { path: 'shop', loadChildren: './shop/shop.module#ShopModule'},
