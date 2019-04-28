@@ -1,0 +1,22 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FilterPipe } from './filter.pipe';
+@NgModule({
+  imports: [
+    CommonModule,
+  ],
+  declarations: [
+    FilterPipe
+  ],
+  exports: [FilterPipe],
+  providers: [
+  ]
+})
+export class FilterPipeModule {
+  static forRoot() {
+    return {
+      ngModule: FilterPipe,
+      providers: [],
+    };
+  }
+}

@@ -1,0 +1,44 @@
+.masonry-item { width: 200px; }
+$break-small: 320px;
+$break-medium: 600px;
+$break-large: 1200px;
+
+.masonry-item {
+  margin-bottom: 20px;
+}
+.grid {
+  padding: 10px;
+  @media screen and (min-width: $break-medium) {
+    padding: 40px;
+  }
+}
+.poloriod {
+  width: 142px;
+  background: #fff;
+  padding: 4px;
+  // border-radius: 3px;
+  text-align: center;
+  img {
+    width: 140px;
+    height: 140px;
+  }
+  video {
+    width: 140px;
+    height: 140px;
+  }
+  a {
+    text-decoration: none;
+  }
+  @media screen and (min-width: $break-medium) {
+    width: 182px;
+    padding: 4px;
+    img {
+      width: 180px;
+      height: 180px;
+    }
+    video {
+      width: 180px;
+      height: 180px;
+    }
+  }
+}

@@ -1,21 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DashboardComponent } from './dashboard.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { CustomizeComponent } from './customize.component';
 import {MaterialModule} from '../app.material.module';
-import { routing } from './dashboard.routing';
-import { FilterPipeModule } from '../pipes/filter.module';
+import { routing } from './customize.routing';
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
     routing,
-    FilterPipeModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   declarations: [
-    DashboardComponent
+    CustomizeComponent
 
   ],
   providers: [
   ]
 })
-export class DashboardModule { }
+export class CustomizeModule { }

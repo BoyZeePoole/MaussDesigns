@@ -17,9 +17,7 @@ import { AlertService } from './services/alert.service';
 import { LinkMenuComponent } from './link-menu/link-menu.component'
 import { ProductService} from './services/product.service';
 import { SubscribeService } from './services/subscribe.service';
-// import { DashboardComponent } from './dashboard/dashboard.component';
 import { SubscribeComponent } from './subscribe/subscribe.component';
-// import { FilterPipe } from './filter.pipe';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { PubSubService} from './services/pup-sub.service';
 
@@ -29,9 +27,7 @@ import { PubSubService} from './services/pup-sub.service';
     HomeComponent,
     AlertComponent,
     LinkMenuComponent,
-    // DashboardComponent,
     SubscribeComponent,
-    // FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +39,7 @@ import { PubSubService} from './services/pup-sub.service';
     ReactiveFormsModule,
     FormsModule
   ],
+  exports:[],
   providers: [
     AuthGuard,
     AlertService,

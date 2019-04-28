@@ -9,6 +9,8 @@ export const routes: Routes = [
       { path: 'splash', loadChildren: './splash/splash.module#SplashModule'},
       { path: 'products', loadChildren: './products/products.module#ProductsModule'},
       { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule'},
+      { path: 'gallery', loadChildren: './gallery/gallery.module#GalleryModule'},
+      { path: 'customize', loadChildren: './customize/customize.module#CustomizeModule'},
       { path: 'clientprofile', loadChildren: './client-profile/client-profile.module#ClientProfileModule'},
       { path: 'registerlogin', loadChildren: './login-register-container/login-register-container.module#LoginRegisterContainerModule'},
       { path: 'shop', loadChildren: './shop/shop.module#ShopModule'},
