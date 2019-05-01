@@ -14,6 +14,7 @@ import {
   styleUrls: ['./app.component.scss'],
   animations: [
     // animation triggers go here
+    
   ]
 })
 export class AppComponent {
