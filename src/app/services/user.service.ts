@@ -17,6 +17,11 @@ export class UserService {
         return this.http.get(EndPoints.userController.getUserById + id);
     }
 
+    getMenuByUserId(id: number) {
+        let endpoint = this.configService.RootUrl() + EndPoints.userController.getMenu
+        return this.http.get(endpoint + '?id=' + id);
+    }
+
     register(user: User) {
         let endpoint = this.configService.RootUrl() + EndPoints.userController.register
         return this.http.post(endpoint, user);

@@ -2,8 +2,8 @@ import { Component, OnInit, ElementRef, ViewChild, Input } from '@angular/core';
 
 import { FormBuilder, FormGroup, Validators, Form, NgForm } from '@angular/forms';
 import { FieldStructure } from '../models';
-
-
+import { CustomizeService } from '../services/customize.service'
+import { Router} from '@angular/router';
 @Component({
   selector: 'app-customize',
   templateUrl: './customize.component.html',
@@ -43,7 +43,9 @@ export class CustomizeComponent implements OnInit {
       
     }
   }
-  constructor( private fb: FormBuilder) { }
+  constructor( private fb: FormBuilder, 
+              private customizeService:CustomizeService,
+              private router: Router) { }
   get f() { return this.customizeForm.controls; }
   ngOnInit() {
     this.customizeForm = this.fb.group({
@@ -56,5 +58,37 @@ export class CustomizeComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
   }
+  save(formValues) {
+    this.submitted = true;
+    //this.customizeForm.setControl('zulu', formValues)
+    if (this.customizeForm.invalid) return;
+    this.loading = true;
+    this.customizeService.save(this.prepareSaveUser())
+   .subscribe(
+    success => {
+      this.router.navigate(['/home/dashboard']);
+    },
+    error => {
+      console.log(error);
+    });
+
+  }
+  prepareSaveUser(): FormData {
+    
+    const formModel = this.customizeForm.value;
+    let formData = new FormData();
+    let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+    formData.append("refid", "0");
+    formData.append("userrefid", currentUser.id);
+    formData.append("theme", formModel.theme);
+    formData.append("colour1", this.color);
+    formData.append("colour2", this.color1);
+    formData.append("colour3", this.color2);
+    for(var f=0;f<this.allFiles.length;f++){
+      formData.append("image", this.allFiles[f]);
+    }
+    return formData;
+}
 
 }

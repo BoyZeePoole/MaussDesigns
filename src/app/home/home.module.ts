@@ -12,6 +12,6 @@ import { LinkMenuModule } from '../link-menu/link-menu.module';
     LinkMenuModule
   ],
   declarations: [],
-  providers: [ ]
+  providers: [  ]
 })
 export class HomeModule { }

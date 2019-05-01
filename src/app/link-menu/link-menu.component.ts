@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ApplicationSettings } from '../services/settings';
+import { PubSubService } from '../services/pup-sub.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-link-menu',
@@ -8,12 +9,27 @@ import { ApplicationSettings } from '../services/settings';
 })
 export class LinkMenuComponent implements OnInit {
   routes;
-  app = ApplicationSettings;
-  @Input() menuData : any; 
-  
+  @Input() menuData: any;
+
+  constructor(private pubsubService: PubSubService,
+    private userService: UserService) {
+
+    this.pubsubService.isLoggedIn.subscribe(
+      data => {
+    let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (currentUser) {
+          this.userService.getMenuByUserId(currentUser.id).subscribe(
+            menu => {
+              if (menu) {
+                this.routes = menu;
+              }
+            });
+        }
+      });
+  }
 
   ngOnInit() {
     this.routes = this.menuData;
   }
-  
+
 }

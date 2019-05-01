@@ -5,7 +5,7 @@ import { CustomizeComponent } from './customize.component';
 import {MaterialModule} from '../app.material.module';
 import { routing } from './customize.routing';
 import { ColorPickerModule } from 'ngx-color-picker';
-
+import { CustomizeService} from '../services/customize.service';
 @NgModule({
   imports: [
     CommonModule,
@@ -20,6 +20,7 @@ import { ColorPickerModule } from 'ngx-color-picker';
 
   ],
   providers: [
+    CustomizeService
   ]
 })
 export class CustomizeModule { }

@@ -20,6 +20,7 @@ import { SubscribeService } from './services/subscribe.service';
 import { SubscribeComponent } from './subscribe/subscribe.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { PubSubService} from './services/pup-sub.service';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { PubSubService} from './services/pup-sub.service';
     ProductService,
     PubSubService,
     SubscribeService,
+    UserService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     {provide: LocationStrategy, useClass: HashLocationStrategy}

@@ -62,8 +62,10 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 }
 .page {
   padding-left: 10px;
+  padding-right: 10px;
   @media screen and (min-width: $break-medium) {
     padding-left: 40px;
+    padding-right: 40px;
   }
 }
 
@@ -96,7 +98,7 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
   height: 30px;
   border-radius: 4px;
   color: #a01878;
-  background: #f5f4f5;
+  background: #f4f0f3;
   width: 98%;
   @media screen and (min-width: $break-medium) {
     width: 220px;

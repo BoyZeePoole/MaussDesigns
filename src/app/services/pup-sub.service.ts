@@ -6,25 +6,34 @@ import { Observable, Subject } from 'rxjs';
 export class PubSubService {
     private subject = new Subject<boolean>();
     private searchstring = new Subject<string>();
+    private loggedIn = new Subject<boolean>();
+
+    constructor() { }
+
+    get isLoggedIn() : Observable<boolean>{
+        return this.loggedIn.asObservable();
+    }
+
+    setLoggedIn(isLoggedIn: boolean){
+        this.loggedIn.next(isLoggedIn);
+        return isLoggedIn;
+    }
 
 
-    constructor(){}
-
-
-    get getSearchstring() : Observable<string>{
+    get getSearchstring(): Observable<string> {
         return this.searchstring.asObservable();
     }
 
-    setSearchString(search: string) : string {
+    setSearchString(search: string): string {
         this.searchstring.next(search);
         return search;
     }
 
-    get isHome() : Observable<boolean>{
+    get isHome(): Observable<boolean> {
         return this.subject.asObservable();
     }
 
-    setHome(isHome: boolean) : boolean {
+    setHome(isHome: boolean): boolean {
         this.subject.next(isHome);
         return isHome;
     }

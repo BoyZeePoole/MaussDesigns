@@ -7,7 +7,8 @@ export const EndPoints = {
       getUserById: '/users/GetById/',
       register: '/users/register',
       update: '/users/Update/',
-      delete: '/users/Delete/'
+      delete: '/users/Delete/',
+      getMenu: 'users/GetMenuByUserId'
     },
     clientProfileController : {
       getAllClients: '/api/ClientProfile/GetAll',
@@ -36,6 +37,9 @@ export const EndPoints = {
     },
     formController : {
       getForm : 'api/form/getform'
+    },
+    customizeController : {
+      save : 'api/Customize/add'
     }
 
 };

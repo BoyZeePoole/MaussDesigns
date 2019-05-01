@@ -4,3 +4,5 @@ export { ClientProfile } from './clientprofile';
 export { User } from './user';
 export { FieldStructure } from './fieldsStructure';
 export { FileList } from './fileList';
+export { Customize } from './customize';
+

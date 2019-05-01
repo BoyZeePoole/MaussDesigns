@@ -10,7 +10,7 @@ import { PubSubService } from '../services/pup-sub.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, OnChanges{
-  routes = MenuRoutes;
+  routes: any = MenuRoutes;
   app = ApplicationSettings;
   isHome = true;
   products: any;
@@ -20,10 +20,7 @@ export class HomeComponent implements OnInit, OnChanges{
   constructor(private router: Router,
               private route: ActivatedRoute,
               private pubsubService: PubSubService) { 
-      let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-      if(currentUser != null && currentUser.rights !== undefined && currentUser.rights.title != ''){
-          this.routes = currentUser.rights;
-      }
+       
   }
   ngOnChanges() {
   }

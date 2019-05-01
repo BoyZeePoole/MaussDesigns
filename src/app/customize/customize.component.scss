@@ -11,8 +11,14 @@
   margin-bottom: 12px;
 }
 .image-style{
-  width: 800px;
-  height: 106px;
+  // width: 350px;
+
+  @media screen and (min-width: $break-medium) {
+    // width: 800px;
+  }
+
+  
+  min-height: 106px;
   border: 1px solid grey;
   background: #FFF;
 }
