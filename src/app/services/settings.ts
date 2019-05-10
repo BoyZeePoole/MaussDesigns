@@ -49,10 +49,6 @@ export const MenuRoutes: Object[] = [{
     route: '/home/shop',
     title: 'About'    
   }, {
-    icon: 'gallery',
-    route: '/home/gallery',
-    title: 'Gallery',
-  }, {
     icon: 'dashboard',
     route: '/home/dashboard',
     title: 'Pépinière',

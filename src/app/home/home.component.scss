@@ -10,7 +10,7 @@ body {
   text-align: center;
   &-content {
     margin: 0 auto;
-    padding-left: 18px;
+    // padding-left: 18px;
   }
   &-right {
     text-align: center;
@@ -142,12 +142,11 @@ body {
 }
 .social-container-footer {
   background: #FFF;
-  border:1pxsolid red;
   padding-top: 30px;
   font-size: 12px;
   height: 111px;
   span {
-    padding-left: 24px;
+     padding-left: 24px;
   }
   text-align: center;
   // width: 100%;

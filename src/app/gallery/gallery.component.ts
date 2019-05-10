@@ -43,8 +43,8 @@ export class GalleryComponent implements OnInit {
    }
    getImage(product){
     if(product){
-      //return "https://api.mauss.co.za/StaticFiles/" + product.imageName;
-      return "http://localhost:60076/StaticFiles/" + product.imageName;
+      return "https://api.mauss.co.za/StaticFiles/" + product.imageName;
+      //return "http://localhost:60076/StaticFiles/" + product.imageName;
     }    
   }
 }
