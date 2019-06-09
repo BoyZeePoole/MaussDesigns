@@ -7,21 +7,32 @@
     </div>
     <div class="form-group">
         <div class="Mauss-label" for="firstName">First Name</div>
-        <input class="Mauss-input" type="text" [formControl]="registerForm.controls['firstName']" /><br>
+        <input class="Mauss-input" type="text" [formControl]="registerForm.controls['firstName']" placeholder="Enter your name" /><br>
         <div *ngIf="submitted && f.firstName.errors">
             <div class="Mauss-error" *ngIf="f.firstName.errors.required">First Name is required</div>
         </div>
     </div><br>
     <div class="form-group">
-        <div class="Mauss-label" for="lastName">Last Name</div>
-        <input class="Mauss-input" type="text" [formControl]="registerForm.controls['lastName']" /><br>
+        <div class="Mauss-label" for="lastName">Surname</div>
+        <input class="Mauss-input" type="text" [formControl]="registerForm.controls['lastName']" placeholder="Enter your surname" /><br>
         <div *ngIf="submitted && f.lastName.errors">
-            <div class="Mauss-error" *ngIf="f.lastName.errors.required">Last Name is required</div>
+            <div class="Mauss-error" *ngIf="f.lastName.errors.required">Surname is required</div>
         </div>
     </div><br>
     <div class="form-group">
+        <div class="Mauss-label" for="lastName">Date of Birth</div>
+        <input class="Mauss-input-date" type="text" [formControl]="registerForm.controls['dateOfBirth_DD']" placeholder="dd" />
+        <input class="Mauss-input-date" type="text" [formControl]="registerForm.controls['dateOfBirth_MM']" placeholder="mm" />
+        <input class="Mauss-input-date" type="text" [formControl]="registerForm.controls['dateOfBirth_YYYY']" placeholder="yyyy" />        
+        <br>
+    </div><br>
+    <div class="form-group">
+        <div class="Mauss-label" for="lastName">Contact Number</div>
+        <input class="Mauss-input" type="text" [formControl]="registerForm.controls['contactNumber']" /><br>
+    </div><br>
+    <div class="form-group">
         <div class="Mauss-label" for="email">E-mail</div>
-        <input class="Mauss-input" type="text" [formControl]="registerForm.controls['email']" /><br>
+        <input class="Mauss-input" type="   text" [formControl]="registerForm.controls['email']" /><br>
         <div *ngIf="submitted && f.email.errors">
             <div class="Mauss-error" *ngIf="f.email.errors.required">Email is required</div>
         </div>

@@ -1,0 +1,30 @@
+@import '../fonts.scss';  
+.header-menu{
+    vertical-align: middle; 
+    text-align: left;
+    @media screen and (min-width: $break-medium) {
+      padding-top: 2px;
+    }
+    padding-top: 5px;
+    padding-left: 20px;
+    font-size: 14px;
+    a{
+      color: #000000;
+      text-decoration: none;
+    }
+  } 
+  .social-container {
+    padding-top: 12px;
+    font-size:12px;
+    width: 200px;
+    float: right;
+    span {
+      padding-left: 14px;
+    }
+  }
+  .router-link {
+    color: #000000;
+    text-decoration: none;
+    padding: 15px 0 0 0;
+      display: block;
+   }

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
-
 import { AlertService } from '../services/alert.service';
 import { UserService } from '../services/user.service';
 import { MustMatch } from '../directives/custom.validators';
@@ -29,6 +28,10 @@ export class RegisterComponent implements OnInit {
         this.registerForm = this.formBuilder.group({
             firstName: ['', Validators.required],
             lastName: ['', Validators.required],
+            dateOfBirth_DD: [],
+            dateOfBirth_MM: [],
+            dateOfBirth_YYYY: [],
+            contactNumber: [],
             email: ['', Validators.required],
             password: ['', [Validators.required, Validators.minLength(6)]],
             password2: ['', Validators.required]

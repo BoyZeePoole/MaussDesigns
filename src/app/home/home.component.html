@@ -52,16 +52,6 @@
       <app-link-menu [menuData]="routes"></app-link-menu>
     </div>
     <br />
-    <!-- <div class="sidebar-footer">
-      <a href="https://www.facebook.com/maussdesigns" target="_new">
-        <span class="icon-facebook"></span>
-      </a>
-      <a href="https://www.instagram.com/maussdesigns/?hl=en" target="_new">
-        <span class="icon-instagram"></span>
-      </a>
-      <span class="icon-pinterest2"></span>
-    </div> -->
-
   </div>
   <div class="content"  [@routeAnimations]="o.isActivated ? o.activatedRoute : ''">
     <router-outlet #o="outlet"></router-outlet>
@@ -69,10 +59,8 @@
   <div class="sidebar-right">
     <input class="Mauss-input" style="width:140px;" placeholder="Search" type="text" [(ngModel)]="searchText"
       (ngModelChange)="doSearch($event)">
-    <br><br>
-    <a class="router-link" [routerLink]="['/home/registerlogin']" routerLinkActive="active">
-      Log in / Register
-    </a>
+    <br><br>    
+    <app-user-menu></app-user-menu>
   </div>
   <div class="footer1"></div>
   <div class="footer2">

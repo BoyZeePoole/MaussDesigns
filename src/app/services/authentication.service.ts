@@ -26,5 +26,6 @@ export class AuthenticationService {
 
     logout() {
         localStorage.removeItem('currentUser');
+        this.pubSubService.setLoggedIn(false);
     }
 }

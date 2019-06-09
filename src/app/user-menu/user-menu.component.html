@@ -1,0 +1,22 @@
+<a *ngIf="!isLoggedIn" class="router-link" [routerLink]="['/home/registerlogin']" routerLinkActive="active">
+  Log in / Register
+</a>
+
+<div *ngIf="isLoggedIn"  class="header-menu">
+    Hello {{userName}}<br><br>
+  <a class="router-link">
+      <span class="icon-heart"></span>&nbsp;&nbsp;My wishlist
+  </a>
+  <a class="router-link">
+    <span></span>Account Details
+</a>
+<a class="router-link">
+    <span></span>Addresses
+</a>
+<a class="router-link">
+    <span></span>Orders
+</a>
+<a class="router-link" [routerLink]="['/home/registerlogin']" routerLinkActive="active">
+  <span></span>Log out
+</a>
+</div>

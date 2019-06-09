@@ -14,7 +14,8 @@ import { ConfigurationService } from './services/config.service';
 import { AlertComponent } from './directives/alert.component';
 import { AuthGuard } from './guards/auth.guard';
 import { AlertService } from './services/alert.service';
-import { LinkMenuComponent } from './link-menu/link-menu.component'
+import { LinkMenuComponent } from './link-menu/link-menu.component';
+import { UserMenuComponent } from './user-menu/user-menu.component';
 import { ProductService} from './services/product.service';
 import { SubscribeService } from './services/subscribe.service';
 import { SubscribeComponent } from './subscribe/subscribe.component';
@@ -29,6 +30,7 @@ import { UserService } from './services/user.service';
     AlertComponent,
     LinkMenuComponent,
     SubscribeComponent,
+    UserMenuComponent
   ],
   imports: [
     BrowserModule,
