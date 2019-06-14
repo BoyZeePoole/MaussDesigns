@@ -1,0 +1,11 @@
+@import "../fonts.scss";
+.bla-bla{
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+  .account {
+    width: 340px;
+    @media screen and (min-width: $break-medium) {
+      width: 350px;
+    }
+  }

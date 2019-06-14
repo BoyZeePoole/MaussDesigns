@@ -7,7 +7,7 @@ import { PubSubService } from '../services/pup-sub.service';
   styleUrls: ['./user-menu.component.scss']
 })
 export class UserMenuComponent implements OnInit {
-  isLoggedIn : boolean = true;
+  isLoggedIn : boolean = false;
   userName : string;
   constructor(private pubsubService: PubSubService) { 
     this.init(this.isLoggedIn);

@@ -17,7 +17,8 @@ export class CustomizeComponent implements OnInit {
   allFiles: string [] = [];
   filesSelected: boolean = false;
   fields : FieldStructure[] = [];
-  @ViewChild('fileInput') fileInput: ElementRef;
+  // @ViewChild('fileInput') fileInput: ElementRef;
+  @ViewChild('fileInput', {static: false}) fileInput: ElementRef;
   color:any;
   color1:any;
   color2:any;

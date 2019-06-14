@@ -1,0 +1,74 @@
+<div class="Mauss-Page-Header">
+    [replace with animated images...]
+  </div>
+<div class="Mauss-Form-Title page">
+  Account Detail
+</div>
+<div class="page">
+  <div class="bla-bla">
+      qweedffasasdasdffasdff d asdv fvgadsf gads fadf g sdfg sdf gsdefg
+  </div>
+  <div class="form-group">
+      <div class="Mauss-label" for="firstName">First name</div>
+      <input class="Mauss-input" type="text" [formControl]="accountForm.controls['firstName']" placeholder="Enter your name" /><br>
+      <div *ngIf="submitted && f.firstName.errors">
+          <div class="Mauss-error" *ngIf="f.firstName.errors.required">First name is required</div>
+      </div>
+  </div><br>
+  <div class="form-group">
+      <div class="Mauss-label" for="lastName">Surname</div>
+      <input class="Mauss-input" type="text" [formControl]="accountForm.controls['lastName']" placeholder="Enter your surname" /><br>
+      <div *ngIf="submitted && f.lastName.errors">
+          <div class="Mauss-error" *ngIf="f.lastName.errors.required">Surname is required</div>
+      </div>
+  </div><br>
+  <div class="form-group">
+      <div class="Mauss-label" for="lastName">Date of birth</div>
+      <input class="Mauss-input-date" type="text" [formControl]="accountForm.controls['dateOfBirth_DD']" placeholder="dd" />
+      <input class="Mauss-input-date" type="text" [formControl]="accountForm.controls['dateOfBirth_MM']" placeholder="mm" />
+      <input class="Mauss-input-date" type="text" [formControl]="accountForm.controls['dateOfBirth_YYYY']" placeholder="yyyy" />        
+      <br>
+  </div><br>
+  <div class="form-group">
+      <div class="Mauss-label" for="lastName">Contact number</div>
+      <input class="Mauss-input" type="text" [formControl]="accountForm.controls['contactNumber']" /><br>
+  </div><br>
+  <div class="form-group">
+      <div class="Mauss-label" for="email">E-mail</div>
+      <input class="Mauss-input" type="   text" [formControl]="accountForm.controls['email']" /><br>
+      <div *ngIf="submitted && f.email.errors">
+          <div class="Mauss-error" *ngIf="f.email.errors.required">Email is required</div>
+      </div>
+  </div><br>
+  <div class="form-group">
+    <div class="Mauss-label" for="password">Current password</div>
+    <input class="Mauss-input" type="password" [formControl]="accountForm.controls['currentpassword']" /><br>
+    <div *ngIf="submitted && f.currentpassword.errors">
+        <div class="Mauss-error" *ngIf="f.currentpassword.errors.required">Password is required</div>
+        <div class="Mauss-error" *ngIf="f.currentpassword.errors.minlength">Password must be at least 6 characters</div>
+    </div>
+</div><br>
+  <div class="form-group">
+      <div class="Mauss-label" for="password">Password</div>
+      <input class="Mauss-input" type="password" [formControl]="accountForm.controls['password']" /><br>
+      <div *ngIf="submitted && f.password.errors">
+          <div class="Mauss-error" *ngIf="f.password.errors.required">Password is required</div>
+          <div class="Mauss-error" *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+      </div>
+  </div><br>
+  <div class="form-group">
+      <div class="Mauss-label" for="password">Confirm new password</div>
+      <input class="Mauss-input" type="password" [formControl]="accountForm.controls['password2']" /><br>
+      <div *ngIf="submitted && f.password2.errors">
+          <div class="Mauss-error" *ngIf="f.password2.errors.required">Password is required</div>
+          <div class="Mauss-error" *ngIf="f.password2.errors.minlength">Password must be at least 6 characters</div>
+          <div class="Mauss-error" *ngIf="f.password2.errors.mustMatch">Passwords must match</div>
+      </div>
+  </div><br>
+  <div class="form-group">
+      <button style="width: 100%;" mat-button class="Mauss-Button" [disabled]="loading"
+          (click)="onSubmit()">Submit</button>
+      <img *ngIf="loading"
+          src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+  </div>
+</div>

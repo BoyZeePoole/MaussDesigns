@@ -35,4 +35,8 @@ export class UserService {
     delete(id: number) {
         return this.http.delete(EndPoints.userController.delete + id);
     }
+    updateAccount(user: User){
+        let endpoint = this.configService.RootUrl() + EndPoints.userController.updateAccount
+        return this.http.post(endpoint, user);
+    }
 }

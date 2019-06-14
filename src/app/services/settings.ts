@@ -6,6 +6,7 @@ export const EndPoints = {
       login: 'api/login',
       getUserById: '/users/GetById/',
       register: '/users/register',
+      updateAccount: '/users/updateAccount',
       update: '/users/Update/',
       delete: '/users/Delete/',
       getMenu: 'users/GetMenuByUserId'

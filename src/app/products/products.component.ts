@@ -5,7 +5,6 @@ import { GroupService } from '../services/group.service';
 import { Group, FileList } from '../models';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { FieldStructure } from '../models';
-import { forEach } from '@angular/router/src/utils/collection';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -19,8 +18,7 @@ export class ProductsComponent implements OnInit {
   group: Group[] = [];
   filesSelected: boolean = false;
   fields : FieldStructure[] = [];
-  @ViewChild('fileInput') fileInput: ElementRef;
- 
+  @ViewChild('fileInput', {static: false}) fileInput: ElementRef;
   constructor(private fb: FormBuilder,
               private productService:ProductService,
               private groupService: GroupService,
