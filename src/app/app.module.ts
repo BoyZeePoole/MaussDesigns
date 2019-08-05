@@ -8,7 +8,7 @@ import { MaterialModule } from './app.material.module';
 import { AppRoutingModule } from "./app.routing.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
-import { JwtInterceptor, ErrorInterceptor } from './helpers';
+import { JwtInterceptor, ErrorInterceptor, LoaderInterceptor } from './helpers';
 import { AuthenticationService } from './services/authentication.service';
 import { ConfigurationService } from './services/config.service';
 import { AlertComponent } from './directives/alert.component';
@@ -22,7 +22,8 @@ import { SubscribeComponent } from './subscribe/subscribe.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { PubSubService} from './services/pup-sub.service';
 import { UserService } from './services/user.service';
-
+import { LoaderComponent } from './shared/loader/loader.component';
+import { LoaderService } from './services/loader.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { UserService } from './services/user.service';
     AlertComponent,
     LinkMenuComponent,
     SubscribeComponent,
-    UserMenuComponent
+    UserMenuComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -52,8 +54,10 @@ import { UserService } from './services/user.service';
     PubSubService,
     SubscribeService,
     UserService,
+    LoaderService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
     {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
