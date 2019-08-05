@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User } from '../models/user';
+import { User, UserExtended } from '../models/user';
 import { EndPoints } from './settings';
 import { ConfigurationService } from './config.service';
 
@@ -14,7 +14,8 @@ export class UserService {
     }
 
     getById(id: number) {
-        return this.http.get(EndPoints.userController.getUserById + id);
+        let endpoint = this.configService.RootUrl() + EndPoints.userController.getUserById;
+        return this.http.get(endpoint + '?id=' + id);
     }
 
     getMenuByUserId(id: number) {
@@ -35,8 +36,8 @@ export class UserService {
     delete(id: number) {
         return this.http.delete(EndPoints.userController.delete + id);
     }
-    updateAccount(user: User){
+    updateAccount(user: UserExtended){
         let endpoint = this.configService.RootUrl() + EndPoints.userController.updateAccount
-        return this.http.post(endpoint, user);
+        return this.http.post<any>(endpoint, user);
     }
 }

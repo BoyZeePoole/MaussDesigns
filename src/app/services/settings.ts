@@ -4,9 +4,9 @@ export const EndPoints = {
       getAllUsers: '/users/GetAll',
       userRegister: '/users/Register',  
       login: 'api/login',
-      getUserById: '/users/GetById/',
+      getUserById: '/users/GetUserByUserId',
       register: '/users/register',
-      updateAccount: '/users/updateAccount',
+      updateAccount: '/users/updateaccount',
       update: '/users/Update/',
       delete: '/users/Delete/',
       getMenu: 'users/GetMenuByUserId'

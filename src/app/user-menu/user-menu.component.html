@@ -5,7 +5,7 @@
 <div *ngIf="isLoggedIn"  class="header-menu">
     Hello {{userName}}<br><br>
   <a class="router-link">
-      <span class="icon-heart"></span>&nbsp;&nbsp;My wishlist
+     My wishlist &nbsp;&nbsp; <span class="icon-heart"></span>
   </a>
   <a class="router-link" [routerLink]="['/home/accountdetail']">
     <span></span>Account Details
@@ -13,7 +13,7 @@
 <a class="router-link">
     <span></span>Addresses
 </a>
-<a class="router-link" [routerLink]="['/home/registerlogin']">
+<a class="router-link" [routerLink]="['/home/customize']">
   <span></span>Customize
 </a>
 <a class="router-link">

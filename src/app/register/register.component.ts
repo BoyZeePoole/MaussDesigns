@@ -5,13 +5,13 @@ import { first } from 'rxjs/operators';
 import { AlertService } from '../services/alert.service';
 import { UserService } from '../services/user.service';
 import { MustMatch } from '../directives/custom.validators';
-import {MatSnackBar} from '@angular/material';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
     selector: 'app-register',
     templateUrl: './register.component.html',
     styleUrls: ['./register.component.scss']
-  })
+})
 export class RegisterComponent implements OnInit {
     registerForm: FormGroup;
     loading = false;
@@ -35,10 +35,9 @@ export class RegisterComponent implements OnInit {
             email: ['', Validators.required],
             password: ['', [Validators.required, Validators.minLength(6)]],
             password2: ['', Validators.required]
-        },{
-            validator: MustMatch('password', 'password2')
-
-        });
+        }, {
+                validator: MustMatch('password', 'password2')
+            });
     }
 
     // convenience getter for easy access to form fields
@@ -51,7 +50,7 @@ export class RegisterComponent implements OnInit {
         if (this.registerForm.invalid) {
             return;
         }
-        if(this.registerForm.controls['password'].value != this.registerForm.controls['password2'].value){
+        if (this.registerForm.controls['password'].value != this.registerForm.controls['password2'].value) {
             //this.registerForm.controls['password2'].errors = true;
             this.dontMatch = true;
             return;
@@ -65,13 +64,13 @@ export class RegisterComponent implements OnInit {
                     this.alertService.success('Registration successful', true);
                     this.snackBar.open('Registration successful', null, {
                         duration: 2000,
-                      });
-                      this.loading = false;
+                    });
+                    this.loading = false;
                 },
                 error => {
                     this.snackBar.open(error, null, {
                         duration: 2000,
-                      });
+                    });
                     this.loading = false;
                 });
     }

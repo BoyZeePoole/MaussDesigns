@@ -4,4 +4,12 @@ export class User {
     password: string;
     firstName: string;
     lastName: string;
+    DateOfBirth: string;
+    contactNumber: string;
+}
+
+export class UserExtended extends User {
+    refId: number;
+    currentPassword: string;
+    rightsId: number;    
 }
