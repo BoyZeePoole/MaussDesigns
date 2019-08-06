@@ -4,15 +4,18 @@ import { DashboardComponent } from './dashboard.component';
 import {MaterialModule} from '../app.material.module';
 import { routing } from './dashboard.routing';
 import { FilterPipeModule } from '../pipes/filter.module';
+import { SnowComponent } from '../shared/snow/snow.component';
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
     routing,
-    FilterPipeModule
+    FilterPipeModule,
+    // SnowComponent 
   ],
   declarations: [
-    DashboardComponent
+    DashboardComponent,
+    SnowComponent
 
   ],
   providers: [
