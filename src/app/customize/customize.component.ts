@@ -1,9 +1,9 @@
 import { Component, OnInit, ElementRef, ViewChild, Input } from '@angular/core';
-
 import { FormBuilder, FormGroup, Validators, Form, NgForm } from '@angular/forms';
 import { FieldStructure } from '../models';
 import { CustomizeService } from '../services/customize.service'
 import { Router} from '@angular/router';
+
 @Component({
   selector: 'app-customize',
   templateUrl: './customize.component.html',
@@ -22,7 +22,7 @@ export class CustomizeComponent implements OnInit {
   color:any;
   color1:any;
   color2:any;
-
+  preColors: any = ['#000000','#ffffff','#00FF00','#FF0000'];
   imageSrc = [];
   onFileChanged(event) {
     this.filesSelected = true;
