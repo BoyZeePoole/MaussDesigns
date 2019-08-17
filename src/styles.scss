@@ -127,3 +127,6 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 .mat-tab-body-content {
   transform: none !important;
 }
+.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #a0a0a0;
+  }

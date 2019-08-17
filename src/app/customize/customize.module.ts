@@ -6,6 +6,7 @@ import {MaterialModule} from '../app.material.module';
 import { routing } from './customize.routing';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { CustomizeService} from '../services/customize.service';
+import { SnowModule } from '../shared/snow/snow.module';
 @NgModule({
   imports: [
     CommonModule,
@@ -13,11 +14,11 @@ import { CustomizeService} from '../services/customize.service';
     routing,
     ReactiveFormsModule,
     FormsModule,
-    ColorPickerModule
+    ColorPickerModule,
+    SnowModule
   ],
   declarations: [
-    CustomizeComponent
-
+    CustomizeComponent,
   ],
   providers: [
     CustomizeService

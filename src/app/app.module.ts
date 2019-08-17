@@ -42,7 +42,7 @@ import { LoaderService } from './services/loader.service';
     HttpClientModule,
     RouterModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
   exports:[],
   providers: [
