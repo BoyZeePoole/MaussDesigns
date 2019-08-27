@@ -55,12 +55,12 @@ body {
 
 .content {
   transition: all .35s ease-in-out;
-  padding: 5px;
+  // padding: 5px;
   min-height: 340px;
   background-color: #f4f0f3;
 
   @media screen and (max-width: $break-small) {
-    padding: 50px;
+    // padding: 50px;
     min-height: 340px;
   }
 }

@@ -65,9 +65,20 @@ export class LoginComponent implements OnInit {
                 error => {
                     this.alertService.error(error);
                     this.loading = false;
-                    this.snackBar.open(error, null, {
+                    this.snackBar.open(error, "🛑", {
                         duration: 2000,
                       });
                 });
     }
 }
+
+@Component({
+    selector: 'alert-snack-bar-component',
+    templateUrl: 'alert-snack-bar-component.html',
+    styles: [`
+      .alert-snack-bar {
+        color: red;
+      }
+    `],
+  })
+  export class AlertSnackBarComponent {}

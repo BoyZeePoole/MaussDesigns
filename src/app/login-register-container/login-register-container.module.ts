@@ -13,6 +13,7 @@ import { LoginComponent} from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
 import { FormService } from '../services/form.service';
 import { DynamicFormBuilderModule } from '../dynamic-form-builder/dynamic-form-builder.module';
+import { SnowModule } from '../shared/snow/snow.module';
 @NgModule({
   imports: [
     CommonModule,
@@ -20,7 +21,8 @@ import { DynamicFormBuilderModule } from '../dynamic-form-builder/dynamic-form-b
     routing,
     ReactiveFormsModule,
     FormsModule,
-    DynamicFormBuilderModule
+    DynamicFormBuilderModule,
+    SnowModule
   ],
   declarations: [
     LoginRegisterContainerComponent,

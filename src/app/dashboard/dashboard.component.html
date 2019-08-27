@@ -1,5 +1,10 @@
 <div class="Mauss-Page-Header">
-    <app-snow></app-snow>
+    <!-- <app-snow></app-snow> -->
+    <div class="headerArea">
+      <app-bubbles></app-bubbles> 
+      <!-- <app-wave></app-wave> -->
+    </div>
+    
   <!-- <div class="top-anima">      
       <img src="../../assets/leaves.png">
   </div> -->
@@ -8,21 +13,19 @@
 <div class="Mauss-Form-Title page">
   Pépinière
 </div>
-<main class="grid" style="border: 1px solid red;">
-    <div *ngFor="let product of (products | filter: searchText)" style="border: 1px solid green;">
-      <div class="poloriod">
+<div class="grid">
+      <div class="poloriod"  *ngFor="let product of (products | filter: searchText)">
         <a [routerLink]="['/home/productdetail', product.refId]" class="category-link">
           <img *ngIf="product.imageName.indexOf('mp4') === -1" [src]="getImage(product)" />
           <video *ngIf="product.imageName.indexOf('mp4') !== -1" controls>
             <source [src]="getImage(product)" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-          <mat-grid-tile-footer>
+          <mat-grid-tile-footer class="footer">
             {{product.description}} <br />
             {{product.price}}
           </mat-grid-tile-footer>
         </a>
       </div>
-    </div>
 
-</main>
+  </div>

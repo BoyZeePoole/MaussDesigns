@@ -24,6 +24,7 @@ import { PubSubService} from './services/pup-sub.service';
 import { UserService } from './services/user.service';
 import { LoaderComponent } from './shared/loader/loader.component';
 import { LoaderService } from './services/loader.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,7 @@ import { LoaderService } from './services/loader.service';
     ReactiveFormsModule,
     FormsModule,
   ],
-  exports:[],
+    exports:[],
   providers: [
     AuthGuard,
     AlertService,

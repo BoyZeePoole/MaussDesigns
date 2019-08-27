@@ -1,0 +1,40 @@
+
+.shp0 {
+  fill: none;
+  stroke: #000000;
+  stroke-width: 2
+}
+
+.shp1 {
+  stroke: #000000;
+  stroke-width: 2
+}
+
+.shp2 {
+  fill: none;
+  stroke: #000000
+}
+
+.shp3 {
+  fill: #000000;
+  stroke: #000000
+}
+
+#top {
+	will-change: transform;
+	transform: translateY(-200px);
+	animation: fall 22.5s infinite linear;
+}
+#bottom {
+	will-change: transform;
+	transform: translateY(-268px);
+	animation: fall 45s infinite linear;
+}
+@keyframes fall {
+	
+	100% {
+    transform: translateY(100%);
+    transform: rotate(360deg);
+	}
+	
+}

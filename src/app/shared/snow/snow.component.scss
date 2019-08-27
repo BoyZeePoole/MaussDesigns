@@ -43,10 +43,8 @@
 	animation: fall 45s infinite linear;
 }
 
-@keyframes fall {
-	
+@keyframes fall {	
 	100% {
 		transform: translateY(0);
-	}
-	
+	}	
 }

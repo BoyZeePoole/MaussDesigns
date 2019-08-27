@@ -54,9 +54,9 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 }
 .Mauss-Page-Header {
   height: 20px;
-  padding-left: 10px;
+ // padding-left: 10px;
   @media screen and (min-width: $break-medium) {
-    padding-left: 40px;
+   // padding-left: 40px;
     height: 186px;
   }
 }
@@ -127,6 +127,10 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 .mat-tab-body-content {
   transform: none !important;
 }
-.mat-progress-spinner circle, .mat-spinner circle {
+.mat-progress-spinner circle,
+.mat-spinner circle {
   stroke: #a0a0a0;
-  }
+}
+.mat-simple-snackbar {
+  font-family: "segoeui";
+}

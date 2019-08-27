@@ -7,7 +7,7 @@ import { ClientProfileService } from '../services/clientprofile.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ConfigurationService } from '../services/config.service';
-
+import { SnowModule } from '../shared/snow/snow.module';
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +15,7 @@ import { ConfigurationService } from '../services/config.service';
     routing,
     ReactiveFormsModule,
     FormsModule,
+    SnowModule
   ],
   declarations: [AccountDetailComponent],
   providers : [

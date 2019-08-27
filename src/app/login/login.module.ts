@@ -7,6 +7,7 @@ import { ConfigurationService } from '../services/config.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AlertService } from '../services/alert.service';
 import {  AuthenticationService } from '../services/authentication.service';
+import { AlertSnackBarComponent, LoginComponent } from './login.component';
 
 @NgModule({
   imports: [
@@ -14,10 +15,10 @@ import {  AuthenticationService } from '../services/authentication.service';
     MaterialModule,
     routing,
     ReactiveFormsModule,
-    FormsModule,
-    //LoginComponent
+    FormsModule
   ],
-  declarations: [],
+  entryComponents: [AlertSnackBarComponent],
+  declarations: [LoginComponent, AlertSnackBarComponent],
   providers : [
     AuthenticationService,
     AlertService,

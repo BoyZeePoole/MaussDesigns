@@ -22,7 +22,7 @@ export class UserMenuComponent implements OnInit {
   }
   init(action: boolean) : void{
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    this.isLoggedIn = action;
+    this.isLoggedIn = currentUser != null;//action;
     if (currentUser) {      
       this.userName = currentUser.firstName + ' ' + currentUser.lastName;
     }
