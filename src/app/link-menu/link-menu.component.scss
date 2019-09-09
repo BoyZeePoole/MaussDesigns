@@ -1,28 +1,48 @@
-@import '../fonts.scss';
-.header-menu{
-    vertical-align: middle; 
-    @media screen and (min-width: $break-medium) {
-      padding-top: 52px;
-    }
-    padding-top: 5px;
-    font-size: 14px;
-    a{
-      color: #000000;
-      text-decoration: none;
-    }
-  } 
-  .social-container {
-    padding-top: 12px;
-    font-size:12px;
-    width: 200px;
-    float: right;
-    span {
-      padding-left: 14px;
-    }
+@import "../fonts.scss";
+.header-menu {
+  height: 300px;
+  vertical-align: middle;
+  @media screen and (min-width: $break-large) {
+    height: 600px;
+
+    background: #fff;
+    padding: 16px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+    margin: 20px 0px 0px 100px;
   }
-  .router-link {
-    /*color: white;*/
+  padding-top: 5px;
+  font-size: 13px;
+  a {
+    color: #000000;
     text-decoration: none;
-    padding: 15px 0 0 0;
-      display: block;
-   }
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+  }
+  ul.topmenu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    border-bottom: 1px solid #e6e6e6;
+  }
+}
+
+.social-container {
+  padding-top: 12px;
+  font-size: 12px;
+  width: 200px;
+  float: right;
+  span {
+    padding-left: 14px;
+  }
+}
+.router-link {
+  /*color: white;*/
+  text-decoration: none;
+  padding: 15px 0 0 0;
+  display: block;
+}

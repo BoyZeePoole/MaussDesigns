@@ -1,20 +1,12 @@
 @import "../fonts.scss";
 .main {
-  //background: #f4f0f3 url("../../assets/MAUSS_-_Square.png") no-repeat center;
-  //background-size:  400px  400px;
-  // width: 400px;
-  // height: 400px;
+ 
   img {
     max-width: 100%;
   }
   @media screen and (min-width: $break-medium) {
-    inmg {
+      img {
       max-width: 100%;
-    }
-    //background: #f4f0f3 url("../../assets/MAUSS_-_Square2.png") no-repeat center;
-    // background-size: 1393px 1393px;
-    // background-size: 1009px 1009px;
-    // width: 1009px;
-    // height: 1009px; 
+    }    
   }
 }

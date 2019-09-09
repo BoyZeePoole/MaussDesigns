@@ -1,25 +1,32 @@
-<a *ngIf="!isLoggedIn" class="router-link" [routerLink]="['/home/registerlogin']" routerLinkActive="active">
-  Log in / Register
-</a>
-
-<div *ngIf="isLoggedIn"  class="header-menu">
-    Hello {{userName}}<br><br>
-  <a class="router-link">
-     My wishlist &nbsp;&nbsp; <span class="icon-heart"></span>
-  </a>
-  <a class="router-link" [routerLink]="['/home/accountdetail']">
-    <span></span>Account Details
-</a>
-<a class="router-link">
-    <span></span>Addresses
-</a>
-<a class="router-link" [routerLink]="['/home/customize']">
-  <span></span>Customize
-</a>
-<a class="router-link">
-    <span></span>Orders
-</a>
-<a class="router-link" [routerLink]="['/home/registerlogin']" routerLinkActive="active">
-  <span></span>Log out
-</a>
+<div *ngIf="isLoggedIn" class="header-menu">
+  <ul>
+    <li>
+      <a class="router-link">
+          <span class="icon-heart"></span>&nbsp;My wishlist
+      </a>
+    </li>
+    <li>
+      <a class="router-link" [routerLink]="['/home/accountdetail']">
+        <span></span>Account Details
+      </a>
+    </li>
+    <li>
+      <a class="router-link">
+        <span></span>Addresses
+      </a>
+    </li>
+    <li>
+      <a class="router-link" [routerLink]="['/home/customize']">
+        <span></span>Customize
+      </a>
+    </li>
+    <li>
+      <a class="router-link">
+        <span></span>Orders
+      </a>
+    </li>
+    <li>
+        Hello {{userName}}<br><br>
+    </li>
+  </ul>
 </div>

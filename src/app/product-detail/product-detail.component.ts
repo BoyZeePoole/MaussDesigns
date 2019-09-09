@@ -9,34 +9,39 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ProductDetailComponent implements OnInit {
 
-  selectProductId : number;
+  selectProductId: number;
   products: any;
   firstProduct: any;
   constructor(private router: Router,
     private route: ActivatedRoute,
     private productService: ProductService) {
-      this.selectProductId = route.snapshot.params['refId'];
-      this.getProduct();
-     }
+    this.selectProductId = route.snapshot.params['refId'];
+    this.getProduct();
+  }
 
   ngOnInit() {
   }
-  getProduct(){
+  getProduct() {
     this.productService.getById(this.selectProductId)
-    .subscribe(
-      data => {
-        this.products = data;
-        this.firstProduct = this.products.length > 0 ? this.products[0] : null;
-      },
-      error => {
-        console.log(error);
-      });
+      .subscribe(
+        data => {
+          this.products = data;
+          this.firstProduct = this.products.length > 0 ? this.products[0] : null;
+        },
+        error => {
+          console.log(error);
+        });
   }
-  getImage(product: any){
-    if(product){
+  getImage(product: any) {
+    if (product) {
       return "http://localhost:60076/StaticFiles/" + product.imageName;
       //return "https://api.mauss.co.za/StaticFiles/" + product.imageName;
 
-    }   
-}
+    }
+  }
+  changeImg(product: any){
+    if (product) {
+      this.firstProduct = product;
+    }
+  }
 }

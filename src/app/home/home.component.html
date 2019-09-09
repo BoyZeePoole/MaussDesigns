@@ -1,69 +1,25 @@
-<!-- <div class="wrapper">
-  <div class="box header">
-        <div style="padding: 12px 0 0 50px; text-align: left;height: 50px;">
-            <input class="Mauss-input" placeholder="Search" type="text" [(ngModel)]="searchText">
-            <div class="social-container">
-                <span>{{userName}}</span> &nbsp;
-                <span class="social icon-facebook"></span>
-                <span class="social icon-twitter"></span>
-                <span class="social icon-instagram"></span>
-                <span class="social icon-pinterest2"></span>
-            </div>
-        </div>
-       
-        <div style="vertical-align: middle; height: 100px;padding-left: 50px; text-align: left; background: #F4F0F3">
-            <div style="float:left;vertical-align: middle;padding-top: 18px;">
-                <div style="line-height: 100%">
-                  <a style="color: #000;text-decoration: none;" [routerLink]="['/home']"  routerLinkActive="active">
-                    <span style="font-size: 30px" class="icon-mauss-logo-02"></span>
-                  </a>
-                </div>                
-            </div>
-            <app-link-menu [menuData]="routes"></app-link-menu>
-         </div>      
-  </div>
-  <div class="content">
-    
-    <router-outlet></router-outlet>
-    <app-dashboard *ngIf="isHome==true" [gridData]="products | filter : searchText"></app-dashboard>
-  </div>
-  <div class="box footer">
-    <app-subscribe></app-subscribe>
-    <div class="extreme-footer"> 
-      <div class="social-container-footer">
-        <span class="social icon-fb_icon"></span>
-        <span class="social icon-twitter_icon"></span>
-        <span class="social icon-instagram_icon"></span>
-        <span class="social icon-pinterest_icon"></span>
-        <br><br>
-        <span style="font-size: 12px;">
-            Copyright &copy; Mauss-designs 2018. All rights reserved
-          </span>
-          <br><br>
-      </div>    
-  </div>
-</div> -->
 <div class="wrapper">
-  <div class="sidebar">
-    <a style="color: #000;text-decoration: none;" [routerLink]="['/home/splash']" routerLinkActive="active">
-      <span style="font-size: 30px" class="icon-mauss-logo-02"></span>
-    </a>
-    <div class="sidebar-content">
-      <app-link-menu [menuData]="routes"></app-link-menu>
+  <div class="header">
+    <div class="top-header">
+        <a style="color: #000;text-decoration: none;" [routerLink]="['/home/splash']" routerLinkActive="active">
+          &nbsp;&nbsp;<span style="font-size: 30px" class="icon-mauss-logo-02"></span>
+        </a>
     </div>
+    <div class="header-menu">
+        <app-user-menu></app-user-menu>
+    </div>
+    <!-- <input class="Mauss-input" style="width:140px;" placeholder="Search" type="text" [(ngModel)]="searchText"
+      (ngModelChange)="doSearch($event)"> -->
     <br />
   </div>
-  <div class="content"  [@routeAnimations]="o.isActivated ? o.activatedRoute : ''">
+  <div class="left">
+    <app-link-menu [menuData]="routes"></app-link-menu>
+  </div>
+  <div class="middle" [@routeAnimations]="o.isActivated ? o.activatedRoute : ''">
     <router-outlet #o="outlet"></router-outlet>
   </div>
-  <div class="sidebar-right">
-    <input class="Mauss-input" style="width:140px;" placeholder="Search" type="text" [(ngModel)]="searchText"
-      (ngModelChange)="doSearch($event)">
-    <br><br>    
-    <app-user-menu></app-user-menu>
-  </div>
-  <div class="footer1"></div>
-  <div class="footer2">
+
+  <div class="footer">
     <div>
       <app-subscribe></app-subscribe>
     </div>
@@ -85,6 +41,5 @@
 
 
   </div>
-  <div class="footer3"></div>
 
 </div>

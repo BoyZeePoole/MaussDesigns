@@ -1,5 +1,21 @@
 <div class="header-menu">
-    <a class="router-link" *ngFor="let item of routes" [routerLink]="item.route">
-        <span *ngIf="item.icon!=''" class="social {{item.icon}}"></span>&nbsp;&nbsp;{{item.title}}
-    </a>
+    <ul class="topmenu">
+        <li *ngFor="let item of routes" [routerLink]="item.route">
+            <a class="router-link">
+                <span *ngIf="item.icon!=''" class="social {{item.icon}}"></span>&nbsp;&nbsp;{{item.title}}
+            </a>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <a *ngIf="!isLoggedIn" class="router-link" [routerLink]="['/home/registerlogin']" routerLinkActive="active">
+                <span></span>&nbsp;&nbsp;Log in / Register
+            </a>
+        </li>
+        <li>
+            <a *ngIf="isLoggedIn" class="router-link" [routerLink]="['/home/registerlogin']" routerLinkActive="active">
+                <span></span>&nbsp;&nbsp;Log out
+            </a>
+        </li>
+    </ul>
 </div>
