@@ -29,7 +29,6 @@
     "jw-angular-social-buttons": "^1.0.0",
     "ngx-color-picker": "^4.5.3",
     "ngx-gallery": "^5.9.1",
-    "ngx-masonry": "^1.1.2",
     "rxjs": "^6.5.2",
     "rxjs-compat": "^6.5.2",
     "tslib": "^1.9.0",
