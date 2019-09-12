@@ -1,30 +1,75 @@
+@import "../fonts.scss";
 .grid-container {
   // justify-content: center;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto 200px;
   grid-template-rows: auto auto;
   grid-template-areas:
-  "picture decsription"
-  "photo photo";
-  padding: 30px;
-  @media screen and (max-width: 600px) {
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-    "picture decsription"
+    "picture description"
     "photo photo";
+  padding: 9px;
+  grid-gap: 25px;
+  @media screen and (max-width: 600px) {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "picture"
+      "description"
+      "photo";
     padding: 4px;
   }
 }
-.picture{
+.nothing {
+  grid-area: nothing;
+}
+.product-detail {
+  display: grid;
+    grid-template-columns: auto;
+    // grid-template-rows: auto;
+    grid-template-areas:
+    "order"
+    "customize" 
+    "wishlist";
+  @media screen and (min-width: 600px) {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 160px auto;
+    grid-template-areas:
+    "order customize" 
+    "wishlist wishlist";
+  }
+}
+.order {
+  grid-area: order;
+  margin-top: 40px;
+}
+.customize {
+  grid-area: customize;
+  margin-top: 40px;
+  
+}
+.wishlist {
+  grid-area: wishlist;
+}
+.picture {
   padding: 5px;
   grid-area: picture;
 }
-.description{
-  grid-area: description;
+.thumbnail {
+  width: 127px;
+  height: 127px;
+  @media screen and (max-width: 600px) {
+    width: 80px;
+    height: 80px;
+  }
 }
-.photo{
+.description {
+  grid-area: description;
+  font-size: 12px;
+}
+.photo {
   grid-area: photo;
+  width: 413px;
 }
 .grid-item {
   background-color: rgba(255, 255, 255, 0.8);
@@ -43,7 +88,11 @@ li {
   float: left;
   padding: 5px;
 }
-.first-picture{
+.first-picture {
   width: 400px;
   height: 400px;
+  @media screen and (max-width: 600px) {
+    width: 340px;
+    height: 340px;
+  }
 }

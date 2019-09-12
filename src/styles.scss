@@ -3,16 +3,16 @@
 $break-small: 320px;
 $break-medium: 600px;
 $break-large: 1200px;
-
+$mauss-font-main: "arial";
 @font-face {
-  font-family: "segoeui";
+  font-family: $mauss-font-main;
   src: url("assets/fonts/segoeui.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 body {
   margin: 0px;
-  font-family: "segoeui";
+  font-family: $mauss-font-main;
 }
 
 ::placeholder {
@@ -68,7 +68,14 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 }
 
 .Mauss-Form-Title {
-  font-family: segoeui;
+  font-family: $mauss-font-main;
+  font-weight: bold;
+  font-size: 14px;
+  padding-top: 31px;
+  padding-bottom: 8px;
+}
+.Mauss-Form-sub-Title {
+  font-family: $mauss-font-main;
   font-weight: bold;
   font-size: 14px;
   padding-top: 8px;
@@ -77,8 +84,20 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 .Mauss-Button {
   background-color: #000 !important;
   border-radius: 4px !important;
-  font-family: segoeui;
+  font-family: $mauss-font-main;
   color: #fff;
+  font-size: 11px;
+  width: 100%;
+  @media screen and (min-width: $break-medium) {
+    width: unset !important;
+  }
+}
+.Mauss-Button-Inverse {
+  border: 1px #999;
+  background-color: transparent !important;
+  border-radius: 4px !important;
+  font-family: $mauss-font-main;
+  color: #000;
   font-size: 11px;
   width: 100%;
   @media screen and (min-width: $break-medium) {
@@ -143,5 +162,5 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
   stroke: #a0a0a0;
 }
 .mat-simple-snackbar {
-  font-family: "segoeui";
+  font-family: $mauss-font-main;
 }
