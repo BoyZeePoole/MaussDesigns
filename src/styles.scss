@@ -88,8 +88,10 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
   color: #fff;
   font-size: 11px;
   width: 100%;
+ 
   @media screen and (min-width: $break-medium) {
     width: unset !important;
+    line-height: 30px !important;
   }
 }
 .Mauss-Button-Inverse {
@@ -102,6 +104,7 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
   width: 100%;
   @media screen and (min-width: $break-medium) {
     width: unset !important;
+    line-height: 30px !important;
   }
 }
 .Mauss-label {

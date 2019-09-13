@@ -14,7 +14,7 @@ export class LinkMenuComponent implements OnInit {
 
   constructor(private pubsubService: PubSubService,
     private userService: UserService) {
-
+      this.init(this.isLoggedIn);
     this.pubsubService.isLoggedIn.subscribe(
       data => {
         let currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -32,6 +32,13 @@ export class LinkMenuComponent implements OnInit {
 
   ngOnInit() {
     this.routes = this.menuData;
+    this.pubsubService.isLoggedIn.subscribe(
+      data => {
+        this.init(data);    
+      });
   }
-
+  init(action: boolean) : void {
+    let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    this.isLoggedIn = currentUser != null;//action;
+  }
 }

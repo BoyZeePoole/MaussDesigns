@@ -31,7 +31,7 @@ $break-large: 1200px;
 }
 .poloriod {
   // animation: fadein 1s;
-  width: 154px;
+  width: 160px;
   background: #fff;
   border-radius: 3px;
   text-align: center;
@@ -50,8 +50,8 @@ $break-large: 1200px;
     border-top: 1px solid #f4f4f4;
   }
   img {
-    width: 152px;
-    height: 152px;
+    width: 160px;
+    height: 160px;
   }
   video {
     width: 160px;
@@ -76,7 +76,7 @@ $break-large: 1200px;
     }
     img {
       width: 186px;
-      height: 153px;
+      height: 186px;
     }
     video {
       width: 186px;
@@ -96,6 +96,9 @@ $break-large: 1200px;
     }
   }
 }
+
+
+// tot hier
 .top-anima {
   animation: banner 30s infinite linear;
   position: relative;

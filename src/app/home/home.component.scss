@@ -124,6 +124,11 @@ body {
   /* width: 100%;*/
 }
 .social-container-footer {
+  a{
+    color: #000;
+
+  }
+  text-decoration: none;
   background: #fff;
   padding-top: 30px;
   font-size: 12px;
@@ -132,5 +137,4 @@ body {
     padding-left: 24px;
   }
   text-align: center;
-  // width: 100%;
 }

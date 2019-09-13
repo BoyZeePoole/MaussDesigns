@@ -20,10 +20,22 @@
           <div class="customize">
             <label>A la carte</label><br />
             <button class="Mauss-Button mat-raised-button">Customize</button></div>
-          <div class="wishlist">
-            <button class="Mauss-Button-Inverse mat-raised-button">
+          <div class="wishlist" *ngIf="isLoggedIn">
+            <button class="Mauss-Button-Inverse mat-raised-button" (click)="addWish()">
               <span class="icon-heart"></span>&nbsp;Add to my wishlist</button>
           </div>
+          <div class="social-container-footer">
+              <fb-like></fb-like>
+              <!-- <a href="https://www.facebook.com/maussdesigns" target="_new">
+                <span class="icon-facebook"></span>
+              </a>
+              <a href="https://www.instagram.com/maussdesigns/?hl=en" target="_new">
+                <span class="icon-instagram"></span>
+              </a>
+              <span class="icon-pinterest2"></span> -->
+              <br><br>
+            </div>
+
         </div>
       </div>
       <div class="photo">

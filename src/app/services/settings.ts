@@ -41,6 +41,10 @@ export const EndPoints = {
     },
     customizeController : {
       save : 'api/Customize/add'
+    },
+    wishlistController : {
+      add : 'api/Wishlist/add',
+      getAll : 'api/Wishlist/getall'
     }
 
 };

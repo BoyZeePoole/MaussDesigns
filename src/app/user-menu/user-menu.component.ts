@@ -20,7 +20,7 @@ export class UserMenuComponent implements OnInit {
         this.init(data);    
       });
   }
-  init(action: boolean) : void{
+  init(action: boolean) : void {
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
     this.isLoggedIn = currentUser != null;//action;
     if (currentUser) {      

@@ -14,18 +14,17 @@
     grid-template-rows: auto;
     grid-template-areas:
       "picture"
-      "description"
-      "photo";
+      "photo"
+      "description";
     padding: 4px;
   }
 }
-.nothing {
-  grid-area: nothing;
-}
+// .nothing {
+//   grid-area: nothing;
+// }
 .product-detail {
   display: grid;
     grid-template-columns: auto;
-    // grid-template-rows: auto;
     grid-template-areas:
     "order"
     "customize" 
@@ -33,7 +32,7 @@
   @media screen and (min-width: 600px) {
     display: grid;
     grid-template-columns: auto auto;
-    grid-template-rows: 160px auto;
+    grid-template-rows: 140px auto;
     grid-template-areas:
     "order customize" 
     "wishlist wishlist";
@@ -42,6 +41,7 @@
 .order {
   grid-area: order;
   margin-top: 40px;
+  
 }
 .customize {
   grid-area: customize;
@@ -50,6 +50,11 @@
 }
 .wishlist {
   grid-area: wishlist;
+  padding-top: 12px;
+  @media screen and (min-width: 600px) {
+    grid-area: wishlist;
+  }
+  
 }
 .picture {
   padding: 5px;
@@ -59,8 +64,8 @@
   width: 127px;
   height: 127px;
   @media screen and (max-width: 600px) {
-    width: 80px;
-    height: 80px;
+    width: 75px;
+    height: 75px;
   }
 }
 .description {
@@ -70,6 +75,9 @@
 .photo {
   grid-area: photo;
   width: 413px;
+  @media screen and (max-width: 600px) {
+    width: 340px;
+  }
 }
 .grid-item {
   background-color: rgba(255, 255, 255, 0.8);
@@ -95,4 +103,17 @@ li {
     width: 340px;
     height: 340px;
   }
+}
+.social-container-footer {
+  a{
+    color: #000;
+    text-decoration: none;
+  }
+  background: #fff;
+  padding-top: 10px;
+  font-size: 12px;
+  span {
+    padding-left: 24px;
+  }
+  // text-align: center;
 }

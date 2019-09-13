@@ -7,8 +7,10 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ConfigurationService } from '../services/config.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductService} from '../services/product.service';
+import { WishlistService } from '../services/wishlist.service';
 import { GroupService} from '../services/group.service';
 import { DynamicFormBuilderModule } from '../dynamic-form-builder/dynamic-form-builder.module';
+import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
 
 @NgModule({
   imports: [
@@ -17,7 +19,8 @@ import { DynamicFormBuilderModule } from '../dynamic-form-builder/dynamic-form-b
     routing,
     ReactiveFormsModule,
     FormsModule,
-    DynamicFormBuilderModule
+    DynamicFormBuilderModule,
+    JwSocialButtonsModule
   ],
   declarations: [
     ProductDetailComponent,
@@ -26,7 +29,8 @@ import { DynamicFormBuilderModule } from '../dynamic-form-builder/dynamic-form-b
     ProductService,
     GroupService,
     HttpClientModule,
-    ConfigurationService
+    ConfigurationService,
+    WishlistService
   ]
 })
 export class ProductDetailModule { }
