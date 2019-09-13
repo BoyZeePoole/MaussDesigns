@@ -1,7 +1,7 @@
 <div *ngIf="isLoggedIn" class="header-menu">
   <ul>
     <li>
-      <a class="router-link">
+      <a class="router-link" [routerLink]="['/home/wishlist']">
           <span class="icon-heart"></span>&nbsp;My wishlist
       </a>
     </li>

@@ -20,6 +20,9 @@ export class WishlistService {
       let endpoint = this.configService.RootUrl() + EndPoints.wishlistController.add;
       return this.http.post(endpoint + '?userRefId=' + userRefId + '&productRefId=' + productRefId, null);
   }
-
+  delete(userRefId: any, productRefId: any){
+    let endpoint = this.configService.RootUrl() + EndPoints.wishlistController.delete;
+    return this.http.post(endpoint + '?userRefId=' + userRefId + '&productRefId=' + productRefId, null);
+  }
 
 }

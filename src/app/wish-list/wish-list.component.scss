@@ -1,0 +1,13 @@
+@import "../fonts.scss";
+.wish-list{
+  padding: 12px;
+  img{
+    width: 40px;
+    height: 40px;
+  }
+  span{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    padding-left: 12px;
+  }
+}

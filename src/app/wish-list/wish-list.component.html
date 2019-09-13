@@ -1,0 +1,21 @@
+<div class="main">
+  <div class="word-page">
+    <div class="Mauss-Form-Title page">
+      My Wishlist
+    </div>
+    <div class="wish-list">
+      <mat-nav-list>
+        <mat-list-item *ngFor="let product of products">
+          <a matLine [routerLink]="['/home/productdetail', product.refId]" class="category-link">
+            <img *ngIf="product.imageName.indexOf('mp4') === -1" [src]="getImage(product)" />
+            <span [innerHTML]="product.description"></span>
+          </a>
+          <i class="material-icons" (click)="delete(product.refId)">
+            delete_forever
+          </i>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      </mat-nav-list>
+    </div>
+  </div>
+</div>
