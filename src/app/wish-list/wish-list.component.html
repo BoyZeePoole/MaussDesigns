@@ -1,4 +1,4 @@
-<div class="main">
+<!-- <div class="main">
   <div class="word-page">
     <div class="Mauss-Form-Title page">
       My Wishlist
@@ -18,22 +18,24 @@
       </mat-nav-list>
     </div>
   </div>
-</div>
+</div> -->
 
 <div class="main">
   <div class="word-page">
     <div class="Mauss-Form-Title page">
       My Wishlist
     </div>
-    <div class="wish-list">
+    <div class="wish">
       <div *ngFor="let product of products">
           <a matLine [routerLink]="['/home/productdetail', product.refId]" class="category-link">
             <img *ngIf="product.imageName.indexOf('mp4') === -1" [src]="getImage(product)" />
             <span>{{product.description}}</span>
+
+            <i class="material-icons" (click)="delete(product.refId)">
+                delete_forever
+              </i>
           </a>
-          <i class="material-icons" (click)="delete(product.refId)">
-            delete_forever
-          </i>
+         
       </div>
     </div>
   </div>

@@ -75,7 +75,7 @@ export class ProductsComponent implements OnInit {
     this.productService.save(this.prepareSaveUser())
       .subscribe(
         success => {
-          this.router.navigate(['/home/splash']);
+          this.router.navigate(['/home/dashboard']);
         },
         error => {
           console.log(error);

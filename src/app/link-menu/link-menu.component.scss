@@ -2,9 +2,9 @@
 .header-menu {
   height: 300px;
   vertical-align: middle;
+  background: #fff;
   @media screen and (min-width: $break-large) {
     height: 600px;
-
     background: #fff;
     padding: 16px;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
@@ -28,6 +28,9 @@
     padding: 0;
     overflow: visible;
     border-bottom: 1px solid #e6e6e6;
+    li{
+      outline: none;
+    }
   }
 }
 
