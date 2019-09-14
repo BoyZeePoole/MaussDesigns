@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WishlistService } from '../services/wishlist.service';
+import { Helper } from '../services/helper';
 
 @Component({
   selector: 'app-wish-list',
@@ -28,8 +29,8 @@ products: any;
   }
   getImage(product){
     if(product){
-      //return "https://api.mauss.co.za/StaticFiles/" + product.imageName;
-      return "http://localhost:60076/StaticFiles/" + product.imageName;
+      return `${Helper.apiServerUrl()}StaticFiles/` + product.imageName;
+      //return "http://localhost:60076/StaticFiles/" + product.imageName;
     }    
   }
   delete(id){

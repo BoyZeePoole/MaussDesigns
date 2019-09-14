@@ -8,10 +8,10 @@ import { ConfigurationService } from './config.service';
 export class ProductService {
     constructor(private http: HttpClient
                 ,private configService: ConfigurationService) { }
-
+    root: string = this.configService.RootUrl();
     getAll(id: any) {
         if(id !=null && id != undefined){
-            let endpoint = this.configService.RootUrl() + EndPoints.productController.getProductsByGroupId;
+            let endpoint = this.root + EndPoints.productController.getProductsByGroupId;
             return this.http.get<Product[]>(endpoint +'?id=' + id);
         }
         else {

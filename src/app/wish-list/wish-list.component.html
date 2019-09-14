@@ -8,7 +8,7 @@
         <mat-list-item *ngFor="let product of products">
           <a matLine [routerLink]="['/home/productdetail', product.refId]" class="category-link">
             <img *ngIf="product.imageName.indexOf('mp4') === -1" [src]="getImage(product)" />
-            <span [innerHTML]="product.description"></span>
+            <span>{{product.description}}</span>
           </a>
           <i class="material-icons" (click)="delete(product.refId)">
             delete_forever
@@ -16,6 +16,25 @@
           <mat-divider></mat-divider>
         </mat-list-item>
       </mat-nav-list>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="word-page">
+    <div class="Mauss-Form-Title page">
+      My Wishlist
+    </div>
+    <div class="wish-list">
+      <div *ngFor="let product of products">
+          <a matLine [routerLink]="['/home/productdetail', product.refId]" class="category-link">
+            <img *ngIf="product.imageName.indexOf('mp4') === -1" [src]="getImage(product)" />
+            <span>{{product.description}}</span>
+          </a>
+          <i class="material-icons" (click)="delete(product.refId)">
+            delete_forever
+          </i>
+      </div>
     </div>
   </div>
 </div>

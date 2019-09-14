@@ -2,8 +2,7 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PubSubService } from '../services/pup-sub.service';
-
-
+import { Helper } from '../services/helper';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -41,8 +40,8 @@ export class DashboardComponent implements OnInit, OnChanges {
   }
   getImage(product){
     if(product){
-      //return "https://api.mauss.co.za/StaticFiles/" + product.imageName;
-      return "http://localhost:60076/StaticFiles/" + product.imageName;
+      return `${Helper.apiServerUrl()}StaticFiles/`+ product.imageName; //"https://api.mauss.co.za/StaticFiles/" + product.imageName;
+      //return "http://localhost:60076/StaticFiles/" + product.imageName;
     }    
   }
 

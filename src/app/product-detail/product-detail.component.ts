@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { PubSubService } from '../services/pup-sub.service';
 import { WishlistService } from '../services/wishlist.service';
 import { MatSnackBar } from '@angular/material';
+import { Helper } from '../services/helper';
 
 @Component({
   selector: 'app-product-detail',
@@ -39,9 +40,9 @@ export class ProductDetailComponent implements OnInit {
   }
   getImage(product: any) {
     if (product) {
-      return "http://localhost:60076/StaticFiles/" + product.imageName;
+      return `${Helper.apiServerUrl()}StaticFiles/`+ product.imageName;
+      //return "http://localhost:60076/StaticFiles/" + product.imageName;
       //return "https://api.mauss.co.za/StaticFiles/" + product.imageName;
-
     }
   }
   changeImg(product: any) {

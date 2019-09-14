@@ -1,13 +1,28 @@
 @import "../fonts.scss";
-.wish-list{
+.wish-list {
+  mat-nav-list {
+    @media screen and (max-width: $break-medium) {
+      cursor: pointer;
+      outline: 0;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+      margin: 5px 0 5px 2px;
+    }
+  }
   padding: 12px;
-  img{
+  img {
     width: 40px;
     height: 40px;
   }
-  span{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  a {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-size: 12px;
-    padding-left: 12px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    span {
+      padding-left: 12px;
+    }
   }
 }
