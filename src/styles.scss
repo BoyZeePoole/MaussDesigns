@@ -54,9 +54,9 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 }
 .Mauss-Page-Header {
   height: 20px;
- // padding-left: 10px;
+  // padding-left: 10px;
   @media screen and (min-width: $break-medium) {
-   // padding-left: 40px;
+    // padding-left: 40px;
     height: 186px;
   }
 }
@@ -88,22 +88,24 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
   color: #fff;
   font-size: 11px;
   width: 100%;
- 
+
   @media screen and (min-width: $break-medium) {
     width: unset !important;
     line-height: 30px !important;
   }
 }
 .Mauss-Button-Inverse {
-  border: 1px #999;
-  background-color: transparent !important;
+  background-color: #000 !important;
   border-radius: 4px !important;
-  font-family: $mauss-font-main;
-  color: #000;
+  color: #fff;
+  font-family: $mauss-font-main;  
   font-size: 11px;
   width: 100%;
   @media screen and (min-width: $break-medium) {
+    border: 1px #999;
+    background-color: #fff !important;
     width: unset !important;
+    color: #000;
     line-height: 30px !important;
   }
 }
@@ -143,12 +145,13 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
   font-style: italic;
 }
 
-.word-page{
+.word-page {
   margin: 0px auto;
   background: #fff;
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
   @media screen and (min-width: $break-large) {
+    min-height: 600px;
     margin: 20px 100px 0 0;
     background: #fff;
     -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);

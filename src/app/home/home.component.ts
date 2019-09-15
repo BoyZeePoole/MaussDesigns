@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ApplicationSettings } from '../services/settings';
 import { PubSubService } from '../services/pup-sub.service';
 import { fader, slideInOutAnimation } from '../animations/index';
+import { trigger, transition, animate, style } from '@angular/animations'
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,16 @@ import { fader, slideInOutAnimation } from '../animations/index';
   styleUrls: ['./home.component.scss'],
   animations: [
     fader,
-    slideInOutAnimation
+    slideInOutAnimation,
+      trigger('slideInOut', [
+        transition(':enter', [
+          style({transform: 'translateY(-100%)'}),
+          animate('200ms ease-in', style({transform: 'translateY(0%)'}))
+        ]),
+        transition(':leave', [
+          animate('200ms ease-in', style({transform: 'translateY(-100%)'}))
+        ])
+      ])
     // animation triggers go here
   ]
 })
@@ -23,6 +33,7 @@ export class HomeComponent implements OnInit, OnChanges{
   searchText: any;
   userName: string;
   groupId: any;
+  showMenu: boolean = false;
   constructor(private router: Router,
               private route: ActivatedRoute,
               private pubsubService: PubSubService) { 
@@ -38,5 +49,8 @@ export class HomeComponent implements OnInit, OnChanges{
       var user = JSON.parse(localStorage.currentUser);
       this.userName = user.firstName + ' ' + user.lastName;
     }
+  }
+  showmenu(){
+    this.showMenu = !this.showMenu;
   }
 }

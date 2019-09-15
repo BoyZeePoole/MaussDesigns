@@ -1,41 +1,19 @@
-<!-- <div class="main">
-  <div class="word-page">
-    <div class="Mauss-Form-Title page">
-      My Wishlist
-    </div>
-    <div class="wish-list">
-      <mat-nav-list>
-        <mat-list-item *ngFor="let product of products">
-          <a matLine [routerLink]="['/home/productdetail', product.refId]" class="category-link">
-            <img *ngIf="product.imageName.indexOf('mp4') === -1" [src]="getImage(product)" />
-            <span>{{product.description}}</span>
-          </a>
-          <i class="material-icons" (click)="delete(product.refId)">
-            delete_forever
-          </i>
-          <mat-divider></mat-divider>
-        </mat-list-item>
-      </mat-nav-list>
-    </div>
-  </div>
-</div> -->
-
 <div class="main">
   <div class="word-page">
     <div class="Mauss-Form-Title page">
-      My Wishlist
+      My Wish list
     </div>
     <div class="wish">
-      <div *ngFor="let product of products">
-          <a matLine [routerLink]="['/home/productdetail', product.refId]" class="category-link">
-            <img *ngIf="product.imageName.indexOf('mp4') === -1" [src]="getImage(product)" />
-            <span>{{product.description}}</span>
-
-            <i class="material-icons" (click)="delete(product.refId)">
-                delete_forever
-              </i>
-          </a>
-         
+      <div class="item" *ngFor="let product of products">
+        <!-- <a class="image"matLine [routerLink]="['/home/productdetail', product.refId]" class="category-link">
+          ccc
+        </a> -->
+            <img  (click)="gotoProductDetails('/home/productdetail', product.refId)" class="image" *ngIf="product.imageName.indexOf('mp4') === -1" [src]="getImage(product)" />
+            <span  (click)="gotoProductDetails('/home/productdetail', product.refId)" class="copy">{{product.description}}</span>
+        
+        <i class="material-icons delete" (click)="delete(product.refId)">
+          delete_forever
+        </i>
       </div>
     </div>
   </div>

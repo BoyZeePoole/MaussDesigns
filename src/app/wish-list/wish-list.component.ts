@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { WishlistService } from '../services/wishlist.service';
 import { Helper } from '../services/helper';
+import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-wish-list',
@@ -9,7 +11,8 @@ import { Helper } from '../services/helper';
 })
 export class WishListComponent implements OnInit {
 products: any;
-  constructor(private wishListService: WishlistService) { }
+  constructor(private wishListService: WishlistService, private router: Router,
+              public snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.getWishList();
@@ -39,9 +42,23 @@ products: any;
       .subscribe(
         data => {
           this.getWishList();
+          this.snackBar.open('Wish removed...', null, {
+            duration: 2000,
+          });
         },
         error => {
           console.log(error);
         });
+  }
+
+  gotoProductDetails(url, id) {
+    var myurl = `${url}/${id}`;
+    this.router.navigateByUrl(myurl).then(e => {
+      if (e) {
+        console.log("Navigation is successful!");
+      } else {
+        console.log("Navigation has failed!");
+      }
+    });
   }
 }

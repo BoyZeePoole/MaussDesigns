@@ -9,19 +9,22 @@ export class LoaderInterceptor implements HttpInterceptor {
   duration: number = 2000;
   timeLeft: number;
   interval;
+  showing: boolean = false;
     constructor(public loaderService: LoaderService) { }  
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
       clearTimeout(this.interval);
       this.interval = setTimeout(() => {        
         this.loaderService.show();
+        this.showing = true;
       }, this.showAfter);
         
         return next.handle(req).pipe(
             finalize(() => {
               clearTimeout(this.interval);
-              //this.interval = setTimeout(() => {
+              let interval = (this.showing == true) ? 500 : 0;
+              this.interval = setTimeout(() => {
                 this.loaderService.hide();
-              //}, 0);
+              }, interval);
             })
         );
     }

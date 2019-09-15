@@ -61,21 +61,18 @@ export const MenuRoutes: Object[] = [{
   }, {
     icon: 'Customize',
     route: '/home/customize',
-    title: 'Customize',
-  }, {
-    icon: 'ClientProfile',
-    route: 'clientprofile',
-    title: 'Client Profile',
-  },
-  {
-    icon: 'ClientProfile',
-    route: 'clientprofile',
-    title: 'Contact us',
-  }, {
-    icon: 'icon-Basket_icon',
-    route: 'login',
-    title: '',
+    title: 'Customize'
   }
+  // }, {
+  //   icon: 'ClientProfile',
+  //   route: 'clientprofile',
+  //   title: 'Client Profile',
+  // },
+  // {
+  //   icon: 'ClientProfile',
+  //   route: 'clientprofile',
+  //   title: 'Contact us',
+  // }
 ];
 
 export const ApplicationSettings = {

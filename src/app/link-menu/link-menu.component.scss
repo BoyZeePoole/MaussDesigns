@@ -1,16 +1,26 @@
 @import "../fonts.scss";
-.header-menu {
-  height: 300px;
-  vertical-align: middle;
-  background: #fff;
+
+.mobile-only {
   @media screen and (min-width: $break-large) {
+    display: none;
+  }
+}
+.link-menu {
+  vertical-align: middle;
+  background:#fff;
+  -webkit-box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.38);
+  -moz-box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.38);
+  box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.38);
+  border-radius: 4px;
+  @media screen and (min-width: $break-large) {
+    border-radius: unset;
     height: 600px;
     background: #fff;
     padding: 16px;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
     margin: 20px 0px 0px 100px;
   }
-  padding-top: 5px;
+  padding: 5px 0 20px;
   font-size: 13px;
   a {
     color: #000000;
@@ -25,11 +35,16 @@
   ul.topmenu {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 0 0 21px;
     overflow: visible;
     border-bottom: 1px solid #e6e6e6;
-    li{
+    li {
       outline: none;
+    }
+    @media screen and (max-width: $break-medium) {
+      li {
+        padding: 5px 0 5px 5px;
+      }
     }
   }
 }

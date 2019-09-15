@@ -1,6 +1,8 @@
 @import "../fonts.scss";
 .header-menu {
+  display: none;
   @media screen and (min-width: $break-large) {
+    display: block;
     padding-top: 21px;
     font-size: 13px;
     height: 43px;
@@ -11,11 +13,8 @@
     margin: 0 auto;
     white-space: nowrap;
     text-align: right;
-    // min-width: 1000px;
     position: relative;
     li {
-      // display: inline-block;
-      
       @media screen and (min-width: $break-large) {
         display: inline-block;
         padding: 0 37px 10px 37px;

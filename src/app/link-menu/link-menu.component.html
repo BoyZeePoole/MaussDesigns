@@ -1,14 +1,36 @@
-<div class="header-menu">
+<div class="link-menu">
     <ul class="topmenu">
         <li *ngFor="let item of routes" [routerLink]="item.route">
             <a class="router-link">
                 <span *ngIf="item.icon!=''" class="social {{item.icon}}"></span>&nbsp;&nbsp;{{item.title}}
             </a>
         </li>
+        <ng-container *ngIf="isLoggedIn">
+            <li class="mobile-only">
+                <a class="router-link" [routerLink]="['/home/wishlist']">
+                    &nbsp;&nbsp;My wishlist&nbsp;<span class="icon-heart"></span>
+                </a>
+            </li>
+            <li class="mobile-only">
+                <a class="router-link" [routerLink]="['/home/accountdetail']">
+                    <span>&nbsp;&nbsp;</span>Account Details
+                </a>
+            </li>
+            <li class="mobile-only">
+                <a class="router-link">
+                    <span>&nbsp;&nbsp;</span>Addresses
+                </a>
+            </li>
+            <li class="mobile-only">
+                <a class="router-link">
+                    <span>&nbsp;&nbsp;</span>Orders
+                </a>
+            </li>
+        </ng-container>
     </ul>
     <ul>
-        <li>
-            <a *ngIf="!isLoggedIn" class="router-link" [routerLink]="['/home/registerlogin']" routerLinkActive="active">
+        <li *ngIf="!isLoggedIn">
+            <a class="router-link" [routerLink]="['/home/registerlogin']" routerLinkActive="active">
                 <span></span>&nbsp;&nbsp;Log in / Register
             </a>
         </li>
