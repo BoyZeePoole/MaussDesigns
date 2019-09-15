@@ -114,12 +114,12 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
   // margin-bottom: 8px;
 }
 .Mauss-input {
-  border: solid 1px rgb(124, 121, 123);
+  border: solid 0px rgb(124, 121, 123);
   outline: none;
   padding-left: 8px;
   height: 30px;
   border-radius: 4px;
-  color: #a01878;
+  color: #000;
   background: #f4f0f3;
   width: 98%;
   @media screen and (min-width: $break-medium) {
@@ -128,12 +128,12 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
   }
   &-date {
     width: 40px;
-    border: solid 1px rgb(124, 121, 123);
+    border: solid 0px rgb(124, 121, 123);
     outline: none;
     padding-left: 8px;
     height: 30px;
     border-radius: 4px;
-    color: #a01878;
+    color: #000;
     background: #f4f0f3;
     margin-right: 4px;
   }

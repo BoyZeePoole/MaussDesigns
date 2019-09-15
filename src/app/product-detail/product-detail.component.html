@@ -12,17 +12,18 @@
           {{firstProduct.description}}
         </div>
         <div [innerHTML]="firstProduct.summary"></div>
-        <div class="product-detail">
-          <div class="order">
-            <label>Je taime</label><br />
+        
+      </div>
+      <div class="product-detail buttons">
+          <div class="order" *ngIf="isLoggedIn" >
             <button class="Mauss-Button mat-raised-button">Place order</button>
           </div>
-          <div class="customize">
-            <label>A la carte</label><br />
-            <button class="Mauss-Button mat-raised-button">Customize</button></div>
-          <div class="wishlist" *ngIf="isLoggedIn">
-            <button class="Mauss-Button-Inverse mat-raised-button" (click)="addWish()">
-              <span class="icon-heart"></span>&nbsp;Add to my wishlist</button>
+          <div class="customize" *ngIf="isLoggedIn">
+            <button class="Mauss-Button mat-raised-button" (click)="addWish()">
+                <span class="icon-heart"></span>&nbsp;Add to my wishlist    
+            </button>
+          </div>
+          <div class="wishlist" *ngIf="isLoggedIn">            
           </div>
           <div class="social-container-footer">
               <fb-like></fb-like>
@@ -37,7 +38,6 @@
             </div>
 
         </div>
-      </div>
       <div class="photo">
         <ul>
           <li *ngFor="let product of products">
