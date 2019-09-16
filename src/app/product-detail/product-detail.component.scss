@@ -18,7 +18,8 @@
       "picture"
       "photo"
       "buttons";
-    padding: 4px;
+    padding: 20px;
+    grid-gap: 2px;
   }
 }
 // .nothing {
@@ -105,8 +106,8 @@ li {
   width: 400px;
   height: 400px;
   @media screen and (max-width: 600px) {
-    width: 340px;
-    height: 340px;
+    width: 360px;
+    height: 360px;
   }
 }
 .social-container-footer {

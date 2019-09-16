@@ -2,6 +2,7 @@ $break-small: 320px;
 $break-large: 1200px;
 
 .main{
+  padding: 20px;
   @media screen and (min-width: $break-large) {
     display: grid;
     grid-gap: 10px;
@@ -10,12 +11,9 @@ $break-large: 1200px;
       "left right"
   }
 }
-
-
 .left{
   grid-area: left;
     float: none; 
-    padding-left: 2px;
     @media screen and (min-width: $break-large) {
       grid-area: left;
         padding-left: 40px;

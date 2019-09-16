@@ -13,7 +13,7 @@ import { trigger, transition, animate, style } from '@angular/animations'
   animations: [
     fader,
     slideInOutAnimation,
-      trigger('slideInOut', [
+      trigger('slidedownUp', [
         transition(':enter', [
           style({transform: 'translateY(-100%)'}),
           animate('200ms ease-in', style({transform: 'translateY(0%)'}))

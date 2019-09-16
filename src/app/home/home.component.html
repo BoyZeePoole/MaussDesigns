@@ -1,13 +1,14 @@
 <div class="wrapper">
   <div class="header">
     <div class="top-header">
-        <mat-icon (click)="showmenu()" class="bar-menu" aria-hidden="false" aria-label="Example home icon">menu</mat-icon>
-        <a style="margin-left:12px;color: #000;text-decoration: none;" [routerLink]="['/home/splash']" routerLinkActive="active">
-          <span class="icon-mauss-logo-02"></span>
-        </a>
+      <mat-icon (click)="showmenu()" class="bar-menu" aria-hidden="false" aria-label="Example home icon">menu</mat-icon>
+      <a style="margin-left:12px;color: #000;text-decoration: none;" [routerLink]="['/home/splash']"
+        routerLinkActive="active">
+        <span class="icon-mauss-logo-02"></span>
+      </a>
     </div>
-    <div>
-        <app-user-menu></app-user-menu>
+    <div style="float: right">
+      <app-user-menu></app-user-menu>
     </div>
     <!-- <input class="Mauss-input" style="width:140px;" placeholder="Search" type="text" [(ngModel)]="searchText"
       (ngModelChange)="doSearch($event)"> -->
@@ -15,13 +16,18 @@
   </div>
   <div class="left">
     <div class="normal-menu">
-        <app-link-menu [menuData]="routes"></app-link-menu>
+      <app-link-menu [menuData]="routes"></app-link-menu>
     </div>
-    <div class="mobile-menu" *ngIf="showMenu"  [@slideInOut]>
-        <app-link-menu [menuData]="routes" (click)="showmenu()"></app-link-menu>
+
+    <div class="mobile-menu" *ngIf="showMenu" [@slideInOut]>
+      <app-link-menu [menuData]="routes" (click)="showmenu()"></app-link-menu>
     </div>
+    <div class="overlay" *ngIf="showMenu" (click)="showmenu()" >
+
+      </div>
   </div>
-  <div class="middle" [@routeAnimations]="o.isActivated ? o.activatedRoute : ''">
+  <!-- <div class="middle" [@routeAnimations]="o.isActivated ? o.activatedRoute : ''"> -->
+  <div class="middle">
     <router-outlet #o="outlet"></router-outlet>
   </div>
 

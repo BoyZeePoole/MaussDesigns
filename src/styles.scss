@@ -111,7 +111,7 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 }
 .Mauss-label {
   font-size: 13px;
-  // margin-bottom: 8px;
+   margin-bottom: 5px;
 }
 .Mauss-input {
   border: solid 0px rgb(124, 121, 123);
@@ -120,7 +120,7 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
   height: 30px;
   border-radius: 4px;
   color: #000;
-  background: #f4f0f3;
+  background: #f4f4f4;;
   width: 98%;
   @media screen and (min-width: $break-medium) {
     width: 220px;
@@ -134,7 +134,7 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
     height: 30px;
     border-radius: 4px;
     color: #000;
-    background: #f4f0f3;
+    background: #f4f4f4;
     margin-right: 4px;
   }
 }
@@ -150,6 +150,7 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
   background: #fff;
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+  padding-bottom: 20px;
   @media screen and (min-width: $break-large) {
     min-height: 600px;
     margin: 20px 100px 0 0;
