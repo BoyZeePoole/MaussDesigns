@@ -4,6 +4,9 @@ body {
   margin: 0px;
   background-color: $background-color;
 }
+body .freez{
+  overflow: hidden;
+}
 .wrapper {
   @media screen and (max-width: $break-medium) {
     display: grid;

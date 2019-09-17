@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, Renderer2 } from '@angular/core';
 import { MenuRoutes } from '../services/settings';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ApplicationSettings } from '../services/settings';
@@ -36,7 +36,9 @@ export class HomeComponent implements OnInit, OnChanges{
   showMenu: boolean = false;
   constructor(private router: Router,
               private route: ActivatedRoute,
-              private pubsubService: PubSubService) { 
+              private pubsubService: PubSubService,
+              private renderer: Renderer2,
+              ) { 
        
   }
   ngOnChanges() {
@@ -52,5 +54,11 @@ export class HomeComponent implements OnInit, OnChanges{
   }
   showmenu(){
     this.showMenu = !this.showMenu;
+    if(this.showMenu){
+      this.renderer.setStyle(document.body, 'overflow', 'hidden ');
+    }
+    else {
+      this.renderer.removeStyle(document.body, "overflow");
+    }
   }
 }
