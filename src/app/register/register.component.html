@@ -39,7 +39,7 @@
     </div><br>
     <div class="form-group">
         <div class="Mauss-label" for="password">Password</div>
-        <input class="Mauss-input" type="password" [formControl]="registerForm.controls['password']" /><br>
+        <input class="Mauss-input" type="password" [formControl]="registerForm.controls['password']" appPassword />
         <div *ngIf="submitted && f.password.errors">
             <div class="Mauss-error" *ngIf="f.password.errors.required">Password is required</div>
             <div class="Mauss-error" *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
@@ -47,7 +47,7 @@
     </div><br>
     <div class="form-group">
         <div class="Mauss-label" for="password">Confirm Password</div>
-        <input class="Mauss-input" type="password" [formControl]="registerForm.controls['password2']" /><br>
+        <input class="Mauss-input" type="password" [formControl]="registerForm.controls['password2']"  appPassword/>
         <div *ngIf="submitted && f.password2.errors">
             <div class="Mauss-error" *ngIf="f.password2.errors.required">Password is required</div>
             <div class="Mauss-error" *ngIf="f.password2.errors.minlength">Password must be at least 6 characters</div>

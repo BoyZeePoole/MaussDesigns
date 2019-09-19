@@ -11,14 +11,14 @@
         <div *ngIf="firstProduct" class="Mauss-Form-sub-Title">
           {{firstProduct.description}}
         </div>
-        <div [innerHTML]="firstProduct.summary"></div>
+        <div class="Mauss-Description" [innerHTML]="firstProduct.summary"></div>
         
       </div>
       <div class="product-detail buttons">
           <div class="order" *ngIf="isLoggedIn" >
             <button class="Mauss-Button mat-raised-button">Place order</button>
           </div>
-          <div class="customize" *ngIf="isLoggedIn">
+          <div class="customize">
             <button class="Mauss-Button mat-raised-button" (click)="addWish()">
                 <span class="icon-heart"></span>&nbsp;Add to my wishlist    
             </button>
@@ -36,7 +36,6 @@
               <span class="icon-pinterest2"></span> -->
               <br><br>
             </div>
-
         </div>
       <div class="photo">
         <ul>

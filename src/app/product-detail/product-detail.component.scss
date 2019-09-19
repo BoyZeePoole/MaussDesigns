@@ -1,6 +1,6 @@
 @import "../fonts.scss";
+@import "../variables.scss";
 .grid-container {
-  // justify-content: center;
   display: grid;
   grid-template-columns: auto auto 200px;
   grid-template-rows: auto auto;
@@ -22,9 +22,6 @@
     grid-gap: 2px;
   }
 }
-// .nothing {
-//   grid-area: nothing;
-// }
 .product-detail {
   display: grid;
     grid-template-columns: auto;
@@ -121,5 +118,4 @@ li {
   span {
     padding-left: 24px;
   }
-  // text-align: center;
 }

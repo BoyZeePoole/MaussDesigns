@@ -13,19 +13,19 @@ import { trigger, transition, animate, style } from '@angular/animations'
   animations: [
     fader,
     slideInOutAnimation,
-      trigger('slidedownUp', [
-        transition(':enter', [
-          style({transform: 'translateY(-100%)'}),
-          animate('200ms ease-in', style({transform: 'translateY(0%)'}))
-        ]),
-        transition(':leave', [
-          animate('200ms ease-in', style({transform: 'translateY(-100%)'}))
-        ])
+    trigger('slidedownUp', [
+      transition(':enter', [
+        style({ transform: 'translateY(-100%)' }),
+        animate('200ms ease-in', style({ transform: 'translateY(0%)' }))
+      ]),
+      transition(':leave', [
+        animate('200ms ease-in', style({ transform: 'translateY(-100%)' }))
       ])
+    ])
     // animation triggers go here
   ]
 })
-export class HomeComponent implements OnInit, OnChanges{
+export class HomeComponent implements OnInit, OnChanges {
   routes: any = MenuRoutes;
   app = ApplicationSettings;
   isHome = true;
@@ -35,30 +35,43 @@ export class HomeComponent implements OnInit, OnChanges{
   groupId: any;
   showMenu: boolean = false;
   constructor(private router: Router,
-              private route: ActivatedRoute,
-              private pubsubService: PubSubService,
-              private renderer: Renderer2,
-              ) { 
-       
+    private route: ActivatedRoute,
+    private pubsubService: PubSubService,
+    private renderer: Renderer2,
+  ) {
+
   }
   ngOnChanges() {
   }
-  doSearch(search: string){
+  doSearch(search: string) {
     this.pubsubService.setSearchString(search);
   }
   ngOnInit() {
-    if(localStorage.currentUser != undefined){
+    if (localStorage.currentUser != undefined) {
       var user = JSON.parse(localStorage.currentUser);
       this.userName = user.firstName + ' ' + user.lastName;
     }
   }
-  showmenu(){
+  showmenu() {
     this.showMenu = !this.showMenu;
-    if(this.showMenu){
+    if (this.showMenu) {
       this.renderer.setStyle(document.body, 'overflow', 'hidden ');
     }
     else {
       this.renderer.removeStyle(document.body, "overflow");
     }
+  }
+  onActivate(event) {
+    if (event.constructor.name != "DashboardComponent") { // for example
+      let scrollToTop = window.setInterval(() => {
+        let pos = window.pageYOffset;
+        if (pos > 0) {
+          window.scrollTo(0, pos - 50); // how far to scroll on each step
+        } else {
+          window.clearInterval(scrollToTop);
+        }
+      }, 16);
+    }
+
   }
 }

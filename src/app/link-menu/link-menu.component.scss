@@ -1,4 +1,5 @@
 @import "../fonts.scss";
+@import "../variables.scss";
 
 .mobile-only {
   @media screen and (min-width: $break-large) {
@@ -8,9 +9,6 @@
 .link-menu {
   vertical-align: middle;
   background:#fff;
-  -webkit-box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.38);
-  -moz-box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.38);
-  box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.38);
   border-bottom-left-radius : 4px;
   border-bottom-right-radius : 4px;
   @media screen and (min-width: $break-large) {
@@ -20,9 +18,11 @@
     padding: 16px;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
     margin: 20px 0px 0px 100px;
+    border-left: unset;
   }
   padding: 5px 0 20px 14px;
-  font-size: 13px;
+  font-size: $menu-left-font-size;
+  border-left: rgb(114, 7, 255) 6px solid;
   a {
     color: #000000;
     text-decoration: none;
@@ -60,7 +60,6 @@
   }
 }
 .router-link {
-  /*color: white;*/
   text-decoration: none;
   padding: 15px 0 0 0;
   display: block;

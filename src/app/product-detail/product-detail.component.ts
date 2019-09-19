@@ -49,7 +49,6 @@ export class ProductDetailComponent implements OnInit {
     }
   }
   ngOnInit() {
-    // Here we wanna register a listener... typothing
     this.pubsubService.isLoggedIn.subscribe(
       data => {
         this.init(data);

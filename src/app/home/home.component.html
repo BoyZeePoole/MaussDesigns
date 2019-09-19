@@ -26,9 +26,9 @@
 
       </div>
   </div>
-  <!-- <div class="middle" [@routeAnimations]="o.isActivated ? o.activatedRoute : ''"> -->
-  <div class="middle">
-    <router-outlet #o="outlet"></router-outlet>
+  <div class="middle" [@routeAnimations]="o.isActivated ? o.activatedRoute : ''">
+  <!-- <div class="middle"> -->
+    <router-outlet (activate)="onActivate($event)" #o="outlet"></router-outlet>
   </div>
 
   <div class="footer">

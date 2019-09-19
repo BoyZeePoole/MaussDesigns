@@ -12,16 +12,13 @@
       Pépinière
     </div>
     <div class="grid">
-      <div class="poloriod" *ngFor="let product of (products | filter: searchText)">
+      <div class="poloriod" *ngFor="let product of (products | filter: searchText)">          
         <a [routerLink]="['/home/productdetail', product.refId]" class="category-link">
+          <div class="Like-link"><span class="icon-heart"></span></div>
           <img *ngIf="product.imageName.indexOf('mp4') === -1" [src]="getImage(product)" />
-          <!-- <video *ngIf="product.imageName.indexOf('mp4') !== -1" controls>
-          <source [src]="getImage(product)" type="video/mp4">
-          Your browser does not support the video tag.
-        </video> -->
-          <mat-grid-tile-footer class="footer">
+          <mat-grid-tile-footer class="footer">              
             {{product.description}} <br />
-            <!-- {{product.price}} -->
+            <span> {{product.price}} </span>
           </mat-grid-tile-footer>
         </a>
       </div>

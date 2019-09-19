@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChildren, QueryList } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, QueryList, ElementRef } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, Form, NgForm } from '@angular/forms';
 import { first } from 'rxjs/operators';
@@ -21,8 +21,11 @@ export class LoginComponent implements OnInit {
     /* testing dynamic forms */
     unsubcribe: any;
     @Input() fields: any[] = [];
-   // @ViewChildren('form') cuForms: QueryList<NgForm>;
+    @ViewChild('password', {static: false}) passwordField: ElementRef;
+    @ViewChild('trigger', {static: false}) iconField: ElementRef;
+    icon: string = "icon-eye trigger";
     constructor(
+        // private el: ElementRef,
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
@@ -42,7 +45,17 @@ export class LoginComponent implements OnInit {
         // get return url from route parameters or default to '/'
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/home/dashboard';
     }
-
+    showHidePassword(){
+        let elementType = this.passwordField.nativeElement.getAttribute('type');
+        if(elementType == 'password'){
+            this.passwordField.nativeElement.setAttribute('type', 'text');
+            this.icon = "icon-eye-blocked trigger";
+        }
+        else{
+            this.passwordField.nativeElement.setAttribute('type', 'password');
+            this.icon = "icon-eye trigger";
+        }
+    }
     // convenience getter for easy access to form fields
     get f() { return this.loginForm.controls; }
     getFields() {

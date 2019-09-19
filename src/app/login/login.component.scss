@@ -1,4 +1,5 @@
 @import "../fonts.scss";
+@import "../variables.scss";
 .example-container {
   display: flex;
   flex-direction: column;
@@ -7,22 +8,19 @@
 .example-container > * {
   width: 100%;
 }
-.bla-bla {
-  font-size: 12px;
-  margin-bottom: 12px;
-}
+
 .login {
-  // width: 340px;
   @media screen and (min-width: $break-medium) {
     width: 350px;
   }
 }
+
 .mat-snack-bar-container {
   background: orange;
   color: #000;
-  font-family: "segoeui";
+  font-family: $mauss-font-main;
 }
 .mat-simple-snackbar {
-  font-family: "segoeui";
+  font-family: $mauss-font-main;
 }
 

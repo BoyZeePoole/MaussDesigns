@@ -1,10 +1,10 @@
 $break-small: 320px;
 $break-medium: 600px;
 $break-large: 1200px;
-
+@import "../../app/fonts.scss";
+@import "../variables.scss";
 
 .grid {
-  // padding: 10px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 160px));
   grid-gap: 10px;
@@ -29,6 +29,7 @@ $break-large: 1200px;
   background-blend-mode: lighten;
 }
 .poloriod {
+  position: relative;
   // animation: fadein 1s;
   width: 160px;
   background: #fff;
@@ -38,7 +39,7 @@ $break-large: 1200px;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
   .footer{
     display: table-cell;
-    font-size: 14px;
+    font-size: $page-title-font-size;
     vertical-align: middle;
     margin: 0;
     line-height: 17px;
@@ -46,6 +47,9 @@ $break-large: 1200px;
     white-space: normal;
     color: #222;
     padding: 7px 12px;
+    span{
+      font-size:$page-sub-title-font-size;
+    }
     // border-top: 1px solid #f4f4f4;
   }
   img {
@@ -73,6 +77,10 @@ $break-large: 1200px;
     &:hover{
       box-shadow: 0 4px 8px 0 rgba(0,0,0,.24);
     }
+    
+    // &:hover  .Like-link {
+    //   display: block;
+    // }
     img {
       width: 186px;
       height: 186px;
@@ -82,8 +90,9 @@ $break-large: 1200px;
       height: 153px;
     }
     .footer{
+      position: relative;
       display: table-cell;
-      font-size: 14px;
+      font-size: $page-title-font-size;
       vertical-align: middle;
       margin: 0;
       line-height: 17px;
@@ -91,12 +100,21 @@ $break-large: 1200px;
       white-space: normal;
       color: #222;
       padding: 7px 12px;
-      // border-top: 1px solid #f4f4f4;
+      span{
+        font-size:$page-sub-title-font-size;
+      }
     }
   }
 }
 
-
+.Like-link{
+  display: none;
+  position: absolute;
+  font-size: 38px;
+  top: 50%;
+  left: 20px;
+  opacity: .7;
+}
 // tot hier
 .top-anima {
   animation: banner 30s infinite linear;

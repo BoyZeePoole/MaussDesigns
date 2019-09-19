@@ -4,6 +4,11 @@ $break-small: 320px;
 $break-medium: 600px;
 $break-large: 1200px;
 $background-color: #f0f0f0;
+
+
+
+
+
 @font-face {
   font-family: 'icomoon';
   src:  url('assets/fonts/icomoon.eot?yzqofp');
@@ -32,6 +37,12 @@ $background-color: #f0f0f0;
 
 .icon-mauss-logo-02:before {
   content: "\e913";
+}
+.icon-eye-blocked:before {
+  content: "\e9d1";
+}
+.icon-eye:before {
+  content: "\e9ce";
 }
 .icon-bird:before {
   content: "\e900";

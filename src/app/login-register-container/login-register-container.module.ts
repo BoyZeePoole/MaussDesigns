@@ -14,6 +14,7 @@ import { RegisterComponent } from '../register/register.component';
 import { FormService } from '../services/form.service';
 import { DynamicFormBuilderModule } from '../dynamic-form-builder/dynamic-form-builder.module';
 import { SnowModule } from '../shared/snow/snow.module';
+import { PasswordDirective } from '../shared/password-app.directive';
 @NgModule({
   imports: [
     CommonModule,
@@ -27,7 +28,8 @@ import { SnowModule } from '../shared/snow/snow.module';
   declarations: [
     LoginRegisterContainerComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PasswordDirective
 ],
   providers : [
     AuthenticationService,
