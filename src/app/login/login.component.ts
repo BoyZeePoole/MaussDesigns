@@ -21,8 +21,8 @@ export class LoginComponent implements OnInit {
     /* testing dynamic forms */
     unsubcribe: any;
     @Input() fields: any[] = [];
-    @ViewChild('password', {static: false}) passwordField: ElementRef;
-    @ViewChild('trigger', {static: false}) iconField: ElementRef;
+    // @ViewChild('password', {static: false}) passwordField: ElementRef;
+    // @ViewChild('trigger', {static: false}) iconField: ElementRef;
     icon: string = "icon-eye trigger";
     constructor(
         // private el: ElementRef,
@@ -45,17 +45,17 @@ export class LoginComponent implements OnInit {
         // get return url from route parameters or default to '/'
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/home/dashboard';
     }
-    showHidePassword(){
-        let elementType = this.passwordField.nativeElement.getAttribute('type');
-        if(elementType == 'password'){
-            this.passwordField.nativeElement.setAttribute('type', 'text');
-            this.icon = "icon-eye-blocked trigger";
-        }
-        else{
-            this.passwordField.nativeElement.setAttribute('type', 'password');
-            this.icon = "icon-eye trigger";
-        }
-    }
+    // showHidePassword(){
+    //     let elementType = this.passwordField.nativeElement.getAttribute('type');
+    //     if(elementType == 'password'){
+    //         this.passwordField.nativeElement.setAttribute('type', 'text');
+    //         this.icon = "icon-eye-blocked trigger";
+    //     }
+    //     else{
+    //         this.passwordField.nativeElement.setAttribute('type', 'password');
+    //         this.icon = "icon-eye trigger";
+    //     }
+    // }
     // convenience getter for easy access to form fields
     get f() { return this.loginForm.controls; }
     getFields() {

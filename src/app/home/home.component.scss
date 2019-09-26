@@ -38,12 +38,34 @@ body .freez{
   grid-area: header;
   background: #ffffff;
   @media screen and (min-width: $break-large) {
+    position: relative;
     padding-top: 12px;
     padding-left: 116px;
     vertical-align: middle;
     grid-area: header;
     background: #ffffff;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+    .internet-connection-off{
+      font-size: 11px;
+      text-align: center;
+      position: absolute;
+      padding: 5px;
+      top: 5px;
+      right: 12px;
+        border-radius: 15px;
+        background: red;
+        // width: 125px;
+    }    
+    .internet-connection-on{
+      text-align: center;
+      position: absolute;
+      padding: 5px;
+      top: 5px;
+      left: 12px;
+      border-radius: 15px;
+        // width: 125px;
+        background: green;
+  }
   }
 }
 .top-header {

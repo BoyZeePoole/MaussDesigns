@@ -1,10 +1,11 @@
-import { Component, OnInit, OnChanges, Renderer2 } from '@angular/core';
+import { Component, OnInit, OnChanges, Renderer2, OnDestroy } from '@angular/core';
 import { MenuRoutes } from '../services/settings';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ApplicationSettings } from '../services/settings';
 import { PubSubService } from '../services/pup-sub.service';
 import { fader, slideInOutAnimation } from '../animations/index';
 import { trigger, transition, animate, style } from '@angular/animations'
+import { ConnectionService } from 'ng-connection-service'
 
 @Component({
   selector: 'app-home',
@@ -34,11 +35,22 @@ export class HomeComponent implements OnInit, OnChanges {
   userName: string;
   groupId: any;
   showMenu: boolean = false;
+  status = 'ONLINE'; //initializing as online by default
+  isConnected = true;
   constructor(private router: Router,
+    private connectionService: ConnectionService,
     private route: ActivatedRoute,
     private pubsubService: PubSubService,
     private renderer: Renderer2,
   ) {
+    this.connectionService.monitor().subscribe(isConnected => {
+      this.isConnected = isConnected;
+      if (this.isConnected) {
+        this.status = "ONLINE";
+      } else {
+        this.status = "OFFLINE"
+      }
+    });
 
   }
   ngOnChanges() {

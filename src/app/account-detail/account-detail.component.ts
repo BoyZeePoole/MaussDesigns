@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { AlertService } from '../services/alert.service';
 import { UserService } from '../services/user.service';
-import { MustMatch } from '../directives/custom.validators';
 import { MatSnackBar } from '@angular/material';
 import { UserExtended, User } from '../models/user';
 @Component({

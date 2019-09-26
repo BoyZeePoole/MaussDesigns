@@ -119,6 +119,19 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
   font-size: $label-font-size;
    margin-bottom: 5px;
 }
+.Mauss-textarea {
+  height: 200px;
+  border: solid 0px rgb(124, 121, 123);
+  outline: none;
+  padding-left: 8px;
+  color: #000;
+  background: #f4f4f4;
+  width: 98%;
+  @media screen and (min-width: $break-medium) {
+    width: 220px;
+    padding-left: 12px;
+  }
+}
 .Mauss-input {
   border: solid 0px rgb(124, 121, 123);
   outline: none;

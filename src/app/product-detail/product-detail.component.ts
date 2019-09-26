@@ -59,6 +59,9 @@ export class ProductDetailComponent implements OnInit {
     this.isLoggedIn = currentUser != null;//action;
     this.currentUser = currentUser;
   }
+  placeOrder(){
+    
+  }
   addWish() {
     this.wishlistService.add(this.currentUser.id, this.firstProduct.refId)
       .subscribe(

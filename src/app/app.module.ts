@@ -33,7 +33,7 @@ import { LoaderService } from './services/loader.service';
     LinkMenuComponent,
     SubscribeComponent,
     UserMenuComponent,
-    LoaderComponent
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,

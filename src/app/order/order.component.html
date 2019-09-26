@@ -1,0 +1,70 @@
+<div class="word-page">
+  <div class="Mauss-Form-Title page">
+    Order Detail
+  </div>
+  <div class="page">
+    <div class="Mauss-Description">
+      qweedffasasdasdffasdff d asdv fvgadsf gads fadf g sdfg sdf gsdefg
+    </div>
+    <div class="photo">
+      <ul>
+        <li *ngFor="let product of products">
+          <img (click)="changeImg(product)" *ngIf="product.imageName.indexOf('mp4') === -1" class="thumbnail"
+            [src]="getImage(product)" />
+          <video *ngIf="product.imageName.indexOf('mp4') !== -1" style="width: 90px; height: 90px;" controls>
+            <source [src]="getImage(product)" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </li>
+      </ul>
+    </div>
+    <div class="form-group">
+      <div class="Mauss-label" for="firstName">Comment</div>
+      <textarea class="Mauss-textarea" rows="5" cols="30" type="text" [formControl]="orderForm.controls['comment']"
+        placeholder="Enter comment">
+
+          </textarea>
+      <br>
+    </div>
+    <br>
+    <!-- <div class="form-group">
+      <div class="Mauss-label" for="colors">Colors</div>
+      <div class="">
+        <ul>
+          <li *ngFor="let color of colorPallette">
+            <div class="Pantone">
+              <div>
+                <img src="../../assets/{{color}}.png" />
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div> -->
+
+    <div id="even" cdkDropList [cdkDropListData]="selectedColor" class="example-list"
+    cdkDropListConnectedTo="pallette"
+      (cdkDropListDropped)="drop($event)" cdkDropListOrientation="horizontal" >
+      <div *ngFor="let color of selectedColor" cdkDrag [cdkDragData]="color">
+        <div class="Pantone">
+          <div>
+            <img src="../../assets/{{color}}.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="pallette" cdkDropList [cdkDropListData]="colorPallette" class="example-list"
+    cdkDropListConnectedTo="even"
+      (cdkDropListDropped)="drop($event)" cdkDropListOrientation="horizontal" >
+      <div *ngFor="let color of colorPallette" [cdkDragData]="color" cdkDrag>
+        <div class="Pantone">
+          <div>
+            <img src="../../assets/{{color}}.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>

@@ -12,7 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     routing,
     LinkMenuModule,
     BrowserAnimationsModule,
-    UserMenuModule
+    UserMenuModule,
   ],
   declarations: [],
   providers: [  ]

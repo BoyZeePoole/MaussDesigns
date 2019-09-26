@@ -11,13 +11,18 @@ export class ErrorInterceptor implements HttpInterceptor {
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         return next.handle(request).pipe(catchError(err => {
+            let error: any;
             if (err.status === 401) {
                 // auto logout if 401 response returned from api
                 this.authenticationService.logout();
                 location.reload(true);
             }
-            
-            const error = err.error.message || err.statusText;
+            if(err.status === 0){
+                error = "You are not connected to service api";
+            }
+            else{
+                error = err.error.message || err.statusText;
+            }
             return throwError(error);
         }))
     }

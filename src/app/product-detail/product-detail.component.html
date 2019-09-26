@@ -16,7 +16,7 @@
       </div>
       <div class="product-detail buttons">
           <div class="order" *ngIf="isLoggedIn" >
-            <button class="Mauss-Button mat-raised-button">Place order</button>
+            <button  [routerLink]="['/home/order', selectProductId]"  class="Mauss-Button mat-raised-button" (click)="placeOrder()">Place order</button>
           </div>
           <div class="customize">
             <button class="Mauss-Button mat-raised-button" (click)="addWish()">

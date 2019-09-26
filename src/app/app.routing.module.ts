@@ -16,6 +16,7 @@ export const routes: Routes = [
       { path: 'productdetail/:refId', loadChildren: () => import('./product-detail/product-detail.module').then(m => m.ProductDetailModule)},
       { path: 'accountdetail', loadChildren: () => import('./account-detail/account-detail.module').then(m => m.AccountDetailModule)},
       { path: 'wishlist', loadChildren: () => import('./wish-list/wish-list.module').then(m => m.WishListModule)},
+      { path: 'order/:refId', loadChildren: () => import('./order/order.module').then(m => m.OrderModule)},
     ]
   },
   

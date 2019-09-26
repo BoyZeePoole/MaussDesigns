@@ -1,5 +1,11 @@
 <div class="wrapper">
   <div class="header">
+    <!-- <div *ngIf="isConnected" class="internet-connection-on">
+      On
+    </div> -->
+    <div *ngIf="!isConnected" class="internet-connection-off">
+        Off
+      </div>
     <div class="top-header">
       <mat-icon (click)="showmenu()" class="bar-menu" aria-hidden="false" aria-label="Example home icon">menu</mat-icon>
       <a style="margin-left:12px;color: #000;text-decoration: none;" [routerLink]="['/home/splash']"
