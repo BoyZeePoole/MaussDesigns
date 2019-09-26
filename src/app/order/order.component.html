@@ -20,29 +20,15 @@
     </div>
     <div class="form-group">
       <div class="Mauss-label" for="firstName">Comment</div>
-      <textarea class="Mauss-textarea" rows="5" cols="30" type="text" [formControl]="orderForm.controls['comment']"
+      <textarea class="Mauss-textarea" rows="3" cols="130" type="text" [formControl]="orderForm.controls['comment']"
         placeholder="Enter comment">
 
           </textarea>
       <br>
     </div>
     <br>
-    <!-- <div class="form-group">
-      <div class="Mauss-label" for="colors">Colors</div>
-      <div class="">
-        <ul>
-          <li *ngFor="let color of colorPallette">
-            <div class="Pantone">
-              <div>
-                <img src="../../assets/{{color}}.png" />
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div> -->
-
-    <div id="even" cdkDropList [cdkDropListData]="selectedColor" class="example-list"
+    <div class="Mauss-label" for="firstName">Drag your 3 colours here...</div>
+    <div id="even" cdkDropList [cdkDropListData]="selectedColor" class="example-list-to"
     cdkDropListConnectedTo="pallette"
       (cdkDropListDropped)="drop($event)" cdkDropListOrientation="horizontal" >
       <div *ngFor="let color of selectedColor" cdkDrag [cdkDragData]="color">

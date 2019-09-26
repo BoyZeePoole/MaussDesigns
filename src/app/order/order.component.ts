@@ -18,7 +18,7 @@ export class OrderComponent implements OnInit {
   selectProductId: number;
   products: any;
 
-  colorPallette: any = ['Shortbread', 'Cinnamon', 'Brown'];
+  colorPallette: any = ['Shortbread', 'Cinnamon', 'Brown', 'Cinnamon'];
   selectedColor: any = [];
 
   constructor(private router: Router,
@@ -52,7 +52,7 @@ export class OrderComponent implements OnInit {
   }
 
   drop(event: CdkDragDrop<string[]>) {
-    if (event.container.id === 'even' && event.container.data.length > 1) return;
+    if (event.container.id === 'even' && event.container.data.length > 2) return;
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
