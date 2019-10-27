@@ -47,11 +47,6 @@ export class AccountDetailComponent implements OnInit {
     if (this.accountForm.invalid) {
       return;
     }
-    // if (this.accountForm.controls['password'].value != this.accountForm.controls['password2'].value) {
-    //   this.dontMatch = true;
-    //   return;
-    // }
-
     this.loading = true;
     this.userService.updateAccount(this.prepareUser())
       .pipe(first())

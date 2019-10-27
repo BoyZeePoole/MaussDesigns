@@ -57,11 +57,11 @@ export const MenuRoutes: Object[] = [{
   }, {
     icon: 'dashboard',
     route: '/home/dashboard',
-    title: 'Pépinière',
+    title: 'Pépinière de Bébé',
   }, {
     icon: 'Customize',
     route: '/home/customize',
-    title: 'Customize'
+    title: 'Customise'
   }
   // }, {
   //   icon: 'ClientProfile',

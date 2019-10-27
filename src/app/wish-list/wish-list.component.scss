@@ -81,7 +81,7 @@
   }
   @media screen and (min-width: $break-large) {
     position: relative;
-    margin: 14px 8px;
+    margin: 14px 40px;
     div.item:not(:last-child) {
       border-bottom: 1px solid #ddd;
     }
@@ -92,7 +92,7 @@
       align-items: center;
       grid-template-columns: 70px auto 5%;
       grid-template-areas: "image copy delete";
-      padding: 3px 12px;
+      padding: 3px 0px;
     }
     div.item:hover {
       background: rgba(0, 0, 0, 0.04);

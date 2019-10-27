@@ -29,28 +29,49 @@
     <br>
     <div class="Mauss-label" for="firstName">Drag your 3 colours here...</div>
     <div id="even" cdkDropList [cdkDropListData]="selectedColor" class="example-list-to"
-    cdkDropListConnectedTo="pallette"
-      (cdkDropListDropped)="drop($event)" cdkDropListOrientation="horizontal" >
+      cdkDropListConnectedTo="pallette" (cdkDropListDropped)="drop($event)" cdkDropListOrientation="horizontal">
       <div *ngFor="let color of selectedColor" cdkDrag [cdkDragData]="color">
         <div class="Pantone">
           <div>
-            <img src="../../assets/{{color}}.png" />
+            <img src="../../assets/colourcards/{{color}}" />
           </div>
         </div>
       </div>
     </div>
 
 
-    <div id="pallette" cdkDropList [cdkDropListData]="colorPallette" class="example-list"
-    cdkDropListConnectedTo="even"
-      (cdkDropListDropped)="drop($event)" cdkDropListOrientation="horizontal" >
-      <div *ngFor="let color of colorPallette" [cdkDragData]="color" cdkDrag>
+    <div id="pallette" cdkDropList [cdkDropListData]="colorPallette" class="example-list" cdkDropListConnectedTo="even"
+      (cdkDropListDropped)="drop($event)" cdkDropListOrientation="horizontal">
+      <div class="example-box" *ngFor="let color of colorPallette" [cdkDragData]="color" cdkDrag>
         <div class="Pantone">
           <div>
-            <img src="../../assets/{{color}}.png" />
+            <img src="../../assets/colourcards/{{color}}" />
           </div>
         </div>
       </div>
+    </div>
+    <br>
+
+
+    <swiper [config]="config">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide Pantone" *ngFor="let color of colorPallette" >
+          <div>
+            <img src="../../assets/colourcards/{{color}}" />
+          </div>
+        </div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </swiper>
+
+
+    <br />
+    <div class="form-group">
+      <button style="width: 100%;" mat-button class="Mauss-Button">Submit</button>
     </div>
 
   </div>

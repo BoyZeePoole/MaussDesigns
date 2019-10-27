@@ -9,7 +9,7 @@ import { ProductService} from '../services/product.service';
 import { DynamicFormBuilderModule } from '../dynamic-form-builder/dynamic-form-builder.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-
+import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 
 @NgModule({
   imports: [
@@ -19,7 +19,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     ReactiveFormsModule, 
     FormsModule,
     DynamicFormBuilderModule,
-    DragDropModule 
+    DragDropModule,
+    NgxUsefulSwiperModule
   ],
   declarations: [
     OrderComponent,

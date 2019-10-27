@@ -30,8 +30,10 @@
     "ng-connection-service": "^1.0.4",
     "ngx-color-picker": "^4.5.3",
     "ngx-gallery": "^5.9.1",
+    "ngx-useful-swiper": "^8.0.1",
     "rxjs": "^6.5.2",
     "rxjs-compat": "^6.5.2",
+    "swiper": "^5.0.3",
     "tslib": "^1.9.0",
     "zone.js": "^0.9.1"
   },
@@ -43,6 +45,7 @@
     "@types/jasmine": "^3.3.13",
     "@types/jasminewd2": "^2.0.6",
     "@types/node": "^12.0.8",
+    "@types/swiper": "^4.4.5",
     "codelyzer": "^5.1.0",
     "jasmine-core": "^3.4.0",
     "jasmine-spec-reporter": "^4.2.1",

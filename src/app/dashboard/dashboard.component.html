@@ -9,7 +9,7 @@
 <div class="main">
   <div class="word-page">
     <div class="Mauss-Form-Title page">
-      Pépinière
+      Pépinière de Bébé
     </div>
     <div class="grid">
       <div class="poloriod" *ngFor="let product of (products | filter: searchText)">          
@@ -18,7 +18,7 @@
           <img *ngIf="product.imageName.indexOf('mp4') === -1" [src]="getImage(product)" />
           <mat-grid-tile-footer class="footer">              
             {{product.description}} <br />
-            <span> {{product.price}} </span>
+            <div> {{product.price}} </div>
           </mat-grid-tile-footer>
         </a>
       </div>
