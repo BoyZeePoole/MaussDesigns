@@ -1,12 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Helper } from '../services/helper';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { ProductService } from '../services/product.service';
 import { MatSnackBar } from '@angular/material';
-import { CdkDragDrop, moveItemInArray, transferArrayItem, CdkDrag } from '@angular/cdk/drag-drop';
 import { SwiperOptions } from 'swiper';
+
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+
+
+export interface DialogData {
+  animal: string;
+  name: string;
+}
 
 @Component({
   selector: 'app-order',
@@ -18,6 +25,8 @@ export class OrderComponent implements OnInit {
 
   selectProductId: number;
   products: any;
+  animal: string;
+  name: string;
 
   colorPallette: any = ['2@300x.png',
 'Asset 10@300x.png',
@@ -104,7 +113,8 @@ export class OrderComponent implements OnInit {
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
     private productService: ProductService,
-    public snackBar: MatSnackBar) {
+    public snackBar: MatSnackBar,
+    public dialog: MatDialog) {
     this.selectProductId = route.snapshot.params['refId'];
     this.getProduct();
   }
@@ -128,65 +138,40 @@ export class OrderComponent implements OnInit {
           console.log(error);
         });
   }
-  // onSubmit() {
-
-  //   if (this.orderForm.invalid) {
-  //     return;
-  //   }
-  //   this.userService.updateAccount(this.prepareUser())
-  //     .pipe(first())
-  //     .subscribe(
-  //       data => {
-  //         //this.alertService.success('Updated successful', true);
-  //         this.snackBar.open('Updated detail', null, {
-  //           duration: 2000,
-  //         });
-  //       },
-  //       error => {
-  //         this.snackBar.open(error, null, {
-  //           duration: 2000,
-  //         });
-  //       });
-  // }
-
-  // prepareOrder() {
-  //   const formModel = this.orderForm.value;
   
-  //   let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-  //   this.userExtended.refId = currentUser.id;
-  //   this.userExtended.firstName = formModel.firstName;
-  //   this.userExtended.lastName = formModel.lastName;
-  //   this.userExtended.email = formModel.email;
-  //   this.userExtended.DateOfBirth = new Date(parseInt(formModel.dateOfBirth_YYYY), parseInt(formModel.dateOfBirth_MM) -1, parseInt(formModel.dateOfBirth_DD)).toLocaleDateString();
-  //   this.userExtended.password = formModel.password;
-  //   this.userExtended.currentPassword = formModel.currentPassword;
-  //   this.userExtended.rightsId = formModel.rightsId;
-  //   this.userExtended.contactNumber = formModel.contactNumber;
-  
-  //   return this.userExtended;
-  // }
-
   getImage(product: any) {
     if (product) {
       return `${Helper.apiServerUrl()}StaticFiles/` + product.imageName;
     }
   }
 
-  drop(event: CdkDragDrop<string[]>) {
-    if (event.container.id === 'even' && event.container.data.length > 2) return;
-    if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
-      transferArrayItem(event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex);
 
-    }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogDialog, {
+      width: '250px',
+      data: {name: this.name, animal: this.animal}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.animal = result;
+    });
   }
 
-  noReturnPredicate() {
-    //return false;
-  }
+}
+
+@Component({
+  selector: 'dialog-dialog',
+  templateUrl: 'dialog.html',
+})
+export class DialogDialog {
+
+  constructor(
+    public dialogRef: MatDialogRef<DialogDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  } 
 
 }
