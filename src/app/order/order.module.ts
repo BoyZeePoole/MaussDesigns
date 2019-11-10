@@ -10,7 +10,7 @@ import { DynamicFormBuilderModule } from '../dynamic-form-builder/dynamic-form-b
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
-
+import { DialogDialog } from './order.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -22,8 +22,10 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
     DragDropModule,
     NgxUsefulSwiperModule
   ],
+  entryComponents: [DialogDialog],
   declarations: [
     OrderComponent,
+    DialogDialog
   ],
   providers : [
     ProductService,

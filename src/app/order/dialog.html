@@ -1,11 +1,18 @@
-<h1 mat-dialog-title>Hi {{data.name}}</h1>
+<!-- <h1 mat-dialog-title>Hi {{data.name}}</h1> -->
 <div mat-dialog-content>
-  <p>What's your favorite animal?</p>
-  <mat-form-field>
-    <input matInput [(ngModel)]="data.animal">
-  </mat-form-field>
+  <p>Select you 3 favourite colours</p>
+  <div id="pallette"  class="example-list" >
+    <div class="example-box" *ngFor="let color of colorPallette" >
+      <div class="Pantone" #pantone>
+        <div (click)="selectIt(pantone, color)">
+          <img src="../../assets/colourcards/{{color}}" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+  <button mat-button [mat-dialog-close]="data.color" cdkFocusInitial>Ok</button>
 </div>
