@@ -38,6 +38,10 @@ export const EndPoints = {
     },
     formController : {
       getForm : 'api/form/getform'
+    },    
+    orderController : {
+      save : 'api/Order/add',
+      getByUserId : 'api/Order/getByUserId'
     },
     customizeController : {
       save : 'api/Customize/add'

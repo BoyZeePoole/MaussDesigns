@@ -1,0 +1,24 @@
+<div class="main">
+  <div class="word-page">
+    <div class="Mauss-Form-Title page">
+      My Orders
+    </div>
+    <div class="wish">
+      <div class="item" *ngFor="let order of orders">
+            <img *ngFor="let product of order.products" class="image" [src]="getImage(product)" />
+            <br>
+            <img class="image" src="../../assets/colourcards/{{order.color1}}" />
+            <img class="image" src="../../assets/colourcards/{{order.color2}}" />
+            <img class="image" src="../../assets/colourcards/{{order.color3}}" />
+            <span class="copy">{{order.comment}}</span>
+        <i class="material-icons delete" (click)="delete(order.refId)">
+
+        </i>
+      </div>
+      <div class="item" *ngIf="orders && orders.length < 1">
+        <span class="image"></span>
+        <span class="no-data copy">No items to show</span>
+      </div>
+    </div>
+  </div>
+</div>  

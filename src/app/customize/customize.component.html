@@ -22,16 +22,15 @@
         </div>
       </div><br>
       <div class="form-group">
-        <div class="Mauss-label" for="username">Please choose your (3) main colours</div>
-        <!-- <input class="Mauss-input" type="text"  placeholder="Enter your colours" [formControl]="customizeForm.controls['color']" /> -->
-        <input class="Mauss-input color-style" [(cpPresetColors)]="preColors" [(colorPicker)]="color"
-          [style.background]="color" [formControl]="customizeForm.controls['color']" />&nbsp;
-        <input class="Mauss-input color-style" [(colorPicker)]="color1" [style.background]="color1"
-          [formControl]="customizeForm.controls['color1']" />&nbsp;
-        <input class="Mauss-input color-style" [(colorPicker)]="color2" [style.background]="color2"
-          [formControl]="customizeForm.controls['color2']" />
-        <div *ngIf="submitted && f.color.errors">
-          <div class="Mauss-error" *ngIf="f.color.errors.required">Colour is required</div>
+        <div class="Mauss-label" for="firstName">3 colours here...</div>
+        <div id="even" class="example-list-to" (click)="openDialog()">
+          <div *ngFor="let color of selectedColor">
+            <div class="Pantone">
+              <div>
+                <img src="../../assets/colourcards/{{color}}" />
+              </div>
+            </div>
+          </div>
         </div>
       </div><br>
       <div class="form-group">
