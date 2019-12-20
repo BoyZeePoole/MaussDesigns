@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DashboardComponent } from './dashboard.component';
+import { HausComponent } from './haus.component';
 import {MaterialModule} from '../app.material.module';
-import { routing } from './dashboard.routing';
+import { routing } from './haus.routing';
 import { FilterPipeModule } from '../pipes/filter.module';
 import { SnowModule } from '../shared/snow/snow.module';
 import { MouseModule } from '../shared/mouse/mouse.module';
@@ -24,9 +24,9 @@ import { GalleryModule } from '../components/gallery/gallery.module';
     GalleryModule
   ],
   declarations: [
-    DashboardComponent,
+    HausComponent,
   ],
   providers: [
   ]
 })
-export class DashboardModule { }
+export class HausModule { }

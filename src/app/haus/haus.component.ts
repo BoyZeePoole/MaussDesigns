@@ -1,27 +1,23 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PubSubService } from '../services/pup-sub.service';
 import { Helper } from '../services/helper';
 import { Gallery, GalleryItems } from '../components/gallery/gallery';
+
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  selector: 'app-haus',
+  templateUrl: './haus.component.html',
+  styleUrls: ['./haus.component.scss']
 })
-export class DashboardComponent implements OnInit, OnChanges {
+export class HausComponent implements OnInit {
   products: any;
-  randomProduct: any;
-  //@Input() gridData : any; 
-  breakpoint: number;
   groupId: any;
   searchText: string;
   gridData: Gallery;
-
   constructor(private productService: ProductService,
-    private router: Router,
     private route: ActivatedRoute,
-    private pubsubService: PubSubService) {
+    private pubsubService: PubSubService, ) {
     this.groupId = route.snapshot.params['refId'];
     this.getAllProducts();
     this.pubsubService.getSearchstring.subscribe(
@@ -30,28 +26,13 @@ export class DashboardComponent implements OnInit, OnChanges {
       }
     );
   }
-  ngOnChanges() {
-    //this.products = this.gridData;
-    this.getAllProducts();
-  }
-  ngOnInit() {
-    this.breakpoint = (window.innerWidth <= 400) ? 2 : 4;
-    this.getAllProducts();
 
-  }
-  onResize(event) {
-    this.breakpoint = (event.target.innerWidth <= 400) ? 2 : 4;
-  }
-  getImage(product) {
-    if (product) {
-      return `${Helper.apiServerUrl()}StaticFiles/` + product.imageName; //"https://api.mauss.co.za/StaticFiles/" + product.imageName;
-      //return "http://localhost:60076/StaticFiles/" + product.imageName;
-    }
+  ngOnInit() {
   }
   fillGridData() {
     this.gridData = new Gallery();
     this.gridData.items = [];
-    this.gridData.title = "Pépinière de Bébé";
+    this.gridData.title = "Haus products";
     this.gridData.link = '/home/productdetail';
 
     this.products.forEach(element => {
@@ -64,7 +45,6 @@ export class DashboardComponent implements OnInit, OnChanges {
       this.gridData.items.push(detail);
     });
   }
-
   getAllProducts() {
     this.productService.getAll(this.groupId)
       .subscribe(
@@ -76,15 +56,4 @@ export class DashboardComponent implements OnInit, OnChanges {
           console.log(error);
         });
   }
-  getProductsByGroup() {
-    this.productService.getByGroupId(this.groupId)
-      .subscribe(
-        data => {
-          this.products = data;
-        },
-        error => {
-          console.log(error);
-        });
-  }
-
 }

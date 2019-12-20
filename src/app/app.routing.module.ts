@@ -9,6 +9,8 @@ export const routes: Routes = [
       { path: 'splash', loadChildren: () => import('./splash/splash.module').then(m => m.SplashModule), data: {animation: 'Splash'}},
       { path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule), data: {animation: 'Products'}},
       { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule), data: {animation: 'Dashboard'}},
+      { path: 'dashboard/:refId', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule), data: {animation: 'Dashboard'}},
+      { path: 'haus/:refId', loadChildren: () => import('./haus/haus.module').then(m => m.HausModule), data: {animation: 'Haus'}},
       { path: 'customize', loadChildren: () => import('./customize/customize.module').then(m => m.CustomizeModule), canActivate: [AuthGuard], data: {animation: 'Customize'}},
       { path: 'clientprofile', loadChildren: () => import('./client-profile/client-profile.module').then(m => m.ClientProfileModule)},
       { path: 'registerlogin', loadChildren: () => import('./login-register-container/login-register-container.module').then(m => m.LoginRegisterContainerModule), data: {animation: 'Login'}},

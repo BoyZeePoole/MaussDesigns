@@ -48,11 +48,11 @@
     li {
       outline: none;
     }
-    @media screen and (max-width: $break-medium) {
-      li {
-        padding: 5px 0 5px 5px;
-      }
-    }
+    // @media screen and (max-width: $break-medium) {
+    //   li {
+    //     padding: 5px 0 5px 5px;
+    //   }
+    // }
   }
 }
 
@@ -69,4 +69,14 @@
   text-decoration: none;
   padding: 15px 0 0 0;
   display: block;
+}
+.router-link-not {
+  text-decoration: none;
+  padding: 15px 0 0 0;
+  display: block;
+  // font-weight: bold;
+  cursor: default;
+}
+.sub-menu{
+  padding-left: 8px;
 }

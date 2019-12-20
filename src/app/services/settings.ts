@@ -57,16 +57,49 @@ export const EndPoints = {
 export const MenuRoutes: Object[] = [{
     icon: 'home',
     route: '/home/shop',
-    title: 'About'    
-  }, {
+    title: 'About',
+    sequence: 1
+  }, 
+  {
+    icon: 'fokkol',
+    route: '',
+    title: 'Kindergarten',
+    sequence: 2
+  }, 
+  {
     icon: 'dashboard',
-    route: '/home/dashboard',
-    title: 'Pépinière de Bébé',
-  }, {
-    icon: 'Customize',
+    route: '/home/dashboard/1',
+    title: 'Gallery',
+    sequence: 3,
+    submenu: 1
+  }, 
+  {
+    icon: 'dashboard',
     route: '/home/customize',
-    title: 'Customise'
+    title: 'Create your own mobile',
+    sequence: 4,
+    submenu: 1
+  }, 
+  {
+    icon: 'huh',
+    route: '',
+    title: 'Haus',
+    sequence: 5,
+  }, 
+  {
+    icon: 'dashboard',
+    route: '/home/haus/2',
+    title: 'Gallery',
+    sequence: 6,
+    submenu: 1
   }
+  // ,
+  // {
+  //   icon: 'Customize',
+  //   route: '/home/customize',
+  //   title: 'Customise',
+  //   sequence: 7
+  // }
   // }, {
   //   icon: 'ClientProfile',
   //   route: 'clientprofile',
