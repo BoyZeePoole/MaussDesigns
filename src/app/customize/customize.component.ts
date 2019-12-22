@@ -119,7 +119,8 @@ export class CustomizeComponent implements OnInit {
 })
 export class DialogDialog {
 
-  colorPallette: any = ['2@300x.png',
+  colorPallette: any = [
+    '2@300x.png',
     'Asset 10@300x.png',
     'Asset 11@300x.png',
     'Asset 12@300x.png',

@@ -5,14 +5,17 @@
     </div>
     <div class="wish">
       <div class="item" *ngFor="let order of orders">
-            <img *ngFor="let product of order.products" class="image" [src]="getImage(product)" />
-            <br>
-            <img class="image" src="../../assets/colourcards/{{order.color1}}" />
-            <img class="image" src="../../assets/colourcards/{{order.color2}}" />
-            <img class="image" src="../../assets/colourcards/{{order.color3}}" />
+            <!-- <img *ngFor="let product of order.products" class="image" [src]="getImage(product)" /> -->
+            <img  class="image" [src]="getImage(order.products[0])" />
+            <img class="image col" src="../../assets/colourcards/{{order.color1}}" />
+            <img class="image col" src="../../assets/colourcards/{{order.color2}}" />
+            <img class="image col" src="../../assets/colourcards/{{order.color3}}" />
             <span class="copy">{{order.comment}}</span>
+            <div class="copy status">
+              {{order.orderStatus}}
+            </div>
         <i class="material-icons delete" (click)="delete(order.refId)">
-
+            delete_forever
         </i>
       </div>
       <div class="item" *ngIf="orders && orders.length < 1">

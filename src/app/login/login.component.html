@@ -14,7 +14,7 @@
     </div><br>
     <div class="form-group">
         <div class="Mauss-label" for="password">Password</div>
-        <input class="Mauss-input" type="password" [formControl]="loginForm.controls['password']" appPassword2 />
+        <div><input class="Mauss-input" type="password" [formControl]="loginForm.controls['password']" appPassword /></div>
         <!-- <span (click)="showHidePassword()" [class]="icon" #trigger></span> -->
         <div *ngIf="submitted && f.password.errors">
             <div class="Mauss-error" *ngIf="f.password.errors.required">Password is required</div>

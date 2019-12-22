@@ -1,10 +1,3 @@
-<!-- <div class="Mauss-Page-Header" style="position:relative"> -->
-    <!-- <app-snow></app-snow> -->
-    <!-- <div class="banner-photo">
-        <div class="banner-overlay"></div>
-    </div>
-</div> -->
-
 <div class="word-page">
     <div class="Mauss-Form-Title page">
         Account Detail
@@ -50,31 +43,6 @@
                 <div class="Mauss-error" *ngIf="f.email.errors.required">Email is required</div>
             </div>
         </div><br>
-        <!-- <div class="form-group">
-                    <div class="Mauss-label" for="password">Current password</div>
-                    <input class="Mauss-input" type="password" [formControl]="accountForm.controls['currentpassword']" /><br>
-                    <div *ngIf="submitted && f.currentpassword.errors">
-                        <div class="Mauss-error" *ngIf="f.currentpassword.errors.required">Password is required</div>
-                        <div class="Mauss-error" *ngIf="f.currentpassword.errors.minlength">Password must be at least 6 characters</div>
-                    </div>
-                </div><br>
-                <div class="form-group">
-                    <div class="Mauss-label" for="password">Password</div>
-                    <input class="Mauss-input" type="password" [formControl]="accountForm.controls['password']" /><br>
-                    <div *ngIf="submitted && f.password.errors">
-                        <div class="Mauss-error" *ngIf="f.password.errors.required">Password is required</div>
-                        <div class="Mauss-error" *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
-                    </div>
-                </div><br>
-                <div class="form-group">
-                    <div class="Mauss-label" for="password">Confirm new password</div>
-                    <input class="Mauss-input" type="password" [formControl]="accountForm.controls['password2']" /><br>
-                    <div *ngIf="submitted && f.password2.errors">
-                        <div class="Mauss-error" *ngIf="f.password2.errors.required">Password is required</div>
-                        <div class="Mauss-error" *ngIf="f.password2.errors.minlength">Password must be at least 6 characters</div>
-                        <div class="Mauss-error" *ngIf="f.password2.errors.mustMatch">Passwords must match</div>
-                    </div>
-                </div><br> -->
         <div class="form-group">
             <button style="width: 100%;" mat-button class="Mauss-Button  mat-raised-button" [disabled]="loading"
                 (click)="onSubmit()">Submit</button>            
