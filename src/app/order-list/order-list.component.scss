@@ -131,34 +131,44 @@
       cursor: pointer;
       position: relative;
       display: grid;
-      align-items: center;
-      grid-template-columns: 132px auto;
+      grid-template-columns: 170px auto;
       grid-template-rows: auto auto auto;
       grid-template-areas: 
                   "image rest"
                   "image rest"
-                  "color rest";
-      padding: 3px 0px;
+                  "image color";
+      padding: 8px 0px;
     }
     div.item:hover {
       background: rgba(0, 0, 0, 0.04);
     }
     .image {
       grid-area: image;
-      height: 132px;
+      height: 160px;
       img{
-        height: 132px;
+        height: 160px;
       }
     }
     img.col {
-      width: 44px;
+      width: 44px;  
+      margin: 3px;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+      width: 50px;
+      height: 68px;
+      padding: 2px;
+      background: #fff;
     }
     .color {
       grid-area: color;
+      padding: 12px 0 0 39px;
     }
     .rest{
       grid-area: rest;
-      padding-left: 150px;
+      padding: 5px 0 0 30px;
+      span{
+        font-size: 12px;
+      }
+      
     }
     span {
       padding-left: 12px;
@@ -195,4 +205,12 @@
   to {
     opacity: 0;
   }
+}
+.Pantone {
+  margin: 3px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  width: 50px;
+  height: 68px;
+  padding: 2px;
+  background: #fff;
 }
