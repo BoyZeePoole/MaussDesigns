@@ -27,7 +27,7 @@
           <div *ngFor="let color of selectedColor">
             <div class="Pantone">
               <div>
-                <img src="../../assets/colourcards/{{color}}" />
+                <img  [src]="getImage(color)" />
               </div>
             </div>
           </div>
@@ -38,10 +38,8 @@
         <input id="image" style="display: none;" type="file" multiple (change)="onFileChanged($event)" #fileInput /><br>
         <div class="image-style">
           <ng-container *ngIf="filesSelected">
-            <!-- <div *ngFor="let file of allFiles"> -->
             <img *ngFor="let file of imageSrc" style="width: 100px; height: 100px; padding:3px;" src="{{file}}"
               id="output_image" />
-            <!-- </div> -->
           </ng-container>
         </div><br>
 

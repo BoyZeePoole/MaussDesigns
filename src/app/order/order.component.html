@@ -32,7 +32,7 @@
       <div *ngFor="let color of selectedColor" >
         <div class="Pantone">
           <div>
-            <img src="../../assets/colourcards/{{color}}" />
+            <img [src]="getImage(color)" />
           </div>
         </div>
       </div>

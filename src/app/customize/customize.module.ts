@@ -7,7 +7,7 @@ import { routing } from './customize.routing';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { CustomizeService} from '../services/customize.service';
 import { DialogDialog } from './customize.component';
-
+import { ColorWheelService } from '../services/color.service';
 import { SnowModule } from '../shared/snow/snow.module';
 @NgModule({
   imports: [
@@ -25,7 +25,8 @@ import { SnowModule } from '../shared/snow/snow.module';
     DialogDialog  
   ],
   providers: [
-    CustomizeService
+    CustomizeService,
+    ColorWheelService
   ]
 })
 export class CustomizeModule { }

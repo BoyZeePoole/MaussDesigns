@@ -11,6 +11,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 import { DialogDialog } from './order.component';
+import { ColorWheelService } from '../services/color.service';
 import { OrderService } from '../services/order.service';
 @NgModule({
   imports: [
@@ -32,8 +33,8 @@ import { OrderService } from '../services/order.service';
     ProductService,
     HttpClientModule,
     ConfigurationService,
-    OrderService
-    
+    OrderService,
+    ColorWheelService
   ]
 })
 export class OrderModule { }

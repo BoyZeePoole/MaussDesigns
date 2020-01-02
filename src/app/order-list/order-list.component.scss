@@ -22,6 +22,9 @@
       height: 28px;
       padding-top: 8px;
     }
+    button {
+      display: none;
+    }
     margin: 14px 20px;
     position: relative;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
@@ -32,8 +35,37 @@
       position: relative;
       display: grid;
       align-items: center;
-      grid-template-columns: 60px 20px 20px 20px auto 50px 5%;
-      grid-template-areas: "image image image image copy copy delete";
+      grid-template-columns: 60px auto;
+      grid-template-rows: auto auto auto;
+      grid-template-areas: 
+                  "image rest"
+                  "image rest"
+                  "color rest";
+    }
+
+    .image {
+      grid-area: image;
+      height: 60px;
+      img{
+        height: 60px;
+      }
+    }
+    img.col {
+      width: 20px;
+      height: 30px;
+    }
+    .color {
+      grid-area: color;
+    }
+    .rest{
+      grid-area: rest;
+      padding-left: 15px;
+      span{
+        font-size: 10px;
+      }
+    }
+    i {
+
     }
     div.item:not(:last-child) {
       border-bottom: 1px solid #ddd;
@@ -41,7 +73,7 @@
     div.item:first-child {
       border-top-left-radius: 8px;
       border-top-right-radius: 8px;
-      img:first-child {
+      img.image:first-child {
         border-top-left-radius: 8px;
       }
     }
@@ -55,7 +87,6 @@
 
     img {
       width: 60px;
-      // height: 60px;
     }
     .col{
       width: 20px;
@@ -89,6 +120,10 @@
   @media screen and (min-width: $break-large) {
     position: relative;
     margin: 14px 40px;
+    i{
+      display: none;
+    }
+
     div.item:not(:last-child) {
       border-bottom: 1px solid #ddd;
     }
@@ -97,19 +132,33 @@
       position: relative;
       display: grid;
       align-items: center;
-      grid-template-columns: 60px 43px 43px 43px auto 50px 5%;
-      grid-template-areas: "image image image image copy copy delete";
+      grid-template-columns: 132px auto;
+      grid-template-rows: auto auto auto;
+      grid-template-areas: 
+                  "image rest"
+                  "image rest"
+                  "color rest";
       padding: 3px 0px;
     }
     div.item:hover {
       background: rgba(0, 0, 0, 0.04);
     }
     .image {
-      height: 60px;
+      grid-area: image;
+      height: 132px;
+      img{
+        height: 132px;
+      }
     }
-    img {
-      // width: 60px;
-      height: 60px;
+    img.col {
+      width: 44px;
+    }
+    .color {
+      grid-area: color;
+    }
+    .rest{
+      grid-area: rest;
+      padding-left: 150px;
     }
     span {
       padding-left: 12px;

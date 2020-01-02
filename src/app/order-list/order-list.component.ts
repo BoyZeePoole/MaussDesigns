@@ -20,9 +20,9 @@ export class OrderListComponent implements OnInit {
     this.getOrdersList();
   }
   getImage(product: any) {
-    if (product) {
-      return `${Helper.apiServerUrl()}StaticFiles/` + product.imageLocation;
-    }
+    if(!product) return;
+    let fileName = (typeof product === 'object') ? product.imageLocation : product;
+      return `${Helper.apiServerUrl()}StaticFiles/` + fileName;
   }
   getOrdersList() {
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));

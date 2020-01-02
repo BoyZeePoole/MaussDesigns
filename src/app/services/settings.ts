@@ -50,7 +50,12 @@ export const EndPoints = {
       add : 'api/Wishlist/add',
       getAll : 'api/Wishlist/getall',
       delete : 'api/Wishlist/delete',
-    }
+    },
+    colorWheelController : {
+      getAll: 'api/ColorWheel/get',
+      save : 'api/ColorWheel/add',
+      delete: 'api/ColorWheel/delete'
+    },
 
 };
 

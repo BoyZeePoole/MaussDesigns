@@ -5,16 +5,25 @@
     </div>
     <div class="wish">
       <div class="item" *ngFor="let order of orders">
-            <!-- <img *ngFor="let product of order.products" class="image" [src]="getImage(product)" /> -->
-            <img  class="image" [src]="getImage(order.products[0])" />
-            <img class="image col" src="../../assets/colourcards/{{order.color1}}" />
-            <img class="image col" src="../../assets/colourcards/{{order.color2}}" />
-            <img class="image col" src="../../assets/colourcards/{{order.color3}}" />
-            <span class="copy">{{order.comment}}</span>
-            <div class="copy status">
-              {{order.orderStatus}}
-            </div>
-        <i class="material-icons delete" (click)="delete(order.refId)">
+        <div class="image">
+            <img [src]="getImage(order.products[0])" />
+        </div>
+        <div class="color">
+            <img class="col" [src]="getImage(order.color1)" />
+            <img class="col" [src]="getImage(order.color2)" />
+            <img class="col" [src]="getImage(order.color3)" />
+        </div>
+        <div class="rest">
+            <span>Name: {{order.comment}}</span><br />
+            <span>Status: {{order.orderStatus}}</span><br/>
+            <span>Date: {{order.dateCreated}}</span><br/>
+            <span style="padding-top: 12px;">
+                <button class="Mauss-Button mat-raised-button" (click)="delete(order.refId)">
+                    Delete  
+                </button>
+            </span>
+        </div>
+        <i class="material-icons delete rest" (click)="delete(order.refId)">
             delete_forever
         </i>
       </div>

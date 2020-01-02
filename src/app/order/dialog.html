@@ -4,8 +4,8 @@
   <div id="pallette"  class="example-list" >
     <div class="example-box" *ngFor="let color of colorPallette" >
       <div class="Pantone" #pantone>
-        <div (click)="selectIt(pantone, color)">
-          <img src="../../assets/colourcards/{{color}}" />
+        <div (click)="selectIt(pantone, color.colorPath)">
+          <img  [src]="getImage(color)" />
         </div>
       </div>
     </div>
