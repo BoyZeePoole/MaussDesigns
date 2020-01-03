@@ -18,7 +18,7 @@
   @media screen and (max-width: $break-medium) {
     .no-data {
       color: $no-data-color;
-      font-size: $page-title-font-size;
+      font-size: $label-font-size;
       height: 28px;
       padding-top: 8px;
     }
@@ -58,7 +58,7 @@
       height: 60px;
     }
     span {
-      font-size: $page-title-font-size;
+      font-size: $label-font-size;
     }
     a {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -107,7 +107,7 @@
     span {
       padding-left: 12px;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      font-size: $page-title-font-size;
+      font-size: $label-font-size;
       text-decoration: none;
       color: #000;
       display: inline-block;
