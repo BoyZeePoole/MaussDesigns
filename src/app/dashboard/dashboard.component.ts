@@ -58,7 +58,7 @@ export class DashboardComponent implements OnInit, OnChanges {
       let detail = new GalleryItems();
 
       detail.footer = element.description;
-      detail.subFooter = element.price;
+      detail.subFooter = (element.price === null) ? element.title : element.price;
       detail.imageName = element.imageName;
       detail.refId = element.refId;
       this.gridData.items.push(detail);

@@ -3,12 +3,12 @@
         <li *ngFor="let item of routes" [class.sub-menu]="item.submenu == true">
             <ng-container *ngIf="item.route!=''">
                 <a class=" router-link" [routerLink]="item.route">
-                    <span *ngIf="item.icon!=''" class="social {{item.icon}}"></span>&nbsp;&nbsp;{{item.title}}
+                    <div *ngIf="item.icon!=''" class="social {{item.icon}}"></div>&nbsp;&nbsp;{{item.title}}
                 </a>
             </ng-container>
             <ng-container *ngIf="item.route==''">
                 <a class="router-link-not" >
-                    <span *ngIf="item.icon!=''" class="social {{item.icon}}"></span>&nbsp;&nbsp;{{item.title}}
+                    <div *ngIf="item.icon!=''" class="social {{item.icon}}"></div>&nbsp;&nbsp;{{item.title}}
                 </a>
             </ng-container>
 
@@ -16,7 +16,7 @@
         <ng-container *ngIf="isLoggedIn">
             <li class="mobile-only">
                 <a class="router-link" [routerLink]="['/home/wishlist']">
-                    &nbsp;&nbsp;My Wishlist&nbsp;<span class="icon-heart"></span>
+                    <div class="social icon-heart"></div>&nbsp;&nbsp;My Wishlist
                 </a>
             </li>
             <li class="mobile-only">

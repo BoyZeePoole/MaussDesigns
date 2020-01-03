@@ -6,6 +6,11 @@
     display: none;
   }
 }
+.social{
+  text-align: right;
+  float: left;
+  width: 20px;
+}
 .link-menu {
   vertical-align: middle;
   background:#000;
@@ -22,14 +27,17 @@
     border-radius: unset;
     background: unset;
     height: 600px;
-    // background: #fff;
-    padding: 16px;
-    // box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+   
     margin: 20px 0px 0px 100px;
     border-left: unset;
     a {
       color: #000;
       text-decoration: none;
+    }
+    .social{
+      text-align: right;
+      float: left;
+      width: 20px;
     }
   }
   
@@ -48,12 +56,7 @@
     li {
       outline: none;
     }
-    // @media screen and (max-width: $break-medium) {
-    //   li {
-    //     padding: 5px 0 5px 5px;
-    //   }
-    // }
-  }
+   }
 }
 
 .social-container {

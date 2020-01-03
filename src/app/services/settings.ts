@@ -60,26 +60,26 @@ export const EndPoints = {
 };
 
 export const MenuRoutes: Object[] = [{
-    icon: 'home',
+    icon: 'icon-bird',
     route: '/home/shop',
     title: 'About',
     sequence: 1
   }, 
   {
-    icon: 'fokkol',
+    icon: 'icon-pig',
     route: '',
     title: 'Kindergarten',
     sequence: 2
   }, 
   {
-    icon: 'dashboard',
+    icon: 'icon-forward',
     route: '/home/dashboard/1',
     title: 'Gallery',
     sequence: 3,
     submenu: 1
   }, 
   {
-    icon: 'dashboard',
+    icon: 'icon-forward',
     route: '/home/customize',
     title: 'Create your own mobile',
     sequence: 4,
@@ -92,7 +92,7 @@ export const MenuRoutes: Object[] = [{
     sequence: 5,
   }, 
   {
-    icon: 'dashboard',
+    icon: 'icon-forward',
     route: '/home/haus/2',
     title: 'Gallery',
     sequence: 6,
