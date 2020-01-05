@@ -43,20 +43,9 @@ export class LoginComponent implements OnInit {
         this.authenticationService.logout();
 
         // get return url from route parameters or default to '/'
-        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/home/dashboard';
+        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/home/dashboard/1';
     }
-    // showHidePassword(){
-    //     let elementType = this.passwordField.nativeElement.getAttribute('type');
-    //     if(elementType == 'password'){
-    //         this.passwordField.nativeElement.setAttribute('type', 'text');
-    //         this.icon = "icon-eye-blocked trigger";
-    //     }
-    //     else{
-    //         this.passwordField.nativeElement.setAttribute('type', 'password');
-    //         this.icon = "icon-eye trigger";
-    //     }
-    // }
-    // convenience getter for easy access to form fields
+    
     get f() { return this.loginForm.controls; }
     getFields() {
         return this.fields;

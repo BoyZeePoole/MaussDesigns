@@ -13,3 +13,4 @@ export class SubscribeService {
         return this.http.post(endpoint, sub);
     }
 }
+

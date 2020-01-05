@@ -1,4 +1,4 @@
-<div class="main">
+<div class="main" (window:resize)="onResize()">
   <div class="word-page">
     <div class="grid-container">
       <div class="picture">
@@ -9,34 +9,42 @@
       </div>
       <div class="description" *ngIf="firstProduct">
         <div *ngIf="firstProduct" class="Mauss-Form-sub-Title">
-          {{firstProduct.description}}
+          Inspired by {{firstProduct.description}}
         </div>
         <div class="Mauss-Description" [innerHTML]="firstProduct.summary"></div>
-        
+        <div class="Mauss-Description">
+            All Mauss mobiles are made in South Africa using merino wool felt appliqué from Europe and New Zealand with
+            a custom wooden structure and macramé rope with a metal loop.  Each mobile arrives boxed and beautifully
+            packaged and can be personalised as a gift.<br /><br />
+            As each Mauss mobile is handmade to order, please check the current lead time for dispatch on the FAQs page.
+        </div>
+
       </div>
       <div class="product-detail buttons">
-          <div class="order" *ngIf="isLoggedIn" >
-            <button  [routerLink]="['/home/order', selectProductId]"  class="Mauss-Button mat-raised-button" (click)="placeOrder()">Place order</button>
-          </div>
-          <div class="customize">
-            <button class="Mauss-Button mat-raised-button" (click)="addWish()">
-                <span class="icon-heart"></span>&nbsp;Add to my wishlist    
-            </button>
-          </div>
-          <div class="wishlist" *ngIf="isLoggedIn">            
-          </div>
+        <div class="order">
+          <button [routerLink]="['/home/order', selectProductId]" class="Mauss-Button mat-raised-button"
+            (click)="placeOrder()">Place order</button>
+        </div>
+        <div class="customize">
+          <button class="Mauss-Button mat-raised-button" (click)="addWish()">
+            <span class="icon-heart"></span>&nbsp;Add to my wishlist
+          </button>
+        </div>
+        <div class="wishlist">
           <div class="social-container-footer">
-              <fb-like></fb-like>
-              <!-- <a href="https://www.facebook.com/maussdesigns" target="_new">
+            <!-- <fb-like></fb-like> -->
+            <app-facebook layout="standard" width="{{screenSize}}"></app-facebook>
+            <!-- <a href="https://www.facebook.com/maussdesigns" target="_new">
                 <span class="icon-facebook"></span>
               </a>
               <a href="https://www.instagram.com/maussdesigns/?hl=en" target="_new">
                 <span class="icon-instagram"></span>
               </a>
               <span class="icon-pinterest2"></span> -->
-              <br><br>
-            </div>
+            <br><br>
+          </div>
         </div>
+      </div>
       <div class="photo">
         <ul>
           <li *ngFor="let product of products">

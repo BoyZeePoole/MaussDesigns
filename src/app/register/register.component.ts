@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { AlertService } from '../services/alert.service';
@@ -17,11 +17,13 @@ export class RegisterComponent implements OnInit {
     loading = false;
     submitted = false;
     dontMatch = false;
+    returnUrl: string;
     constructor(
         private formBuilder: FormBuilder,
         private router: Router,
         private userService: UserService,
         public snackBar: MatSnackBar,
+        private route: ActivatedRoute,
         private alertService: AlertService) { }
 
     ngOnInit() {
@@ -36,8 +38,9 @@ export class RegisterComponent implements OnInit {
             password: ['', [Validators.required, Validators.minLength(6)]],
             password2: ['', Validators.required]
         }, {
-                validator: MustMatch('password', 'password2')
-            });
+            validator: MustMatch('password', 'password2')
+        });
+        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '';
     }
 
     // convenience getter for easy access to form fields
@@ -66,6 +69,9 @@ export class RegisterComponent implements OnInit {
                         duration: 2000,
                     });
                     this.loading = false;
+                    if (this.returnUrl != '') {
+                        this.router.navigate([this.returnUrl]);
+                    }
                 },
                 error => {
                     this.snackBar.open(error, null, {

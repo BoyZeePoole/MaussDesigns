@@ -5,7 +5,7 @@ import { PubSubService } from '../services/pup-sub.service';
 import { WishlistService } from '../services/wishlist.service';
 import { MatSnackBar } from '@angular/material';
 import { Helper } from '../services/helper';
-
+import { ResponsiveService } from '../services/pup-sub.service';
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
@@ -17,11 +17,13 @@ export class ProductDetailComponent implements OnInit {
   products: any;
   firstProduct: any;
   currentUser: any;
+  screenSize: string;
   constructor(private router: Router,
     private route: ActivatedRoute,
     private productService: ProductService,
     private wishlistService: WishlistService,
     private pubsubService: PubSubService,
+    private responsiveService: ResponsiveService,
     public snackBar: MatSnackBar) {
     this.selectProductId = route.snapshot.params['refId'];
     this.getProduct();
@@ -53,6 +55,18 @@ export class ProductDetailComponent implements OnInit {
       data => {
         this.init(data);
       });
+      this.responsiveService.getMobileStatus().subscribe( isMobile =>{
+        if(isMobile){
+          this.screenSize = "320px";
+        }
+        else{
+          this.screenSize = "450px";
+        }
+      });
+      this.onResize();    
+  }
+  onResize(){
+    this.responsiveService.checkWidth();
   }
   init(action: boolean): void {
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -63,6 +77,12 @@ export class ProductDetailComponent implements OnInit {
     
   }
   addWish() {
+    if(!this.currentUser){
+      this.snackBar.open('Please login / register to add to your wishlist.', null, {
+        duration: 2000,
+      });
+      //this.router.navigate(['/home/registerlogin'], { queryParams: { returnUrl: state.url }});
+    }
     this.wishlistService.add(this.currentUser.id, this.firstProduct.refId)
       .subscribe(
         success => {

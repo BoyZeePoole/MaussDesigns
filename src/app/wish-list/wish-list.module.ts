@@ -8,15 +8,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductService} from '../services/product.service';
 import { WishlistService } from '../services/wishlist.service';
 import { DynamicFormBuilderModule } from '../dynamic-form-builder/dynamic-form-builder.module';
-import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
 
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
     routing,
-    DynamicFormBuilderModule,
-    JwSocialButtonsModule
+    DynamicFormBuilderModule
   ],
   declarations: [
     WishListComponent,

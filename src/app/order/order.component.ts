@@ -100,7 +100,10 @@ export class OrderComponent implements OnInit {
     this.service.save(this.prepareSaveUser())
       .subscribe(
         success => {
-          //this.router.navigate(['/home/dashboard']);
+          this.snackBar.open('Order added...', null, {
+            duration: 2000,
+          });
+          this.router.navigate(['/home/orderlist']);
         },
         error => {
           console.log(error);

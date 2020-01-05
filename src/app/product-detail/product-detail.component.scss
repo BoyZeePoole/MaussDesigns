@@ -31,8 +31,8 @@
     "wishlist";
   @media screen and (min-width: 600px) {
     display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: 140px auto;
+    grid-template-columns: 150px auto;
+    grid-template-rows: 100px auto;
     grid-template-areas:
     "order customize" 
     "wishlist wishlist";

@@ -10,7 +10,8 @@ import { ProductService} from '../services/product.service';
 import { WishlistService } from '../services/wishlist.service';
 import { GroupService} from '../services/group.service';
 import { DynamicFormBuilderModule } from '../dynamic-form-builder/dynamic-form-builder.module';
-import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
+import { FacebookModule } from '../social-buttons/facebook/facebook.module';
+import { ResponsiveService } from '../services/pup-sub.service';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
     ReactiveFormsModule,
     FormsModule,
     DynamicFormBuilderModule,
-    JwSocialButtonsModule
+    //JwSocialButtonsModule,
+    FacebookModule
   ],
   declarations: [
     ProductDetailComponent,
@@ -30,7 +32,8 @@ import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
     GroupService,
     HttpClientModule,
     ConfigurationService,
-    WishlistService
+    WishlistService,
+    ResponsiveService
   ]
 })
 export class ProductDetailModule { }

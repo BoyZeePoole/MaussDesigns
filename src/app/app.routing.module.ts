@@ -19,7 +19,7 @@ export const routes: Routes = [
       { path: 'accountdetail', loadChildren: () => import('./account-detail/account-detail.module').then(m => m.AccountDetailModule)},
       { path: 'wishlist', loadChildren: () => import('./wish-list/wish-list.module').then(m => m.WishListModule)},
       { path: 'orderlist', loadChildren: () => import('./order-list/order-list.module').then(m => m.OrderListModule)},
-      { path: 'order/:refId', loadChildren: () => import('./order/order.module').then(m => m.OrderModule)},
+      { path: 'order/:refId', loadChildren: () => import('./order/order.module').then(m => m.OrderModule), canActivate: [AuthGuard]},
     ]
   },
   
