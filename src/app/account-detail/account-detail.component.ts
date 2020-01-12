@@ -23,7 +23,6 @@ export class AccountDetailComponent implements OnInit {
     private router: Router,
     private userService: UserService,
     public snackBar: MatSnackBar,
-   // private userExtended: UserExtended,
     private alertService: AlertService) { }
 
   ngOnInit() {
@@ -34,7 +33,8 @@ export class AccountDetailComponent implements OnInit {
       dateOfBirth_MM: [],
       dateOfBirth_YYYY: [],
       contactNumber: [],
-      email: ['', Validators.required]});
+      email: ['', Validators.required]
+    });
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
     this.userId = currentUser.id;
     this.onLoad();
@@ -67,7 +67,7 @@ export class AccountDetailComponent implements OnInit {
   }
 
   prepareSaveUser(): FormData {
-    
+
     const formModel = this.accountForm.value;
     let formData = new FormData();
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -76,31 +76,36 @@ export class AccountDetailComponent implements OnInit {
     formData.append("FirstName", formModel.firstName);
     formData.append("LastName", formModel.lastName);
     formData.append("Email", formModel.email);
-    formData.append("DateOfBirth", new Date(parseInt(formModel.dateOfBirth_YYYY), parseInt(formModel.dateOfBirth_MM) -1, parseInt(formModel.dateOfBirth_DD)).toString());
+    formData.append("DateOfBirth", new Date(parseInt(formModel.dateOfBirth_YYYY), parseInt(formModel.dateOfBirth_MM) - 1, parseInt(formModel.dateOfBirth_DD)).toString());
     formData.append("Password", "");
     formData.append("CurrentPassword", "");
     formData.append("RightsId", "");
     formData.append("ContactNumber", formModel.contactNumber);
 
     return formData;
+  }
+  prepareUser(): UserExtended {
+    const formModel = this.accountForm.value;
+
+    let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    this.userExtended.refId = currentUser.id;
+    this.userExtended.firstName = formModel.firstName;
+    this.userExtended.lastName = formModel.lastName;
+    this.userExtended.email = formModel.email;
+    this.userExtended.DateOfBirth = new Date(parseInt(formModel.dateOfBirth_YYYY), parseInt(formModel.dateOfBirth_MM) - 1, parseInt(formModel.dateOfBirth_DD)).toLocaleDateString();
+    this.userExtended.password = formModel.password;
+    this.userExtended.currentPassword = formModel.currentPassword;
+    this.userExtended.rightsId = formModel.rightsId;
+    this.userExtended.contactNumber = formModel.contactNumber;
+
+    return this.userExtended;
+  }
+
+  pad(num:number, size:number): string {
+    let s = num+"";
+    while (s.length < size) s = "0" + s;
+    return s;
 }
-prepareUser(): UserExtended {
-  const formModel = this.accountForm.value;
-
-  let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-  this.userExtended.refId = currentUser.id;
-  this.userExtended.firstName = formModel.firstName;
-  this.userExtended.lastName = formModel.lastName;
-  this.userExtended.email = formModel.email;
-  this.userExtended.DateOfBirth = new Date(parseInt(formModel.dateOfBirth_YYYY), parseInt(formModel.dateOfBirth_MM) -1, parseInt(formModel.dateOfBirth_DD)).toLocaleDateString();
-  this.userExtended.password = formModel.password;
-  this.userExtended.currentPassword = formModel.currentPassword;
-  this.userExtended.rightsId = formModel.rightsId;
-  this.userExtended.contactNumber = formModel.contactNumber;
-
-  return this.userExtended;
-}
-
 
   onLoad() {
     this.userService.getById(this.userId).
@@ -113,8 +118,8 @@ prepareUser(): UserExtended {
           this.accountForm.controls['lastName'].setValue(this.user.lastName);
           this.accountForm.controls['contactNumber'].setValue(this.user.contactNumber);
           this.accountForm.controls['email'].setValue(this.user.email);
-          this.accountForm.controls['dateOfBirth_DD'].setValue(newDate.getDate());
-          this.accountForm.controls['dateOfBirth_MM'].setValue(newDate.getMonth()+1);
+          this.accountForm.controls['dateOfBirth_DD'].setValue( this.pad(newDate.getDate(), 2));
+          this.accountForm.controls['dateOfBirth_MM'].setValue(this.pad(newDate.getMonth() + 1, 2));
           this.accountForm.controls['dateOfBirth_YYYY'].setValue(newDate.getFullYear());
         }
       )
