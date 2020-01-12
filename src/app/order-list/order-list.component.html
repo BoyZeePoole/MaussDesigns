@@ -13,6 +13,8 @@
             <div><b>Name:</b> {{order.comment}}</div>
             <div><b>Status:</b> {{order.orderStatus}}</div>
             <div><b>Date: </b>{{order.dateCreated}}</div>
+            <div><b>Qty: </b>{{order.quantity}}</div>
+            <div *ngIf="order.price"><b>Price: </b>{{order.price}}</div>
             <!-- <span style="padding-top: 12px;">
                 <button class="Mauss-Button mat-raised-button" (click)="delete(order.refId)">
                     Delete  
@@ -20,9 +22,9 @@
             </span> -->
         </div>
         <div class="color">
-            <img class="col" [src]="getImage(order.color1)" />
-            <img class="col" [src]="getImage(order.color2)" />
-            <img class="col" [src]="getImage(order.color3)" />
+            <img *ngIf="order.color1!=null" class="col" [src]="getImage(order.color1)" />
+            <img *ngIf="order.color2!=null" class="col" [src]="getImage(order.color2)" />
+            <img *ngIf="order.color3!=null" class="col" [src]="getImage(order.color3)" />
         </div>
         <!-- <i class="material-icons delete rest" (click)="delete(order.refId)">
             delete_forever

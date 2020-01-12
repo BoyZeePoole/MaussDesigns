@@ -56,6 +56,10 @@ export const EndPoints = {
       save : 'api/ColorWheel/add',
       delete: 'api/ColorWheel/delete'
     },
+    addressController : {
+      getAddressById: 'api/Address/getByUserId',
+      save: 'api/Address/add'
+    }
 
 };
 

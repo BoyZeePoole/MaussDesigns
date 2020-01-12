@@ -23,7 +23,7 @@ export class OrderComponent implements OnInit {
 
   selectProductId: number;
   products: any;
-
+  price: number;
 
   selectedColor: any = [];
 
@@ -57,7 +57,9 @@ export class OrderComponent implements OnInit {
       userRefId: null,
       colour1: [null],
       colour2: [null],
-      colour3: [null]
+      colour3: [null],
+      quantity: [null],
+      price: [null]
     });
     this.getProduct();
   }
@@ -69,6 +71,7 @@ export class OrderComponent implements OnInit {
       .subscribe(
         data => {
           this.products = data;
+          this.price = (data !== null) ? data[0].price : 0;
         },
         error => {
           console.log(error);
@@ -115,12 +118,15 @@ export class OrderComponent implements OnInit {
     const formModel = this.orderForm.value;
     let formData = new FormData();
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-
+    let price = this.price ? this.price.toString() : '0';
     formData.append("refid", "0");
     formData.append("userrefid", currentUser.id);
-    formData.append("comment", formModel.comment)
+    formData.append("comment", formModel.comment);
+    formData.append("quantity", formModel.quantity);
+    formData.append("price", price);
     formData.append("productRefId", this.selectProductId.toString());
-    for (var f = 0; f < this.selectedColor.length; f++) {
+    let colors = this.selectedColor.length | 0; 
+    for (var f = 0; f < colors; f++) {
       formData.append("color" + (f+1), this.selectedColor[f]);
     }
     return formData;

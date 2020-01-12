@@ -12,20 +12,20 @@ export class ProductService {
     getAll(id: any) {
         if(id !=null && id != undefined){
             let endpoint = this.root + EndPoints.productController.getProductsByGroupId;
-            return this.http.get<Product[]>(endpoint +'?id=' + id);
+            return this.http.get(endpoint +'?id=' + id);
         }
         else {
             let endpoint = this.configService.RootUrl() + EndPoints.productController.getAllProductss;
-            return this.http.get<Product[]>(endpoint);
+            return this.http.get(endpoint);
         }       
     }
     getByGroupId(id) {
         let endpoint = this.configService.RootUrl() + EndPoints.productController.getProductsByGroupId;
-        return this.http.get<Product[]>(endpoint +'?id=' + id);
+        return this.http.get(endpoint +'?id=' + id);
     }
     getById(id: number) {
         let endpoint = this.configService.RootUrl() + EndPoints.productController.getProductById;
-        return this.http.get<Product[]>(endpoint +'?id=' + id);
+        return this.http.get(endpoint +'?id=' + id);
     }
     getByTag(tag: string) {
         return this.http.get(EndPoints.productController.getProductByTag + tag);
