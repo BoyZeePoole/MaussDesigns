@@ -45,13 +45,13 @@ export class DashboardComponent implements OnInit, OnChanges {
   getImage(product) {
     if (product) {
       return `${Helper.apiServerUrl()}StaticFiles/` + product.imageName; //"https://api.mauss.co.za/StaticFiles/" + product.imageName;
-      //return "http://localhost:60076/StaticFiles/" + product.imageName;
     }
   }
   fillGridData() {
     this.gridData = new Gallery();
     this.gridData.items = [];
-    this.gridData.title = "Pépinière de Bébé";
+    this.gridData.title = "Kindergarten Gallery";
+    //this.gridData.title = "Pépinière de Bébé";
     this.gridData.link = '/home/productdetail';
 
     this.products.forEach(element => {

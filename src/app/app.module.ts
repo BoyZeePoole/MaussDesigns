@@ -23,7 +23,9 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { PubSubService} from './services/pup-sub.service';
 import { UserService } from './services/user.service';
 import { LoaderComponent } from './shared/loader/loader.component';
+
 import { LoaderService } from './services/loader.service';
+import { LoaderModule } from './shared/loader/loader.module';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,7 @@ import { LoaderService } from './services/loader.service';
     RouterModule,
     ReactiveFormsModule,
     FormsModule,
-    
+    LoaderModule
   ],
     exports:[],
   providers: [

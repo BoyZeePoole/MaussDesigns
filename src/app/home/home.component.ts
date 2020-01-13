@@ -35,6 +35,7 @@ export class HomeComponent implements OnInit, OnChanges {
   userName: string;
   groupId: any;
   showMenu: boolean = false;
+  menuText: string = 'menu';
   status = 'ONLINE'; //initializing as online by default
   isConnected = true;
   constructor(private router: Router,
@@ -68,8 +69,10 @@ export class HomeComponent implements OnInit, OnChanges {
     this.showMenu = !this.showMenu;
     if (this.showMenu) {
       this.renderer.setStyle(document.body, 'overflow', 'hidden ');
+      this.menuText = 'close';
     }
     else {
+      this.menuText = 'menu';
       this.renderer.removeStyle(document.body, "overflow");
     }
   }

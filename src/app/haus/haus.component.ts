@@ -32,7 +32,7 @@ export class HausComponent implements OnInit {
   fillGridData() {
     this.gridData = new Gallery();
     this.gridData.items = [];
-    this.gridData.title = "Haus products";
+    this.gridData.title = "Haus Gallery";
     this.gridData.link = '/home/productdetail';
 
     this.products.forEach(element => {

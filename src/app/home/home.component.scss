@@ -79,6 +79,8 @@ body .freez{
   vertical-align: middle;
   .bar-menu {
     margin-left: 12px;
+    animation: banner 1s linear;
+
     @media screen and (min-width: $break-medium) {
       display: none;
     }
@@ -100,7 +102,6 @@ body .freez{
   width: 80%;
   z-index: 100;
   top: 87px;
-  
   @media screen and (min-width: $break-medium) {
     display: none;
   }
@@ -186,4 +187,10 @@ body .freez{
     padding-left: 24px;
   }
   text-align: center;
+}
+@keyframes banner {
+  100% {
+    left: 0px;
+    transform: rotate(180deg);
+  }
 }

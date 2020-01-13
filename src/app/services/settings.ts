@@ -65,7 +65,7 @@ export const EndPoints = {
 
 export const MenuRoutes: Object[] = [{
     icon: 'icon-bird',
-    route: '/home/shop',
+    route: '/home/splash',
     title: 'About',
     sequence: 1
   }, 
@@ -90,7 +90,7 @@ export const MenuRoutes: Object[] = [{
     submenu: 1
   }, 
   {
-    icon: 'huh',
+    icon: 'icon-butterfly',
     route: '',
     title: 'Haus',
     sequence: 5,

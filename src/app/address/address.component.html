@@ -11,7 +11,7 @@
         <div class="Mauss-label" for="firstName">Street</div>
         <input class="Mauss-input" type="text" [formControl]="addressForm.controls['street']"
           placeholder="Enter your street name" /><br>
-        <div *ngIf="submitted && f.street.errors">
+        <div *ngIf="f.street.errors">
           <div class="Mauss-error" *ngIf="f.street.errors.required">street name is required</div>
         </div>
         <br>
@@ -19,8 +19,8 @@
           <div class="Mauss-label" for="town">Suburb</div>
           <input class="Mauss-input" type="text" [formControl]="addressForm.controls['town']"
             placeholder="Enter your town name" /><br>
-          <div *ngIf="submitted && f.town.errors">
-            <div class="Mauss-error" *ngIf="f.street.town.required">town name is required</div>
+          <div *ngIf="f.town.errors">
+            <div class="Mauss-error" *ngIf="f.town.errors.required">town name is required</div>
           </div>
         </div>
         <br>
@@ -28,7 +28,7 @@
           <div class="Mauss-label" for="town">City</div>
           <input class="Mauss-input" type="text" [formControl]="addressForm.controls['city']"
             placeholder="Enter your city name" /><br>
-          <div *ngIf="submitted && f.city.errors">
+          <div *ngIf="f.city.errors">
             <div class="Mauss-error" *ngIf="f.city.errors.required">City is required</div>
           </div>
         </div>
@@ -37,7 +37,7 @@
           <div class="Mauss-label" for="town">Province/State</div>
           <input class="Mauss-input" type="text" [formControl]="addressForm.controls['province']"
             placeholder="Enter your province/state name" /><br>
-          <div *ngIf="submitted && f.province.errors">
+          <div *ngIf="f.province.errors">
             <div class="Mauss-error" *ngIf="f.province.errors.required">Province/State is required</div>
           </div>
         </div>
@@ -46,7 +46,7 @@
           <div class="Mauss-label" for="town">Country</div>
           <input class="Mauss-input" type="text" [formControl]="addressForm.controls['country']"
             placeholder="Enter your country" /><br>
-          <div *ngIf="submitted && f.country.errors">
+          <div *ngIf="f.country.errors">
             <div class="Mauss-error" *ngIf="f.country.errors.required">country is required</div>
           </div>
         </div>
@@ -55,7 +55,7 @@
           <div class="Mauss-label" for="town">Postal Code</div>
           <input class="Mauss-input" type="text" [formControl]="addressForm.controls['postalcode']"
             placeholder="Enter your postalcode" /><br>
-          <div *ngIf="submitted && f.postalcode.errors">
+          <div *ngIf="f.postalcode.errors">
             <div class="Mauss-error" *ngIf="f.postalcode.errors.required">postalcode is required</div>
           </div>
         </div>

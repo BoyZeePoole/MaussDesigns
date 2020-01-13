@@ -3,12 +3,12 @@
         <li *ngFor="let item of routes" [class.sub-menu]="item.submenu == true">
             <ng-container *ngIf="item.route!=''">
                 <a class=" router-link" [routerLink]="item.route">
-                    <div *ngIf="item.icon!=''" class="social {{item.icon}}"></div>&nbsp;&nbsp;{{item.title}}
+                    <div *ngIf="item.icon!=''" class="social {{item.icon}}"></div>{{item.title}}
                 </a>
             </ng-container>
             <ng-container *ngIf="item.route==''">
                 <a class="router-link-not" >
-                    <div *ngIf="item.icon!=''" class="social {{item.icon}}"></div>&nbsp;&nbsp;{{item.title}}
+                    <div *ngIf="item.icon!=''" class="social {{item.icon}}"></div>{{item.title}}
                 </a>
             </ng-container>
 
@@ -16,22 +16,22 @@
         <ng-container *ngIf="isLoggedIn">
             <li class="mobile-only">
                 <a class="router-link" [routerLink]="['/home/wishlist']">
-                    <div class="social icon-heart"></div>&nbsp;&nbsp;My Wishlist
+                    <div class="social icon-heart"></div>My Wishlist
                 </a>
             </li>
             <li class="mobile-only">
                 <a class="router-link" [routerLink]="['/home/accountdetail']">
-                    <span>&nbsp;&nbsp;</span>My Account
+                    <span></span>My Account
                 </a>
             </li>
             <li class="mobile-only">
                 <a class="router-link" [routerLink]="['/home/address']">
-                    <span>&nbsp;&nbsp;</span>My Addresses
+                    <span></span>My Addresses
                 </a>
             </li> 
             <li class="mobile-only">
                 <a class="router-link" [routerLink]="['/home/orderlist']">
-                    <span>&nbsp;&nbsp;</span>My Orders
+                    <span></span>My Orders
                 </a>
             </li>
         </ng-container>
@@ -39,12 +39,12 @@
     <ul>
         <li *ngIf="!isLoggedIn">
             <a class="router-link" [routerLink]="['/home/registerlogin']" routerLinkActive="active">
-                <span></span>&nbsp;&nbsp;Log in / Register
+                <span></span>Log in / Register
             </a>
         </li>
         <li>
             <a *ngIf="isLoggedIn" class="router-link" [routerLink]="['/home/registerlogin']" routerLinkActive="active">
-                <span></span>&nbsp;&nbsp;Log out
+                <span></span>Log out
             </a>
         </li>
     </ul>
