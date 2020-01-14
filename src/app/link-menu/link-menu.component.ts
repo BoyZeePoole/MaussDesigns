@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, ElementRef, Renderer2, OnInit, Input } from '@angular/core';
 import { PubSubService } from '../services/pup-sub.service';
 import { UserService } from '../services/user.service';
+import { MenuRoutes } from '../services/settings';
 
 @Component({
   selector: 'app-link-menu',
@@ -9,12 +10,15 @@ import { UserService } from '../services/user.service';
 })
 export class LinkMenuComponent implements OnInit {
   routes;
+  newRoutes;
   @Input() menuData: any;
   isLoggedIn: boolean = false;
 
   constructor(private pubsubService: PubSubService,
-    private userService: UserService) {
-      this.init(this.isLoggedIn);
+    private userService: UserService,
+    private renderer: Renderer2,
+    private el: ElementRef) {
+    this.init(this.isLoggedIn);
     this.pubsubService.isLoggedIn.subscribe(
       data => {
         let currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -23,7 +27,8 @@ export class LinkMenuComponent implements OnInit {
           this.userService.getMenuByUserId(currentUser.id).subscribe(
             menu => {
               if (menu) {
-                this.routes = menu;
+                //this.routes = menu;
+                this.routes = this.createMenuTree(menu);
               }
             });
         }
@@ -31,14 +36,62 @@ export class LinkMenuComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.routes = this.menuData;
+    this.routes = this.createMenuTree(this.menuData);
     this.pubsubService.isLoggedIn.subscribe(
       data => {
-        this.init(data);    
+        this.init(data);
       });
   }
-  init(action: boolean) : void {
+  init(action: boolean): void {
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
     this.isLoggedIn = currentUser != null;//action;
   }
+  createMenuTree(menu: any) {
+    let mainMenu: Item[] = menu.filter(
+      item => {
+        return item.parentId === null;
+      });
+      mainMenu.forEach(element => {
+        element.showChildren = false;
+      });
+    let rootMenus: Menu[];
+    rootMenus = [];
+    mainMenu.forEach(element => {
+      var rootMenu: Menu = {
+        item: element,
+        items: menu.filter(
+          menuItem => {
+            return menuItem.parentId === element.refId;
+          })
+      }
+      rootMenus.push(rootMenu);
+    });
+    return rootMenus;
+  }
+  onEvent(event) {
+    event.stopPropagation();
+ }
+  menuToggle(routeMenu) {
+    routeMenu.item.showChildren = !routeMenu.item.showChildren;
+  }
+
+}
+
+
+export interface Item {
+  refId: number;
+  icon: string;
+  route: string;
+  title: string;
+  rightsId: number;
+  sequence: number;
+  active: boolean;
+  subMenu: boolean;
+  parentId?: number;
+  showChildren: boolean;
+}
+
+export interface Menu {
+  item: Item;
+  items: Item[];
 }

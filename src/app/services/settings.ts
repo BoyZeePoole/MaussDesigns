@@ -67,40 +67,52 @@ export const MenuRoutes: Object[] = [{
     icon: 'icon-bird',
     route: '/home/splash',
     title: 'About',
-    sequence: 1
+    parentId: null,
+    sequence: 1,
+    refId: 2
   }, 
   {
     icon: 'icon-pig',
     route: '',
+    parentId: null,
     title: 'Kindergarten',
-    sequence: 2
+    sequence: 2,
+    refId: 10008
   }, 
   {
     icon: 'icon-forward',
     route: '/home/dashboard/1',
     title: 'Gallery',
+    parentId: 10008,
     sequence: 3,
-    submenu: 1
+    submenu: 1,
+    refId: 3
   }, 
   {
     icon: 'icon-forward',
     route: '/home/customize',
     title: 'Create your own mobile',
+    parentId: 10008,
     sequence: 4,
-    submenu: 1
+    submenu: 1,
+    refId: 10011
   }, 
   {
     icon: 'icon-butterfly',
     route: '',
     title: 'Haus',
+    parentId: null,
     sequence: 5,
+    refId: 10010
   }, 
   {
     icon: 'icon-forward',
     route: '/home/haus/2',
     title: 'Gallery',
+    parentId: 10010,
     sequence: 6,
-    submenu: 1
+    submenu: 1,
+    refId: 5
   }
   // ,
   // {

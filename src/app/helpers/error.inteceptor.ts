@@ -21,6 +21,12 @@ export class ErrorInterceptor implements HttpInterceptor {
             if(err.status === 0){
                 error = "You are not connected to service api";
             }
+            if(err.error.Image){
+                error='';
+                err.error.Image.forEach((element: any) => {
+                    error += element;
+                });
+            }
             else{
                 error = err.error.message || err.statusText;
             }

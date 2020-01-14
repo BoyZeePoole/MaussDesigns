@@ -4,10 +4,11 @@
       On
     </div> -->
     <div *ngIf="!isConnected" class="internet-connection-off">
-        Off
-      </div>
+      Off
+    </div>
     <div class="top-header">
-      <mat-icon (click)="showmenu()" class="bar-menu" aria-hidden="false" aria-label="Example home icon">{{menuText}}</mat-icon>
+      <mat-icon (click)="showmenu()" class="bar-menu" aria-hidden="false" aria-label="Example home icon">{{menuText}}
+      </mat-icon>
       <a style="margin-left:12px;color: #000;text-decoration: none;" [routerLink]="['/home/splash']"
         routerLinkActive="active">
         <span class="icon-mauss-logo-02"></span>
@@ -28,11 +29,15 @@
     <div class="mobile-menu" *ngIf="showMenu" [@slideInOut]>
       <app-link-menu [menuData]="routes" (click)="showmenu()"></app-link-menu>
     </div>
-    <div class="overlay" *ngIf="showMenu" (click)="showmenu()" ></div>
+    <div class="overlay" *ngIf="showMenu" (click)="showmenu()"></div>
   </div>
-  <div class="middle" [@routeAnimations]="o.isActivated ? o.activatedRoute : ''">
-  <!-- <div class="middle"> -->
-    <router-outlet (activate)="onActivate($event)" #o="outlet"></router-outlet>
+  <!-- <div class="middle" [@routeAnimations]="o.isActivated ? o.activatedRoute : ''"> -->
+  <div class="middle" >
+    <div class="main">
+      <div class="word-page">
+        <router-outlet (activate)="onActivate($event)" #o="outlet"></router-outlet>
+      </div>
+    </div>
   </div>
 
   <div class="footer">

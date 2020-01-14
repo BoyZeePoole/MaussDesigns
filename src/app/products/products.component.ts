@@ -4,6 +4,7 @@ import { ProductService } from '../services/product.service';
 import { GroupService } from '../services/group.service';
 import { Group, FileList } from '../models';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { MatSnackBar } from '@angular/material';
 import { FieldStructure } from '../models';
 @Component({
   selector: 'app-products',
@@ -22,7 +23,8 @@ export class ProductsComponent implements OnInit {
   constructor(private fb: FormBuilder,
     private productService: ProductService,
     private groupService: GroupService,
-    private router: Router) {
+    private router: Router,
+    public snackBar: MatSnackBar) {
     //
   }
 
@@ -43,7 +45,9 @@ export class ProductsComponent implements OnInit {
           );
         },
         error => {
-          console.log(error);
+          this.snackBar.open(error, "🛑", {
+            duration: 2000,
+          });
         }
       );
   }
@@ -78,7 +82,9 @@ export class ProductsComponent implements OnInit {
           this.router.navigate(['/home/dashboard']);
         },
         error => {
-          console.log(error);
+          this.snackBar.open(error, null, {
+            duration: 2000,
+          });
         });
 
   }

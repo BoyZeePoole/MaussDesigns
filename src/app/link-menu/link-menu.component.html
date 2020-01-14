@@ -1,18 +1,38 @@
 <div class="link-menu">
     <ul class="topmenu">
-        <li *ngFor="let item of routes" [class.sub-menu]="item.submenu == true">
+        <!-- <li *ngFor="let item of routes" [ngClass]="{'sub-menu': item.submenu == true}">
             <ng-container *ngIf="item.route!=''">
                 <a class=" router-link" [routerLink]="item.route">
                     <div *ngIf="item.icon!=''" class="social {{item.icon}}"></div>{{item.title}}
                 </a>
             </ng-container>
             <ng-container *ngIf="item.route==''">
-                <a class="router-link-not" >
+                <a class="router-link-not">
                     <div *ngIf="item.icon!=''" class="social {{item.icon}}"></div>{{item.title}}
                 </a>
             </ng-container>
-
+        </li> -->
+        <li *ngFor="let route of routes" (click)="menuToggle(route)">
+            <ng-container *ngIf="route.item.route!=''">
+                <a class=" router-link" [routerLink]="route.item.route">
+                    <div *ngIf="route.item.icon!=''" class="social {{route.item.icon}}"></div>{{route.item.title}}
+                </a>
+            </ng-container>
+            <ng-container *ngIf="route.item.route==''">
+                <a class="router-link">
+                    <div *ngIf="route.item.icon!=''" class="social {{route.item.icon}}"></div>{{route.item.title}}
+                </a>
+            </ng-container>
+            <ul *ngIf="(route.items.length > 0 && route.item.showChildren===true)">
+                <li *ngFor="let child of route.items" class="sub-menu" (click)="onEvent($event)">
+                    <a class="router-link" [routerLink]="child.route">
+                        <div *ngIf="child.icon!=''" class="social {{child.icon}}"></div>{{child.title}}
+                    </a>
+                </li>
+            </ul>
         </li>
+
+        
         <ng-container *ngIf="isLoggedIn">
             <li class="mobile-only">
                 <a class="router-link" [routerLink]="['/home/wishlist']">
@@ -28,7 +48,7 @@
                 <a class="router-link" [routerLink]="['/home/address']">
                     <span></span>My Addresses
                 </a>
-            </li> 
+            </li>
             <li class="mobile-only">
                 <a class="router-link" [routerLink]="['/home/orderlist']">
                     <span></span>My Orders

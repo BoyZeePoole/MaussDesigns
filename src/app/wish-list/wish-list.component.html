@@ -1,20 +1,17 @@
-<div class="main">
-  <div class="word-page">
-    <div class="Mauss-Form-Title page">
-      My Wishlist
-    </div>
-    <div class="wish">
-      <div class="item" *ngFor="let product of products">
-            <img  (click)="gotoProductDetails('/home/productdetail', product.refId)" class="image" *ngIf="product.imageName.indexOf('mp4') === -1" [src]="getImage(product)" />
-            <span  (click)="gotoProductDetails('/home/productdetail', product.refId)" class="copy">{{product.description}}</span>
-        <i class="material-icons delete" (click)="delete(product.refId)">
-          delete_forever
-        </i>
-      </div>
-      <div class="item" *ngIf="products && products.length < 1">
-        <span class="image"></span>
-        <span class="no-data copy">No items to show</span>
-      </div>
-    </div>
+<div class="Mauss-Form-Title page">
+  My Wishlist
+</div>
+<div class="wish">
+  <div class="item" *ngFor="let product of products">
+    <img (click)="gotoProductDetails('/home/productdetail', product.refId)" class="image"
+      *ngIf="product.imageName.indexOf('mp4') === -1" [src]="getImage(product)" />
+    <span (click)="gotoProductDetails('/home/productdetail', product.refId)" class="copy">{{product.description}}</span>
+    <i class="material-icons delete" (click)="delete(product.refId)">
+      delete_forever
+    </i>
+  </div>
+  <div class="item" *ngIf="products && products.length < 1">
+    <span class="image"></span>
+    <span class="no-data copy">No items to show</span>
   </div>
 </div>

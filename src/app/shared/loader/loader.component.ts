@@ -26,7 +26,7 @@ export class LoaderComponent implements OnInit {
         this.diameter = 60;
       }
     });
-    this.onResize();  
+    this.onResize();
   }
   onResize(){
     this.responsiveService.checkWidth();
