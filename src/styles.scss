@@ -59,7 +59,7 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
   }
 }
 .page {
-  padding: 20px;
+  padding: 0 15px 54px 15px;
   @media screen and (min-width: $break-medium) {
     padding: 40px;
   }
@@ -70,7 +70,7 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
   font-weight: bold;
   font-size: $page-title-font-size;
   padding-top: 31px;
-  padding-bottom: 8px;
+  // padding-bottom: 8px;
 }
 .Mauss-Form-sub-Title {
   font-family: $mauss-font-main;
@@ -96,11 +96,38 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
     line-height: 30px !important;
   }
 }
+
+/* Directives*/
 .trigger{
-  // border: 1px solid green;
   padding-top: 5px;
   margin: -30px;
 }
+.trigger-right{
+  padding-top: 5px;
+  margin-left: -23px;
+}
+.search-small{
+  transition: width .5s;
+  width: 80px !important;
+}
+.search-container{
+  float: left;
+  @media screen and (min-width: $break-medium) {
+    float: right;
+    margin-right: 34px;
+  }
+}
+.search-large{
+  transition: width .5s;
+  width: 170px !important;
+  @media screen and (min-width: $break-medium) {
+    width: 300px !important;
+  }
+
+}
+
+
+/*End*/
 .Mauss-Button-Inverse {
   background-color: #000 !important;
   border-radius: 4px !important;

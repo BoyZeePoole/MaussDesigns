@@ -7,7 +7,8 @@ export class PubSubService {
     private subject = new Subject<boolean>();
     private searchstring = new Subject<string>();
     private loggedIn = new Subject<boolean>();
-
+    private globalMenu = new Subject<boolean>();
+    
     constructor() { }
 
     get isLoggedIn() : Observable<boolean>{
@@ -36,6 +37,16 @@ export class PubSubService {
     setHome(isHome: boolean): boolean {
         this.subject.next(isHome);
         return isHome;
+    }
+
+    setGlobalMenu(globalMenu: boolean): boolean{
+        this.globalMenu.next(globalMenu);
+        return globalMenu;
+    }
+
+    get globalShowMenu(): Observable<boolean>{
+        return this.globalMenu.asObservable();
+
     }
 
 }

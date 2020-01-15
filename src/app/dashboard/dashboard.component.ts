@@ -51,7 +51,6 @@ export class DashboardComponent implements OnInit, OnChanges {
     this.gridData = new Gallery();
     this.gridData.items = [];
     this.gridData.title = "Kindergarten Gallery";
-    //this.gridData.title = "Pépinière de Bébé";
     this.gridData.link = '/home/productdetail';
 
     this.products.forEach(element => {
@@ -60,6 +59,7 @@ export class DashboardComponent implements OnInit, OnChanges {
       detail.footer = element.description;
       detail.subFooter = (element.price === null) ? element.title : element.price;
       detail.imageName = element.imageName;
+      detail.tags = element.tags;
       detail.refId = element.refId;
       this.gridData.items.push(detail);
     });

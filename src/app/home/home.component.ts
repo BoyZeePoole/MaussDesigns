@@ -6,6 +6,7 @@ import { PubSubService } from '../services/pup-sub.service';
 import { fader, slideInOutAnimation } from '../animations/index';
 import { trigger, transition, animate, style } from '@angular/animations'
 import { ConnectionService } from 'ng-connection-service'
+import { ResponsiveService } from '../services/pup-sub.service';
 
 @Component({
   selector: 'app-home',
@@ -38,11 +39,13 @@ export class HomeComponent implements OnInit, OnChanges {
   menuText: string = 'menu';
   status = 'ONLINE'; //initializing as online by default
   isConnected = true;
+  isMobile: boolean = false;
   constructor(private router: Router,
     private connectionService: ConnectionService,
     private route: ActivatedRoute,
     private pubsubService: PubSubService,
     private renderer: Renderer2,
+    private responsiveService: ResponsiveService
   ) {
     this.connectionService.monitor().subscribe(isConnected => {
       this.isConnected = isConnected;
@@ -53,6 +56,13 @@ export class HomeComponent implements OnInit, OnChanges {
       }
     });
 
+    this.pubsubService.globalShowMenu.subscribe(
+      data => {
+        this.showMenu = data;
+        this.showmenu();
+      }
+    );
+    this.mobileSubscription();
   }
   ngOnChanges() {
   }
@@ -66,15 +76,17 @@ export class HomeComponent implements OnInit, OnChanges {
     }
   }
   showmenu() {
-    this.showMenu = !this.showMenu;
-    if (this.showMenu) {
-      this.renderer.setStyle(document.body, 'overflow', 'hidden ');
-      this.menuText = 'close';
-    }
-    else {
-      this.menuText = 'menu';
-      this.renderer.removeStyle(document.body, "overflow");
-    }
+    //if (this.isMobile) {
+      this.showMenu = !this.showMenu;
+      if (this.showMenu) {
+        this.renderer.setStyle(document.body, 'overflow', 'hidden ');
+        this.menuText = 'close';
+      }
+      else {
+        this.menuText = 'menu';
+        this.renderer.removeStyle(document.body, "overflow");
+      }
+    //}
   }
   onActivate(event) {
     if (event.constructor.name != "DashboardComponent") { // for example
@@ -88,5 +100,15 @@ export class HomeComponent implements OnInit, OnChanges {
       }, 16);
     }
 
+  }
+  mobileSubscription() {
+    this.responsiveService.getMobileStatus().subscribe(isMobile => {
+      if (isMobile) {
+        this.isMobile = isMobile;
+      }
+      else {
+        this.isMobile = isMobile;
+      }
+    });
   }
 }

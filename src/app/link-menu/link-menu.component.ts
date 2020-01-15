@@ -9,8 +9,8 @@ import { MenuRoutes } from '../services/settings';
   styleUrls: ['./link-menu.component.scss']
 })
 export class LinkMenuComponent implements OnInit {
-  routes;
-  newRoutes;
+  routes: Menu[];
+  newRoutes: any;
   @Input() menuData: any;
   isLoggedIn: boolean = false;
 
@@ -27,7 +27,6 @@ export class LinkMenuComponent implements OnInit {
           this.userService.getMenuByUserId(currentUser.id).subscribe(
             menu => {
               if (menu) {
-                //this.routes = menu;
                 this.routes = this.createMenuTree(menu);
               }
             });
@@ -69,10 +68,19 @@ export class LinkMenuComponent implements OnInit {
     return rootMenus;
   }
   onEvent(event) {
+    this.pubsubService.setGlobalMenu(true);
     event.stopPropagation();
  }
   menuToggle(routeMenu) {
-    routeMenu.item.showChildren = !routeMenu.item.showChildren;
+    if(routeMenu.items.length > 0){
+      routeMenu.item.showChildren = !routeMenu.item.showChildren;
+      this.pubsubService.setGlobalMenu(false);
+    }
+    else{
+      routeMenu.item.showChildren = !routeMenu.item.showChildren;
+      this.pubsubService.setGlobalMenu(true);
+    }
+    
   }
 
 }

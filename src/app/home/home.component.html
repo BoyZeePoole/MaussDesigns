@@ -17,8 +17,6 @@
     <div style="float: right">
       <app-user-menu></app-user-menu>
     </div>
-    <!-- <input class="Mauss-input" style="width:140px;" placeholder="Search" type="text" [(ngModel)]="searchText"
-      (ngModelChange)="doSearch($event)"> -->
     <br />
   </div>
   <div class="left">
@@ -27,15 +25,15 @@
     </div>
 
     <div class="mobile-menu" *ngIf="showMenu" [@slideInOut]>
-      <app-link-menu [menuData]="routes" (click)="showmenu()"></app-link-menu>
+      <app-link-menu [menuData]="routes" ></app-link-menu>
     </div>
-    <div class="overlay" *ngIf="showMenu" (click)="showmenu()"></div>
+    <div class="overlay" (click)="showmenu()" *ngIf="showMenu"></div>
   </div>
   <!-- <div class="middle" [@routeAnimations]="o.isActivated ? o.activatedRoute : ''"> -->
   <div class="middle" >
-    <div class="main">
+    <div class="main" [@slideInOut]>
       <div class="word-page">
-        <router-outlet (activate)="onActivate($event)" #o="outlet"></router-outlet>
+        <router-outlet (activate)="onActivate($event)" #o="outlet" [@routeAnimations]="o.isActivated ? o.activatedRoute : ''"></router-outlet>
       </div>
     </div>
   </div>

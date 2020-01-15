@@ -8,4 +8,5 @@ export class GalleryItems{
   imageName: string;
   footer: string;
   subFooter: string;
+  tags: string;
 }

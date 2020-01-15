@@ -24,6 +24,12 @@ $break-large: 1200px;
     margin: 0 auto;
   }
 }
+.search-title{
+  float: left;
+  @media screen and (max-width: $break-medium) {
+    float: right;
+  }
+}
 .headerArea {
   height: 100%;
   width: 186px;
@@ -78,7 +84,7 @@ $break-large: 1200px;
     margin-right: 16px;
     vertical-align: top;
     display: inline-block;
-    overflow: hidden;
+    // overflow: hidden;
     border-radius: 3px;
 
     &:hover {

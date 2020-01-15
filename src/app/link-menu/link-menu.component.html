@@ -1,26 +1,14 @@
 <div class="link-menu">
     <ul class="topmenu">
-        <!-- <li *ngFor="let item of routes" [ngClass]="{'sub-menu': item.submenu == true}">
-            <ng-container *ngIf="item.route!=''">
-                <a class=" router-link" [routerLink]="item.route">
-                    <div *ngIf="item.icon!=''" class="social {{item.icon}}"></div>{{item.title}}
-                </a>
-            </ng-container>
-            <ng-container *ngIf="item.route==''">
-                <a class="router-link-not">
-                    <div *ngIf="item.icon!=''" class="social {{item.icon}}"></div>{{item.title}}
-                </a>
-            </ng-container>
-        </li> -->
-        <li *ngFor="let route of routes" (click)="menuToggle(route)">
+        <li *ngFor="let route of routes">
             <ng-container *ngIf="route.item.route!=''">
-                <a class=" router-link" [routerLink]="route.item.route">
+                <a class=" router-link" [routerLink]="route.item.route" (click)="menuToggle(route)">
                     <div *ngIf="route.item.icon!=''" class="social {{route.item.icon}}"></div>{{route.item.title}}
                 </a>
             </ng-container>
             <ng-container *ngIf="route.item.route==''">
                 <a class="router-link">
-                    <div *ngIf="route.item.icon!=''" class="social {{route.item.icon}}"></div>{{route.item.title}}
+                    <div *ngIf="route.item.icon!=''" class="social {{route.item.icon}}" (click)="menuToggle(route)"></div>{{route.item.title}}
                 </a>
             </ng-container>
             <ul *ngIf="(route.items.length > 0 && route.item.showChildren===true)">
@@ -34,22 +22,22 @@
 
         
         <ng-container *ngIf="isLoggedIn">
-            <li class="mobile-only">
+            <li class="mobile-only" (click)="onEvent($event)">
                 <a class="router-link" [routerLink]="['/home/wishlist']">
                     <div class="social icon-heart"></div>My Wishlist
                 </a>
             </li>
-            <li class="mobile-only">
+            <li class="mobile-only" (click)="onEvent($event)">
                 <a class="router-link" [routerLink]="['/home/accountdetail']">
                     <span></span>My Account
                 </a>
             </li>
-            <li class="mobile-only">
+            <li class="mobile-only" (click)="onEvent($event)">
                 <a class="router-link" [routerLink]="['/home/address']">
                     <span></span>My Addresses
                 </a>
             </li>
-            <li class="mobile-only">
+            <li class="mobile-only" (click)="onEvent($event)">
                 <a class="router-link" [routerLink]="['/home/orderlist']">
                     <span></span>My Orders
                 </a>

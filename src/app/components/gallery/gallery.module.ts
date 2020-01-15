@@ -7,6 +7,8 @@ import { MouseModule } from '../../shared/mouse/mouse.module';
 import { WaveModule } from '../../shared/wave/wave.module';
 import { BubblesModule } from '../../shared/bubbles/bubbles.module';
 import { GalleryComponent } from './gallery.component';
+import { SearchDirective } from '../../shared/search.directive';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -16,13 +18,15 @@ import { GalleryComponent } from './gallery.component';
     SnowModule,
     MouseModule,
     WaveModule,
-    BubblesModule
+    BubblesModule,
+    FormsModule
   ],
   exports:[
     GalleryComponent
   ],
   declarations: [
-    GalleryComponent
+    GalleryComponent,
+    SearchDirective
   ],
   providers: [
   ]
