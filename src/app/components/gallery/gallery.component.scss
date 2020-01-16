@@ -40,8 +40,8 @@ $break-large: 1200px;
 }
 .poloriod {
   position: relative;
-  // animation: fadein 1s;
   width: 160px;
+  transition: left 0.3s;
   background: #fff;
   border-radius: 3px;
   text-align: center;
@@ -63,11 +63,11 @@ $break-large: 1200px;
         color: $product-sub-title-color;
         font-size: $product-sub-title-font-size;
     }
-    // border-top: 1px solid #f4f4f4;
   }
   img {
     width: 160px;
     height: 160px;
+    border-radius: 3px 3px 0px 0px;
   }
   video {
     width: 160px;
@@ -84,7 +84,6 @@ $break-large: 1200px;
     margin-right: 16px;
     vertical-align: top;
     display: inline-block;
-    // overflow: hidden;
     border-radius: 3px;
 
     &:hover {
@@ -132,7 +131,6 @@ $break-large: 1200px;
 .top-anima {
   animation: banner 30s infinite linear;
   position: relative;
-  //border: 1px solid #000;
   width: 80px;
   height: 92px;
   float: left;

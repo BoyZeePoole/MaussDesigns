@@ -102,6 +102,8 @@ body .freez{
   width: 80%;
   z-index: 100;
   top: 87px;
+  left: -600px;
+  transition: all 0.5s;
   @media screen and (min-width: $break-medium) {
     display: none;
   }
@@ -188,9 +190,10 @@ body .freez{
   }
   text-align: center;
 }
-@keyframes banner {
-  100% {
-    left: 0px;
-    transform: rotate(180deg);
-  }
+@-webkit-keyframes slide {
+  100% { left: 0; }
+}
+
+@keyframes slide {
+  100% { left: 0; }
 }

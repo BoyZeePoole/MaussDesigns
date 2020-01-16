@@ -6,7 +6,7 @@
   </div>
 </div>
 <div class="grid" *ngIf="gridData">
-  <div class="poloriod" *ngFor="let item of (gridData.items | filter: searchText)">
+  <div [@fadeAnimation] class="poloriod" *ngFor="let item of (gridData.items | filter: searchText)">
     <a (click)="gotoDetail(gridData.link, item.refId)" class="category-link">
       <div class="Like-link"><span class="icon-heart"></span></div>
       <img *ngIf="item.imageName.indexOf('mp4') === -1" [src]="getImage(item)" />

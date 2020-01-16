@@ -2,42 +2,40 @@
     <ul class="topmenu">
         <li *ngFor="let route of routes">
             <ng-container *ngIf="route.item.route!=''">
-                <a class=" router-link" [routerLink]="route.item.route" (click)="menuToggle(route)">
+                <a class=" router-link" [routerLink]="route.item.route" (click)="menuToggle()">
                     <div *ngIf="route.item.icon!=''" class="social {{route.item.icon}}"></div>{{route.item.title}}
                 </a>
             </ng-container>
             <ng-container *ngIf="route.item.route==''">
-                <a class="router-link">
-                    <div *ngIf="route.item.icon!=''" class="social {{route.item.icon}}" (click)="menuToggle(route)"></div>{{route.item.title}}
+                <a class="router-link box" #box (click)="doTree(box)">
+                    <div *ngIf="route.item.icon!=''" class="social {{route.item.icon}}" ></div>{{route.item.title}}
                 </a>
             </ng-container>
-            <ul *ngIf="(route.items.length > 0 && route.item.showChildren===true)">
-                <li *ngFor="let child of route.items" class="sub-menu" (click)="onEvent($event)">
+            <ul class="nested" >
+                <li *ngFor="let child of route.items" class="sub-menu" (click)="menuToggle()">
                     <a class="router-link" [routerLink]="child.route">
                         <div *ngIf="child.icon!=''" class="social {{child.icon}}"></div>{{child.title}}
                     </a>
                 </li>
             </ul>
         </li>
-
-        
         <ng-container *ngIf="isLoggedIn">
-            <li class="mobile-only" (click)="onEvent($event)">
+            <li class="mobile-only" (click)="menuToggle()">
                 <a class="router-link" [routerLink]="['/home/wishlist']">
                     <div class="social icon-heart"></div>My Wishlist
                 </a>
             </li>
-            <li class="mobile-only" (click)="onEvent($event)">
+            <li class="mobile-only" (click)="menuToggle()">
                 <a class="router-link" [routerLink]="['/home/accountdetail']">
                     <span></span>My Account
                 </a>
             </li>
-            <li class="mobile-only" (click)="onEvent($event)">
+            <li class="mobile-only" (click)="menuToggle()">
                 <a class="router-link" [routerLink]="['/home/address']">
                     <span></span>My Addresses
                 </a>
             </li>
-            <li class="mobile-only" (click)="onEvent($event)">
+            <li class="mobile-only" (click)="menuToggle()">
                 <a class="router-link" [routerLink]="['/home/orderlist']">
                     <span></span>My Orders
                 </a>
@@ -45,7 +43,7 @@
         </ng-container>
     </ul>
     <ul>
-        <li *ngIf="!isLoggedIn">
+        <li *ngIf="!isLoggedIn" (click)="menuToggle()">
             <a class="router-link" [routerLink]="['/home/registerlogin']" routerLinkActive="active">
                 <span></span>Log in / Register
             </a>

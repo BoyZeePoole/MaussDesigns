@@ -9,6 +9,7 @@ import { BubblesModule } from '../../shared/bubbles/bubbles.module';
 import { GalleryComponent } from './gallery.component';
 import { SearchDirective } from '../../shared/search.directive';
 import { FormsModule } from '@angular/forms';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     MouseModule,
     WaveModule,
     BubblesModule,
-    FormsModule
+    FormsModule,
+    // BrowserAnimationsModule
   ],
   exports:[
     GalleryComponent

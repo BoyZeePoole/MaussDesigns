@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+// import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
@@ -38,7 +38,7 @@ import { LoaderModule } from './shared/loader/loader.module';
     LoaderComponent,
   ],
   imports: [
-    BrowserModule,
+    // BrowserModule,
     MaterialModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -46,7 +46,7 @@ import { LoaderModule } from './shared/loader/loader.module';
     RouterModule,
     ReactiveFormsModule,
     FormsModule,
-    LoaderModule
+    LoaderModule,
   ],
     exports:[],
   providers: [
@@ -62,7 +62,7 @@ import { LoaderModule } from './shared/loader/loader.module';
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
-    {provide: LocationStrategy, useClass: HashLocationStrategy}
+    //{provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
 })

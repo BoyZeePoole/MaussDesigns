@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, Renderer2, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnChanges, Renderer2, ElementRef } from '@angular/core';
 import { MenuRoutes } from '../services/settings';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ApplicationSettings } from '../services/settings';
@@ -45,7 +45,8 @@ export class HomeComponent implements OnInit, OnChanges {
     private route: ActivatedRoute,
     private pubsubService: PubSubService,
     private renderer: Renderer2,
-    private responsiveService: ResponsiveService
+    private responsiveService: ResponsiveService,
+    private elementRef: ElementRef
   ) {
     this.connectionService.monitor().subscribe(isConnected => {
       this.isConnected = isConnected;
@@ -76,14 +77,16 @@ export class HomeComponent implements OnInit, OnChanges {
     }
   }
   showmenu() {
-    //if (this.isMobile) {
       this.showMenu = !this.showMenu;
+      let mobileMenu = this.elementRef.nativeElement.querySelector(".mobile-menu");
       if (this.showMenu) {
         this.renderer.setStyle(document.body, 'overflow', 'hidden ');
+        mobileMenu.style.left ="0px";
         this.menuText = 'close';
       }
       else {
         this.menuText = 'menu';
+        mobileMenu.style.left ="-600px";
         this.renderer.removeStyle(document.body, "overflow");
       }
     //}

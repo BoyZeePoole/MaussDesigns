@@ -71,16 +71,12 @@ export class LinkMenuComponent implements OnInit {
     this.pubsubService.setGlobalMenu(true);
     event.stopPropagation();
  }
-  menuToggle(routeMenu) {
-    if(routeMenu.items.length > 0){
-      routeMenu.item.showChildren = !routeMenu.item.showChildren;
-      this.pubsubService.setGlobalMenu(false);
-    }
-    else{
-      routeMenu.item.showChildren = !routeMenu.item.showChildren;
-      this.pubsubService.setGlobalMenu(true);
-    }
-    
+  menuToggle() {
+    this.pubsubService.setGlobalMenu(true);    
+  }
+
+  doTree(box: Element){
+    box.parentElement.querySelector(".nested").classList.toggle("active");
   }
 
 }

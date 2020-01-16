@@ -24,14 +24,14 @@
       <app-link-menu [menuData]="routes"></app-link-menu>
     </div>
 
-    <div class="mobile-menu" *ngIf="showMenu" [@slideInOut]>
+    <div class="mobile-menu"  [@slideInOut]>
       <app-link-menu [menuData]="routes" ></app-link-menu>
     </div>
     <div class="overlay" (click)="showmenu()" *ngIf="showMenu"></div>
   </div>
   <!-- <div class="middle" [@routeAnimations]="o.isActivated ? o.activatedRoute : ''"> -->
   <div class="middle" >
-    <div class="main" [@slideInOut]>
+    <div class="main">
       <div class="word-page">
         <router-outlet (activate)="onActivate($event)" #o="outlet" [@routeAnimations]="o.isActivated ? o.activatedRoute : ''"></router-outlet>
       </div>
