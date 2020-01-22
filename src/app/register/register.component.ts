@@ -1,11 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { AlertService } from '../services/alert.service';
 import { UserService } from '../services/user.service';
 import { MustMatch } from '../directives/custom.validators';
 import { MatSnackBar } from '@angular/material';
+import { CaptchaRequest } from '../models';
+
+declare var grecaptcha: any;
 
 @Component({
     selector: 'app-register',
@@ -14,10 +17,12 @@ import { MatSnackBar } from '@angular/material';
 })
 export class RegisterComponent implements OnInit {
     registerForm: FormGroup;
+    siteKey: string = '6LfKrNAUAAAAAPnGRnP1vGgV8FuNegGsj4Jd_A7h';
     loading = false;
     submitted = false;
     dontMatch = false;
     returnUrl: string;
+    captchaRequest: CaptchaRequest = new CaptchaRequest();
     constructor(
         private formBuilder: FormBuilder,
         private router: Router,
@@ -36,17 +41,70 @@ export class RegisterComponent implements OnInit {
             contactNumber: [],
             email: ['', Validators.required],
             password: ['', [Validators.required, Validators.minLength(6)]],
-            password2: ['', Validators.required]
+            password2: ['', Validators.required],
+            recaptcha: ['', Validators.required]
         }, {
             validator: MustMatch('password', 'password2')
         });
+
+
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '';
+        this.addScript();
     }
 
+    addScript() {
+        const url = 'https://www.google.com/recaptcha/api.js?render=' + this.siteKey;
+        if (!document.querySelector(`script[src='${url}']`)) {
+            let script = document.createElement('script');
+            script.src = url;
+            script.async = false;
+            script.defer = true;
+            document.body.appendChild(script);
+        }
+    }
     // convenience getter for easy access to form fields
     get f() { return this.registerForm.controls; }
 
+
+    getCaptcha() {
+        this.submitted = true;
+        if (this.registerForm.invalid) {
+            return;
+        }
+        grecaptcha.ready(() => {
+            grecaptcha.execute(this.siteKey, { action: 'home' })
+                .then((token) => {
+                    this.captchaRequest.remoteIp = '';
+                    this.captchaRequest.secret = '';
+                    this.captchaRequest.response = token;
+                    console.log(token);
+                    this.verifyCaptcha();
+                });
+        });
+    }
+    
+    verifyCaptcha(){
+        this.userService.verifyUser(this.captchaRequest)
+            .pipe(first())
+            .subscribe(
+                data => {
+                    // this.snackBar.open('successful', null, {
+                    //     duration: 2000,
+                    // });
+                    // console.log(data);
+                    if(data.success == true){
+                        this.onSubmit();
+                    }
+                },
+                error => {
+                    this.snackBar.open(error, null, {
+                        duration: 2000,
+                    });
+                });
+    }
+
     onSubmit() {
+        //this.getCaptcha();
         this.submitted = true;
 
         // stop here if form is invalid
@@ -80,4 +138,5 @@ export class RegisterComponent implements OnInit {
                     this.loading = false;
                 });
     }
+
 }

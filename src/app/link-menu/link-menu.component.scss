@@ -21,6 +21,7 @@
 .social{
   float: left;
   padding-right: 12px;
+  width: 20px;
 }
 .link-menu {
   vertical-align: middle;
@@ -28,6 +29,10 @@
   border-bottom-left-radius : 4px;
   border-bottom-right-radius : 4px;
   padding: 5px 0 20px 14px;
+
+  transition: all 0.5s;
+
+  
   font-size: $menu-left-font-size;
   a {
     color: #fff;
@@ -46,6 +51,7 @@
     }
     .social{
       float: left;
+      width: 20px;
     }
   }
   
@@ -62,13 +68,22 @@
     padding: 0 0 21px;
     overflow: visible;
     border-bottom: 1px solid #e6e6e6;
-
+    transition: all 0.5s;
     li {
       outline: none;
+      position: relative;
     }
    }
 }
-
+.expander {
+  float: right;
+  padding-right: 5px;
+  padding-left: 5px;
+  transition: transform 0.5s;
+}
+.rotate-down{
+  transform: rotate(90deg);
+}
 .social-container {
   padding-top: 12px;
   font-size: 12px;
@@ -92,6 +107,7 @@
 }
 .sub-menu{
   padding-left: 32px;
+  transition: display 0.5s;
 }
 
 .box {
@@ -101,10 +117,14 @@
   -ms-user-select: none; /* IE 10+ */
   user-select: none;
 }
-.nested {
+.nested li a {
   display: none;
+  transition: all .1s ease-in-out;
+  line-height: 0;
 }
 
-.active {
+.active li a {
   display: block;
+  transition: all .1s ease-in-out;
+  line-height: 1;
 }

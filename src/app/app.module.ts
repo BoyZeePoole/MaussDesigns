@@ -23,10 +23,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { PubSubService} from './services/pup-sub.service';
 import { UserService } from './services/user.service';
 import { LoaderComponent } from './shared/loader/loader.component';
-
 import { LoaderService } from './services/loader.service';
 import { LoaderModule } from './shared/loader/loader.module';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +45,7 @@ import { LoaderModule } from './shared/loader/loader.module';
     ReactiveFormsModule,
     FormsModule,
     LoaderModule,
+
   ],
     exports:[],
   providers: [
@@ -62,7 +61,8 @@ import { LoaderModule } from './shared/loader/loader.module';
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
-    //{provide: LocationStrategy, useClass: HashLocationStrategy}
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
+   
   ],
   bootstrap: [AppComponent]
 })

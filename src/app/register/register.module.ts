@@ -6,12 +6,14 @@ import { ConfigurationService } from '../services/config.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AlertService } from '../services/alert.service';
 import { UserService } from '../services/user.service';
+import { RecaptchaDirectiveModule  } from 'spaier-ng-recaptcha';
 @NgModule({
   imports: [
     CommonModule,
     routing,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    RecaptchaDirectiveModule
   ],
   declarations: [],
   //exports: [RegisterComponent],
@@ -19,7 +21,8 @@ import { UserService } from '../services/user.service';
     UserService,
     AlertService,
     HttpClientModule,
-    ConfigurationService
+    ConfigurationService,
+    
   ]
 })
 export class RegisterModule { }

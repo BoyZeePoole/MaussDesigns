@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User, UserExtended } from '../models/user';
+import { User, UserExtended, CaptchaRequest } from '../models/user';
 import { EndPoints } from './settings';
 import { ConfigurationService } from './config.service';
 
@@ -39,5 +39,9 @@ export class UserService {
     updateAccount(user: UserExtended){
         let endpoint = this.configService.RootUrl() + EndPoints.userController.updateAccount
         return this.http.post<any>(endpoint, user);
+    }
+    verifyUser(token: CaptchaRequest){
+        let endpoint = this.configService.RootUrl() + EndPoints.verifyController.verifyUser
+        return this.http.post<any>(endpoint, token);
     }
 }

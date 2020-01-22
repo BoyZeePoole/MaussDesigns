@@ -1,20 +1,26 @@
 <div class="link-menu">
     <ul class="topmenu">
         <li *ngFor="let route of routes">
+            
             <ng-container *ngIf="route.item.route!=''">
                 <a class=" router-link" [routerLink]="route.item.route" (click)="menuToggle()">
-                    <div *ngIf="route.item.icon!=''" class="social {{route.item.icon}}"></div>{{route.item.title}}
+                    <div *ngIf="route.item.icon!=''" class="social {{route.item.icon}}"></div>
+                    {{route.item.title}}
                 </a>
             </ng-container>
             <ng-container *ngIf="route.item.route==''">
                 <a class="router-link box" #box (click)="doTree(box)">
-                    <div *ngIf="route.item.icon!=''" class="social {{route.item.icon}}" ></div>{{route.item.title}}
+                    <div *ngIf="route.item.icon!=''" class="social {{route.item.icon}}" ></div>
+                    {{route.item.title}}
+                    <div class="expander icon-cheveron-right"></div>
                 </a>
             </ng-container>
+
+
             <ul class="nested" >
                 <li *ngFor="let child of route.items" class="sub-menu" (click)="menuToggle()">
                     <a class="router-link" [routerLink]="child.route">
-                        <div *ngIf="child.icon!=''" class="social {{child.icon}}"></div>{{child.title}}
+                        <div *ngIf="child.icon!=''" class="social"></div>{{child.title}}
                     </a>
                 </li>
             </ul>

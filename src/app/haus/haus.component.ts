@@ -41,6 +41,8 @@ export class HausComponent implements OnInit {
       detail.footer = element.description;
       detail.subFooter = (element.price === null) ? element.title : element.price;
       detail.imageName = element.imageName;
+      detail.tags = element.tags;
+
       detail.refId = element.refId;
       this.gridData.items.push(detail);
     });

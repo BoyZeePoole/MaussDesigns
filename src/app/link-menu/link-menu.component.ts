@@ -77,6 +77,7 @@ export class LinkMenuComponent implements OnInit {
 
   doTree(box: Element){
     box.parentElement.querySelector(".nested").classList.toggle("active");
+    box.querySelector(".icon-cheveron-right").classList.toggle("rotate-down");
   }
 
 }

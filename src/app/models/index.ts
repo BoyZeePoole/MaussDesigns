@@ -6,3 +6,4 @@ export { FieldStructure } from './fieldsStructure';
 export { FileList } from './fileList';
 export { Customize } from './customize';
 export { ColorWheel } from './color-wheel';
+export { CaptchaRequest } from './user';

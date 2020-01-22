@@ -40,7 +40,7 @@ body .freez{
   @media screen and (min-width: $break-large) {
     position: relative;
     padding-top: 12px;
-    padding-left: 116px;
+    padding-left: 80px;
     vertical-align: middle;
     grid-area: header;
     background: #ffffff;
@@ -190,6 +190,7 @@ body .freez{
   }
   text-align: center;
 }
+
 @-webkit-keyframes slide {
   100% { left: 0; }
 }

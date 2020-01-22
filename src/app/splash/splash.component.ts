@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./splash.component.scss']
 })
 export class SplashComponent implements OnInit {
-
+  imageUrlArray = [
+    "../../assets/banner/slider_images_1.png",
+    "../../assets/banner/slider_images_2.png",
+    "../../assets/banner/slider_images_3.png"
+]; 
   constructor() { }
-
+  
   ngOnInit() {
   }
 

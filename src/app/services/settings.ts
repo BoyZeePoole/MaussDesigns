@@ -59,6 +59,9 @@ export const EndPoints = {
     addressController : {
       getAddressById: 'api/Address/getByUserId',
       save: 'api/Address/add'
+    },
+    verifyController : {
+      verifyUser: 'api/Verify/VerifyUser'
     }
 
 };

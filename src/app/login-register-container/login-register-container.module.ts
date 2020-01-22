@@ -15,6 +15,8 @@ import { FormService } from '../services/form.service';
 import { DynamicFormBuilderModule } from '../dynamic-form-builder/dynamic-form-builder.module';
 import { SnowModule } from '../shared/snow/snow.module';
 import { PasswordDirective } from '../shared/password-app.directive';
+import { GoogleCaptchaDirective } from '../shared/google-captcha.directive';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -29,7 +31,8 @@ import { PasswordDirective } from '../shared/password-app.directive';
     LoginRegisterContainerComponent,
     LoginComponent,
     RegisterComponent,
-    PasswordDirective
+    PasswordDirective,
+    GoogleCaptchaDirective
 ],
   providers : [
     AuthenticationService,

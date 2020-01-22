@@ -9,6 +9,7 @@ import { MouseModule } from '../shared/mouse/mouse.module';
 import { WaveModule } from '../shared/wave/wave.module';
 import { BubblesModule } from '../shared/bubbles/bubbles.module';
 import { GalleryModule } from '../components/gallery/gallery.module';
+import {SlideshowModule} from 'ng-simple-slideshow';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { GalleryModule } from '../components/gallery/gallery.module';
     MouseModule,
     WaveModule,
     BubblesModule,
-    GalleryModule
+    GalleryModule,
+    SlideshowModule
   ],
   declarations: [
     DashboardComponent,
