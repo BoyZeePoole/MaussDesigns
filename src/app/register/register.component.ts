@@ -41,8 +41,7 @@ export class RegisterComponent implements OnInit {
             contactNumber: [],
             email: ['', Validators.required],
             password: ['', [Validators.required, Validators.minLength(6)]],
-            password2: ['', Validators.required],
-            recaptcha: ['', Validators.required]
+            password2: ['', Validators.required]
         }, {
             validator: MustMatch('password', 'password2')
         });
