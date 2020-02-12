@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { first } from 'rxjs/operators';
@@ -7,6 +7,7 @@ import { UserService } from '../services/user.service';
 import { MustMatch } from '../directives/custom.validators';
 import { MatSnackBar } from '@angular/material';
 import { CaptchaRequest } from '../models';
+// import { threadId } from 'worker_threads';
 
 declare var grecaptcha: any;
 
@@ -15,7 +16,7 @@ declare var grecaptcha: any;
     templateUrl: './register.component.html',
     styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent implements OnInit, OnDestroy {
     registerForm: FormGroup;
     siteKey: string = '6LfKrNAUAAAAAPnGRnP1vGgV8FuNegGsj4Jd_A7h';
     loading = false;
@@ -51,6 +52,10 @@ export class RegisterComponent implements OnInit {
         this.addScript();
     }
 
+    ngOnDestroy() {
+        this.removeScript();
+    }
+
     addScript() {
         const url = 'https://www.google.com/recaptcha/api.js?render=' + this.siteKey;
         if (!document.querySelector(`script[src='${url}']`)) {
@@ -60,6 +65,14 @@ export class RegisterComponent implements OnInit {
             script.defer = true;
             document.body.appendChild(script);
         }
+    }
+    removeScript(){
+        const url = 'https://www.google.com/recaptcha/api.js?render=' + this.siteKey;
+        if (document.querySelector(`script[src='${url}']`)) {
+            let script = document.querySelector(`script[src='${url}']`);
+            document.body.removeChild(script);
+        }
+
     }
     // convenience getter for easy access to form fields
     get f() { return this.registerForm.controls; }
@@ -76,7 +89,7 @@ export class RegisterComponent implements OnInit {
                     this.captchaRequest.remoteIp = '';
                     this.captchaRequest.secret = '';
                     this.captchaRequest.response = token;
-                    console.log(token);
+                    // console.log(token);
                     this.verifyCaptcha();
                 });
         });
@@ -87,10 +100,6 @@ export class RegisterComponent implements OnInit {
             .pipe(first())
             .subscribe(
                 data => {
-                    // this.snackBar.open('successful', null, {
-                    //     duration: 2000,
-                    // });
-                    // console.log(data);
                     if(data.success == true){
                         this.onSubmit();
                     }
@@ -121,8 +130,8 @@ export class RegisterComponent implements OnInit {
             .pipe(first())
             .subscribe(
                 data => {
-                    this.alertService.success('Registration successful', true);
-                    this.snackBar.open('Registration successful', null, {
+                    this.alertService.success('Registration successful, please check your email for verification', true);
+                    this.snackBar.open('Registration successful, please check your email for verification', null, {
                         duration: 2000,
                     });
                     this.loading = false;

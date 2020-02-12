@@ -30,22 +30,14 @@
     </div>
     <div class="wishlist">
       <div class="social-container-footer">
-        <!-- <fb-like></fb-like> -->
         <app-facebook layout="standard" width="{{screenSize}}"></app-facebook>
-        <!-- <a href="https://www.facebook.com/maussdesigns" target="_new">
-                <span class="icon-facebook"></span>
-              </a>
-              <a href="https://www.instagram.com/maussdesigns/?hl=en" target="_new">
-                <span class="icon-instagram"></span>
-              </a>
-              <span class="icon-pinterest2"></span> -->
         <br><br>
       </div>
     </div>
   </div>
   <div class="photo">
     <ul>
-      <li *ngFor="let product of products">
+      <li  *ngFor="let product of products">
         <img (click)="changeImg(product)" *ngIf="product.imageName.indexOf('mp4') === -1" class="thumbnail"
           [src]="getImage(product)" />
         <video *ngIf="product.imageName.indexOf('mp4') !== -1" style="width: 90px; height: 90px;" controls>

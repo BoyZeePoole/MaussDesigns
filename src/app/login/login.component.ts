@@ -2,10 +2,14 @@ import { Component, OnInit, Input, ViewChild, QueryList, ElementRef } from '@ang
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, Form, NgForm } from '@angular/forms';
 import { first } from 'rxjs/operators';
-
+import { UserService } from '../services/user.service';
 import { AlertService } from '../services/alert.service';
 import { AuthenticationService } from '../services/authentication.service';
 import {MatSnackBar} from '@angular/material';
+import { CaptchaRequest } from '../models';
+
+
+declare var grecaptcha: any;
 
 @Component({
     selector: 'app-login',
@@ -24,6 +28,8 @@ export class LoginComponent implements OnInit {
     // @ViewChild('password', {static: false}) passwordField: ElementRef;
     // @ViewChild('trigger', {static: false}) iconField: ElementRef;
     icon: string = "icon-eye trigger";
+    captchaRequest: CaptchaRequest = new CaptchaRequest();
+    siteKey: string = '6LfKrNAUAAAAAPnGRnP1vGgV8FuNegGsj4Jd_A7h';
     constructor(
         // private el: ElementRef,
         private formBuilder: FormBuilder,
@@ -31,6 +37,7 @@ export class LoginComponent implements OnInit {
         private router: Router,
         private authenticationService: AuthenticationService,
         public snackBar: MatSnackBar,
+        private userService:UserService,
         private alertService: AlertService) { }
 
     ngOnInit() {
@@ -49,6 +56,38 @@ export class LoginComponent implements OnInit {
     get f() { return this.loginForm.controls; }
     getFields() {
         return this.fields;
+    }
+    getCaptcha() {
+        this.submitted = true;
+        if (this.loginForm.invalid) {
+            return;
+        }
+        grecaptcha.ready(() => {
+            grecaptcha.execute(this.siteKey, { action: 'home' })
+                .then((token) => {
+                    this.captchaRequest.remoteIp = '';
+                    this.captchaRequest.secret = '';
+                    this.captchaRequest.response = token;
+                    // console.log(token);
+                    this.verifyCaptcha();
+                });
+        });
+    }
+    
+    verifyCaptcha(){
+        this.userService.verifyUser(this.captchaRequest)
+            .pipe(first())
+            .subscribe(
+                data => {
+                    if(data.success == true){
+                        this.onSubmit();
+                    }
+                },
+                error => {
+                    this.snackBar.open(error, null, {
+                        duration: 2000,
+                    });
+                });
     }
     onSubmit() {
         this.submitted = true;
