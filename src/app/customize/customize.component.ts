@@ -27,7 +27,7 @@ export class CustomizeComponent implements OnInit {
   selectedColor: any = [];
 
   // @ViewChild('fileInput') fileInput: ElementRef;
-  @ViewChild('fileInput', {static: false}) fileInput: ElementRef;
+  @ViewChild('fileInput') fileInput: ElementRef;
   color:any;
   color1:any;
   color2:any;

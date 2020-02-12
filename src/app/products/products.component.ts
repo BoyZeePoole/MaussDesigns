@@ -19,7 +19,7 @@ export class ProductsComponent implements OnInit {
   group: Group[] = [];
   filesSelected: boolean = false;
   fields: FieldStructure[] = [];
-  @ViewChild('fileInput', { static: false }) fileInput: ElementRef;
+  @ViewChild('fileInput') fileInput: ElementRef;
   constructor(private fb: FormBuilder,
     private productService: ProductService,
     private groupService: GroupService,
