@@ -1,9 +1,8 @@
 $break-small: 320px;
 $break-medium: 600px;
 $break-large: 1200px;
-@import "../../fonts.scss";
-@import  "../../variables.scss";
-
+@import "../../app/fonts.scss";
+@import "../variables.scss";
 
 .grid {
   display: grid;
@@ -24,30 +23,23 @@ $break-large: 1200px;
     margin: 0 auto;
   }
 }
-.search-title{
-  float: left;
-  @media screen and (max-width: $break-medium) {
-    float: right;
-  }
-}
 .headerArea {
   height: 100%;
   width: 186px;
-  background: transparent url(../../../assets/TopFrame.png);
+  background: transparent url(../../assets/TopFrame.png);
   background-repeat: no-repeat;
   background-size: 1188px 186px;
   background-blend-mode: lighten;
 }
 .poloriod {
   position: relative;
+  // animation: fadein 1s;
   width: 160px;
-  transition: left 0.3s;
   background: #fff;
-  // border-radius: 3px;
+  border-radius: 3px;
   text-align: center;
-  // -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-  // box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-  transition: all 200ms ease-in-out 0s;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   .footer {
     display: table-cell;
     font-weight: 300;
@@ -64,11 +56,11 @@ $break-large: 1200px;
         color: $product-sub-title-color;
         font-size: $product-sub-title-font-size;
     }
+    // border-top: 1px solid #f4f4f4;
   }
   img {
     width: 160px;
     height: 160px;
-    // border-radius: 3px 3px 0px 0px;
   }
   video {
     width: 160px;
@@ -80,12 +72,13 @@ $break-large: 1200px;
   @media screen and (min-width: $break-medium) {
     width: 186px;
     background: #fff;
-    // -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-    // box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
     margin-right: 16px;
     vertical-align: top;
     display: inline-block;
-    // border-radius: 3px;
+    // overflow: hidden;
+    border-radius: 3px;
 
     &:hover {
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.24);
@@ -132,6 +125,7 @@ $break-large: 1200px;
 .top-anima {
   animation: banner 30s infinite linear;
   position: relative;
+  //border: 1px solid #000;
   width: 80px;
   height: 92px;
   float: left;

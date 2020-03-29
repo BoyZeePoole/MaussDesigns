@@ -100,23 +100,23 @@ export const MenuRoutes: Object[] = [{
     submenu: 1,
     refId: 10011
   }, 
-  {
-    icon: 'icon-butterfly',
-    route: '',
-    title: 'Haus',
-    parentId: null,
-    sequence: 5,
-    refId: 10010
-  }, 
-  {
-    icon: 'icon-forward',
-    route: '/home/haus/2',
-    title: 'Gallery',
-    parentId: 10010,
-    sequence: 6,
-    submenu: 1,
-    refId: 5
-  }
+  // {
+  //   icon: 'icon-butterfly',
+  //   route: '',
+  //   title: 'Haus',
+  //   parentId: null,
+  //   sequence: 5,
+  //   refId: 10010
+  // }, 
+  // {
+  //   icon: 'icon-forward',
+  //   route: '/home/haus/2',
+  //   title: 'Gallery',
+  //   parentId: 10010,
+  //   sequence: 6,
+  //   submenu: 1,
+  //   refId: 5
+  // }
   // ,
   // {
   //   icon: 'Customize',

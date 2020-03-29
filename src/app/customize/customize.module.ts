@@ -4,7 +4,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CustomizeComponent } from './customize.component';
 import {MaterialModule} from '../app.material.module';
 import { routing } from './customize.routing';
-import { ColorPickerModule } from 'ngx-color-picker';
 import { CustomizeService} from '../services/customize.service';
 import { DialogDialog } from './customize.component';
 import { ColorWheelService } from '../services/color.service';
@@ -16,7 +15,6 @@ import { SnowModule } from '../shared/snow/snow.module';
     routing,
     ReactiveFormsModule,
     FormsModule,
-    ColorPickerModule,
     SnowModule
   ],
   entryComponents: [DialogDialog],
