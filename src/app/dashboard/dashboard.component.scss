@@ -5,7 +5,7 @@ $break-large: 1200px;
 @import "../variables.scss";
 
 .imm{
-  
+  width: 100%;
   @media screen and (max-width: $break-medium) {
     width: 100%;
   }

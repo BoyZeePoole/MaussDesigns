@@ -1,21 +1,21 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FilterPipe } from './filter.pipe';
+import { EvenOddPipe } from './even-odd.pipe';
 @NgModule({
   imports: [
     CommonModule,
   ],
   declarations: [
-    FilterPipe,
+    EvenOddPipe
   ],
-  exports: [FilterPipe],
+  exports: [EvenOddPipe],
   providers: [
   ]
 })
-export class FilterPipeModule {
-  static forRoot(): ModuleWithProviders<FilterPipe> {
+export class EvenOddPipeModule {
+  static forRoot(): ModuleWithProviders<EvenOddPipe> {
     return {
-        ngModule: FilterPipe,
+        ngModule: EvenOddPipe,
         providers: [],
     };
 }

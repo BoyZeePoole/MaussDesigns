@@ -6,7 +6,23 @@
   </div>
 </div>
 <div class="grid" *ngIf="gridData">
-  <div  class="poloriod" *ngFor="let item of (gridData.items | filter: searchText)">
+  <div  class="poloriod" *ngFor="let item of (gridData.items | filter: searchText |  evenOdd:'even'); let index = index;">
+    <a (click)="gotoDetail(gridData.link, item.refId)" class="category-link">
+      <div class="Like-link"><span class="icon-heart"></span></div>
+      <img *ngIf="item.imageName.indexOf('mp4') === -1" [src]="getImage(item)" />
+      <mat-grid-tile-footer class="footer">
+        {{item.footer}} <br />
+        <div> {{item.subFooter}} </div>
+      </mat-grid-tile-footer>
+    </a>
+  </div>
+  <div *ngIf="gridData.items.length < 1" class="category-link">
+    No data...
+  </div>
+</div>
+<app-banner-stills></app-banner-stills>
+<div class="grid" *ngIf="gridData">
+  <div  class="poloriod" *ngFor="let item of (gridData.items | filter: searchText |  evenOdd:'odd'); let index = index;">
     <a (click)="gotoDetail(gridData.link, item.refId)" class="category-link">
       <div class="Like-link"><span class="icon-heart"></span></div>
       <img *ngIf="item.imageName.indexOf('mp4') === -1" [src]="getImage(item)" />

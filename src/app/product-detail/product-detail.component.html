@@ -6,8 +6,15 @@
     </div>
   </div>
   <div class="description" *ngIf="firstProduct">
-    <div *ngIf="firstProduct" class="Mauss-Form-sub-Title">
+    
+    <div *ngIf="firstProduct" class="product-detail-sub-title">
+      {{firstProduct.subtitle}}
+    </div>
+    <div *ngIf="firstProduct" class="product-detail-title">
       Inspired by {{firstProduct.description}}
+    </div>
+    <div class="product-detail-price">
+      ZAR {{firstProduct.price}}.00+
     </div>
     <div class="Mauss-Description" [innerHTML]="firstProduct.summary"></div>
     <div class="Mauss-Description">

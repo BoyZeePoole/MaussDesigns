@@ -9,7 +9,7 @@ import { MouseModule } from '../shared/mouse/mouse.module';
 import { WaveModule } from '../shared/wave/wave.module';
 import { BubblesModule } from '../shared/bubbles/bubbles.module';
 import { GalleryModule } from '../components/gallery/gallery.module';
-
+import { BannerStillsModule } from '../banner-stills/banner-stills.module';
 
 @NgModule({
   imports: [
@@ -22,6 +22,7 @@ import { GalleryModule } from '../components/gallery/gallery.module';
     WaveModule,
     BubblesModule,
     GalleryModule,
+    BannerStillsModule
   ],
   declarations: [
     DashboardComponent,

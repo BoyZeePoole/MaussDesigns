@@ -67,7 +67,7 @@ export const EndPoints = {
 };
 
 export const MenuRoutes: Object[] = [{
-    icon: 'icon-bird',
+    icon: 'icon-squirrel',
     route: '/home/splash',
     title: 'About',
     parentId: null,

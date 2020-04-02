@@ -1,5 +1,6 @@
 @import "../fonts.scss";
 @import "../variables.scss";
+
 .grid-container {
   display: grid;
   grid-template-columns: auto auto 200px;
@@ -37,6 +38,23 @@
     "order customize" 
     "wishlist wishlist";
   }
+  &-title{
+    margin-top: 4px;
+    font-family: 'Playfair Display';
+    font-size: 12px;
+    // font-weight: bold;
+  }
+  &-sub-title{
+    margin-top: 4px;
+    font-family: 'Playfair Display';
+    font-size: 16px;
+    // font-weight: bold;
+  }
+  &-price{
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: bold;
+  }
 }
 .order {
   grid-area: order;
@@ -69,11 +87,14 @@
   }
 }
 .buttons{
-  grid-area: buttons;  
+  grid-area: buttons;
+  padding: 15px;
+
 }
 .description {
   grid-area: description;
   font-size: 12px;
+  padding: 15px;
 }
 .photo {
   grid-area: photo;

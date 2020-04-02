@@ -9,6 +9,8 @@ import { BubblesModule } from '../../shared/bubbles/bubbles.module';
 import { GalleryComponent } from './gallery.component';
 import { SearchDirective } from '../../shared/search.directive';
 import { FormsModule } from '@angular/forms';
+import { BannerStillsModule } from '../../banner-stills/banner-stills.module';
+import { EvenOddPipeModule } from '../../pipes/even-odd.module';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -21,6 +23,8 @@ import { FormsModule } from '@angular/forms';
     WaveModule,
     BubblesModule,
     FormsModule,
+    BannerStillsModule,
+    EvenOddPipeModule
     // BrowserAnimationsModule
   ],
   exports:[

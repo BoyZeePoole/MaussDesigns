@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 //@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import "./app/variables.scss";
-
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
 @font-face {
   font-family: $mauss-font-main;
@@ -114,7 +114,7 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
   float: left;
   @media screen and (min-width: $break-medium) {
     float: right;
-    margin-right: 34px;
+    margin-right: 6px;
   }
 }
 .search-large{
