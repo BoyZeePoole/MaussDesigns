@@ -1,9 +1,9 @@
   <div class="Mauss-Form-Title page">
-    Order Detail
+    Order details
   </div>
   <div class="page">
     <div class="Mauss-Description">
-      qweedffasasdasdffasdff d asdv fvgadsf gads fadf g sdfg sdf gsdefg
+      This is order details sinnetjie
     </div>
     <div class="photo">
       <ul>
@@ -17,16 +17,13 @@
         </li>
       </ul>
     </div>
-    <div class="form-group">
-      <div class="Mauss-label" for="firstName">Comment</div>
-      <textarea class="Mauss-textarea" rows="3" cols="130" type="text" [formControl]="orderForm.controls['comment']"
-        placeholder="Enter comment">
-
-          </textarea>
-      <br>
-    </div>
     <br>
-    <div class="Mauss-label" for="firstName">3 colours here...</div>
+    <div class="Mauss-label" for="firstName">Select Crumbs</div>
+    <div id="even" class="example-list-to" (click)="openOptionsDialog()">
+     
+    </div>
+    <br />
+    <div class="Mauss-label" for="firstName">Choose your main 3 colours</div>
     <div id="even" class="example-list-to" (click)="openDialog()">
       <div *ngFor="let color of selectedColor" >
         <div class="Pantone">
@@ -37,6 +34,13 @@
       </div>
     </div>
     <br />
+    <div class="form-group">
+      <div class="Mauss-label" for="firstName">Additional notes</div>
+      <textarea class="Mauss-textarea" rows="3" cols="130" type="text" [formControl]="orderForm.controls['comment']" placeholder="Enter comment">
+          </textarea>
+      <br>
+    </div>
+    <br>
     <div class="Mauss-label" for="firstName">Qty</div>
     <div class="form-group">
         <input class="Mauss-input" style="width: 56px" type="number" value="1" [formControl]="orderForm.controls['quantity']" />

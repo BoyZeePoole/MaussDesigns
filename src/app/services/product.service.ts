@@ -43,4 +43,8 @@ export class ProductService {
     delete(id: number) {
         return this.http.delete(EndPoints.productController.delete + id);
     }
+    getMobileOptions(){
+        let endpoint = this.configService.RootUrl() + EndPoints.productController.getMoblieOptions  ;
+        return this.http.get(endpoint);
+    }
 }

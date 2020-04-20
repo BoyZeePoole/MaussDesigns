@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
 // components
- import { DynamicFormBuilderComponent } from './dynamic-form-builder.component';
+import { DynamicFormBuilderComponent } from './dynamic-form-builder.component';
 import { FieldBuilderComponent } from './field-builder/field-builder.component';
 import { TextBoxComponent } from './atoms/textbox';
 import { DropDownComponent } from './atoms/dropdown';
 import { FileComponent } from './atoms/file';
 import { CheckBoxComponent } from './atoms/checkbox';
 import { RadioComponent } from './atoms/radio';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   imports: [
@@ -19,7 +19,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatCheckboxModule
   ],
   declarations: [
-     DynamicFormBuilderComponent,
+    DynamicFormBuilderComponent,
     FieldBuilderComponent,
     TextBoxComponent,
     DropDownComponent,

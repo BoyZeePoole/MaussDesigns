@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { OrderComponent } from './order.component';
+import { OrderComponent, MobileOptionsDialog } from './order.component';
 import {MaterialModule} from '../app.material.module';
 import { routing } from './order.routing';
 import { ConfigurationService } from '../services/config.service';
@@ -24,10 +24,11 @@ import { OrderService } from '../services/order.service';
     DragDropModule,
     NgxUsefulSwiperModule
   ],
-  entryComponents: [DialogDialog],
+  entryComponents: [DialogDialog, MobileOptionsDialog],
   declarations: [
     OrderComponent,
-    DialogDialog
+    DialogDialog,
+    MobileOptionsDialog
   ],
   providers : [
     ProductService,

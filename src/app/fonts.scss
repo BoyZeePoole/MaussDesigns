@@ -29,6 +29,9 @@ $background-color: #f0f0f0;
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-caret-down:before {
+  content: "\f0d7";
+}
 .icon-cheveron-down:before {
   content: "\e916";
 }

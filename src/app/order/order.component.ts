@@ -85,6 +85,17 @@ export class OrderComponent implements OnInit {
     }
   }
 
+  openOptionsDialog(): void {
+    const dialogRef = this.dialog.open(MobileOptionsDialog, {
+      //width: '250px',
+      data: { color: this.selectedColor }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.selectedColor = result;
+    });
+  }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogDialog, {
@@ -177,4 +188,25 @@ export class DialogDialog {
       return `${Helper.apiServerUrl()}StaticFiles/` + color.colorPath;
     }    
   }
+}
+
+
+@Component({
+  selector: 'mobile-options-dialog',
+  templateUrl: 'mobile-options-dialog.html',
+  styleUrls: ['./order.component.scss']
+})
+export class MobileOptionsDialog {
+
+  colorPallette: any;
+  constructor(
+    public dialogRef: MatDialogRef<DialogDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+      // this.getColors();
+     }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
 }

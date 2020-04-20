@@ -6,4 +6,5 @@
 export const environment = {
   production: false,
   apiServer: 'http://localhost:60076/'
+  //apiServer: 'https://api.mauss.co.za/'
 };

@@ -1,0 +1,20 @@
+<div mat-dialog-content>
+  <p>Select your option</p>
+  <div>
+    Select Option 1
+  </div>
+  <div>
+    Select Option 2
+  </div>
+  <div>
+    Select Option 3
+  </div>
+  <div>
+    Select Option 4
+  </div>
+  <br>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close] cdkFocusInitial>Ok</button>
+</div>

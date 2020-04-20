@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 //@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import "./app/variables.scss";
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
 
 @font-face {
   font-family: $mauss-font-main;
@@ -22,7 +22,7 @@ body {
 @import "~@angular/material/theming";
 $custom-typography: mat-typography-config(
   $font-family: "Open Sans",
-  $input: mat-typography-level(13px, 1.125, 400)
+  $input: mat-typography-level(13px, 1.125, 400),
 );
 // Plus imports for other components in your app.
 
@@ -61,25 +61,36 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 .page {
   padding: 0 15px 54px 15px;
   @media screen and (min-width: $break-medium) {
-    padding: 40px;
+    padding: 13px 40px 10px 40px;
   }
 }
-
+.banner-page {
+  padding: 0 15px 54px 15px;
+  @media screen and (min-width: $break-medium) {
+    padding: 40px 40px 40px 40px;
+  }
+}
 .Mauss-Form-Title {
-  font-family: $mauss-font-main;
-  font-weight: bold;
+  font-family: $mauss-font-secondary;
+  // font-weight: bold;
   font-size: $page-title-font-size;
   padding-top: 31px;
   // padding-bottom: 8px;
 }
+.Mauss-Form-Title-A {
+  font-family: $mauss-font-secondary;
+  // font-weight: bold;
+  font-size: $page-title-font-size;
+  padding: 31px 40px 8px 40px;
+}
 .Mauss-Form-sub-Title {
-  font-family: $mauss-font-main;
-  font-weight: bold;
+  font-family: $mauss-font-secondary;
+  // font-weight: bold;
   font-size: $page-sub-title-font-size;
   padding-top: 8px;
   padding-bottom: 8px;
 }
-.Mauss-Description{
+.Mauss-Description {
   padding-top: 12px;
   font-size: $description-paragraph-font-size;
   margin-bottom: 12px;
@@ -98,41 +109,85 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 }
 
 /* Directives*/
-.trigger{
+.trigger {
   padding-top: 5px;
   margin: -30px;
 }
-.trigger-right{
+.drop-down-indicator {
+  margin: -20px;
+  padding-top: 5px;
+}
+.show-drop-down {
+  display: block;
+}
+.hide-drop-down {
+  display: none;
+}
+.drop-down-layer {
+  z-index: 150;
+  min-width: 150px;
+  position: absolute;
+  background: #fff;
+  max-height: 0;
+  overflow: hidden;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+  transform: perspective(400) rotate3d(1, 0, 0, -90deg);
+  -moz-transform: perspective(400) rotate3d(1, 0, 0, -90deg);
+  -ms-transform: perspective(400) rotate3d(1, 0, 0, -90deg);
+  transform-origin: 50% 0;
+  -ms-transform-origin: 50% 0;
+  -moz-transform-origin: 50% 0;
+
+  transition: 150ms;
+  // border-radius: 5px;
+  div {
+    cursor: pointer;
+    padding: 10px 8px 10px 18px;
+    font-size: 12px;
+    &:hover {
+      background: $background-color-input;
+    }
+    &:active {
+      background: $no-data-color;
+    }
+  }
+}
+.drop-down-layer-active {
+  max-height: 1000px;
+  -ms-transform: perspective(400) rotate3d(0, 0, 0, 0);
+  transform: perspective(400) rotate3d(0, 0, 0, 0);
+  -moz-transform: perspective(400) rotate3d(0, 0, 0, 0);
+}
+
+.trigger-right {
   padding-top: 5px;
   margin-left: -23px;
 }
-.search-small{
-  transition: width .5s;
+.search-small {
+  transition: width 0.5s;
   width: 80px !important;
 }
-.search-container{
+.search-container {
   float: left;
   @media screen and (min-width: $break-medium) {
     float: right;
     margin-right: 6px;
   }
 }
-.search-large{
-  transition: width .5s;
+.search-large {
+  transition: width 0.5s;
   width: 170px !important;
   @media screen and (min-width: $break-medium) {
     width: 300px !important;
   }
-
 }
-
 
 /*End*/
 .Mauss-Button-Inverse {
   background-color: #000 !important;
   border-radius: 4px !important;
   color: #fff;
-  font-family: $mauss-font-main;  
+  font-family: $mauss-font-main;
   font-size: $button-font-size;
   width: 100%;
   @media screen and (min-width: $break-medium) {
@@ -145,7 +200,7 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 }
 .Mauss-label {
   font-size: $label-font-size;
-   margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 .Mauss-textarea {
   height: 100px;
@@ -153,10 +208,12 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
   outline: none;
   padding-left: 8px;
   color: #000;
-  background: #f4f4f4;
+  background: $background-color-input;
   width: 98%;
+  font-family: $mauss-font-main;
+  font-size: 12px;
   @media screen and (min-width: $break-medium) {
-    width: 530px;
+    width: 219px;
     padding-left: 12px;
   }
 }
@@ -167,8 +224,10 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
   height: 30px;
   border-radius: 4px;
   color: #000;
-  background: #f4f4f4;;
+  background: $background-color-input;
   width: 98%;
+  font-family: $mauss-font-main;
+  font-size: 12px;
   @media screen and (min-width: $break-medium) {
     width: 220px;
     padding-left: 12px;
@@ -181,8 +240,10 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
     height: 30px;
     border-radius: 4px;
     color: #000;
-    background: $background-color;
+    background: $background-color-input;
     margin-right: 4px;
+    font-family: $mauss-font-main;
+    font-size: 12px;
   }
 }
 .Mauss-error {

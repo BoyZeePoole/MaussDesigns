@@ -4,9 +4,21 @@
       <img #mainImage *ngIf="firstProduct.imageName.indexOf('mp4') === -1" class="first-picture"
         [src]="getImage(firstProduct)" />
     </div>
+    <div class="photo">
+      <ul>
+        <li *ngFor="let product of products">
+          <img (click)="changeImg(product)" *ngIf="product.imageName.indexOf('mp4') === -1" class="thumbnail"
+            [src]="getImage(product)" />
+          <video *ngIf="product.imageName.indexOf('mp4') !== -1" style="width: 90px; height: 90px;" controls>
+            <source [src]="getImage(product)" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </li>
+      </ul>
+    </div>
   </div>
   <div class="description" *ngIf="firstProduct">
-    
+
     <div *ngIf="firstProduct" class="product-detail-sub-title">
       {{firstProduct.subtitle}}
     </div>
@@ -14,7 +26,7 @@
       Inspired by {{firstProduct.description}}
     </div>
     <div class="product-detail-price">
-      ZAR {{firstProduct.price}}.00+
+      ZAR {{productPrice}}.00±
     </div>
     <div class="Mauss-Description" [innerHTML]="firstProduct.summary"></div>
     <div class="Mauss-Description">
@@ -22,13 +34,43 @@
       a custom wooden structure and macramé rope with a metal loop.  Each mobile arrives boxed and beautifully
       packaged and can be personalised as a gift.<br /><br />
       As each Mauss mobile is handmade to order, please check the current lead time for dispatch on the FAQs page.
-    </div>
+    </div><br>
 
+
+    <div class="Mauss-label" for="firstName">Select a mobile option</div>
+    <div>
+      <input class="Mauss-input" type="text" *ngIf="productOptions" appDropDown [data]="productOptions"
+        (valueChange)="updatePrice($event)" />
+    </div>
+    <br>
+
+
+    <div class="Mauss-label" for="firstName">Select your 3 main colours</div>
+    <div id="even" class="example-list-to" (click)="openDialog()">
+      <div *ngFor="let color of selectedColor">
+        <div class="Pantone">
+          <div>
+            <img [src]="getImage(color)" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="Mauss-label" for="firstName">Additional notes</div>
+      <textarea class="Mauss-textarea" rows="3" cols="130" type="text" [formControl]="orderForm.controls['comment']"
+        placeholder="Enter comment"></textarea>
+      <br>
+    </div>
+    <br>
+    <div class="Mauss-label" for="firstName">Qty</div>
+    <div class="form-group">
+      <input class="Mauss-input" style="width: 56px" type="number" value="1"
+        [formControl]="orderForm.controls['quantity']" />
+    </div><br>
   </div>
   <div class="product-detail buttons">
     <div class="order">
-      <button [routerLink]="['/home/order', selectProductId]" class="Mauss-Button mat-raised-button"
-        (click)="placeOrder()">Place order</button>
+      <button class="Mauss-Button mat-raised-button" (click)="save()">Place order</button>
     </div>
     <div class="customize">
       <button class="Mauss-Button mat-raised-button" (click)="addWish()">
@@ -42,16 +84,5 @@
       </div>
     </div>
   </div>
-  <div class="photo">
-    <ul>
-      <li  *ngFor="let product of products">
-        <img (click)="changeImg(product)" *ngIf="product.imageName.indexOf('mp4') === -1" class="thumbnail"
-          [src]="getImage(product)" />
-        <video *ngIf="product.imageName.indexOf('mp4') !== -1" style="width: 90px; height: 90px;" controls>
-          <source [src]="getImage(product)" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </li>
-    </ul>
-  </div>
+
 </div>

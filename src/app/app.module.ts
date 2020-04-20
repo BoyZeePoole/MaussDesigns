@@ -1,7 +1,7 @@
 // import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './app.material.module';
@@ -16,11 +16,11 @@ import { AuthGuard } from './guards/auth.guard';
 import { AlertService } from './services/alert.service';
 import { LinkMenuComponent } from './link-menu/link-menu.component';
 import { UserMenuComponent } from './user-menu/user-menu.component';
-import { ProductService} from './services/product.service';
+import { ProductService } from './services/product.service';
 import { SubscribeService } from './services/subscribe.service';
 import { SubscribeComponent } from './subscribe/subscribe.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { PubSubService} from './services/pup-sub.service';
+import { PubSubService } from './services/pup-sub.service';
 import { UserService } from './services/user.service';
 import { LoaderComponent } from './shared/loader/loader.component';
 import { LoaderService } from './services/loader.service';
@@ -47,7 +47,7 @@ import { LoaderModule } from './shared/loader/loader.module';
     LoaderModule,
 
   ],
-    exports:[],
+  exports: [],
   providers: [
     AuthGuard,
     AlertService,
@@ -61,8 +61,8 @@ import { LoaderModule } from './shared/loader/loader.module';
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
-    {provide: LocationStrategy, useClass: HashLocationStrategy},
-   
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+
   ],
   bootstrap: [AppComponent]
 })

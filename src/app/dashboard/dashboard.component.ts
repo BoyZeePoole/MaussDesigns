@@ -16,12 +16,12 @@ export class DashboardComponent implements OnInit, OnChanges {
   breakpoint: number;
   groupId: any;
   searchText: string;
-  gridData: Gallery;  
+  gridData: Gallery;
   imageUrlArray = [
     "../../assets/banner/slider_images_1.png",
     "../../assets/banner/slider_images_2.png",
     "../../assets/banner/slider_images_3.png"
-]; 
+  ];
   constructor(private productService: ProductService,
     private router: Router,
     private route: ActivatedRoute,
@@ -54,14 +54,14 @@ export class DashboardComponent implements OnInit, OnChanges {
   fillGridData() {
     this.gridData = new Gallery();
     this.gridData.items = [];
-    this.gridData.title = "Kindergarten Gallery";
+    this.gridData.title = "Kindergarten gallery";
     this.gridData.link = '/home/productdetail';
 
     this.products.forEach(element => {
       let detail = new GalleryItems();
 
       detail.footer = element.description;
-      detail.subFooter = (element.price === null) ? element.title : element.price;
+      detail.subFooter = element.title;// (element.price === null) ? element.title : element.price;
       detail.imageName = element.imageName;
       detail.tags = element.tags;
       detail.refId = element.refId;

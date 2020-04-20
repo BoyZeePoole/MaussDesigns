@@ -25,7 +25,8 @@ export const EndPoints = {
       update: 'api/Products/Update/',
       delete: 'api/Products/Delete/',
       getProductByTag: 'api/Products/getByTag',
-      getProductsByGroupId: 'api/Products/getbygroup'
+      getProductsByGroupId: 'api/Products/getbygroup',
+      getMoblieOptions: 'api/Products/getmobileoptions'
     },
     groupController : {
       get : 'api/Group/getgroup'

@@ -1,45 +1,53 @@
-    <div class="Mauss-Form-Title page">
-      Create your own mobile
+<app-banner-stills></app-banner-stills>
+<div class="Mauss-Form-Title page">
+  Create your own mobile
+</div>
+<div class="page">
+  <div class="Mauss-Description">
+    qweedffasasdasdffasdff d asdv fvgadsf gads fadf g sdfg sdf gsdefg
+  </div>
+
+  <div class="Mauss-label" for="firstName">Select a mobile option</div>
+  <div>
+    <input class="Mauss-input" type="text" *ngIf="productOptions" appDropDown [data]="productOptions" />
+  </div>
+  <br>
+
+  <div class="form-group">
+    <div class="Mauss-label" for="username">Please choose your theme*</div>
+    <input class="Mauss-input" type="text" placeholder="Enter your theme"
+      [formControl]="customizeForm.controls['theme']" />
+    <div *ngIf="submitted && f.theme.errors">
+      <div class="Mauss-error" *ngIf="f.theme.errors.required">Theme is required</div>
     </div>
-    <div class="page">
-      <div class="Mauss-Description">
-        qweedffasasdasdffasdff d asdv fvgadsf gads fadf g sdfg sdf gsdefg
-      </div>
-      <div class="form-group">
-        <div class="Mauss-label" for="username">Please choose your theme*</div>
-        <input class="Mauss-input" type="text" placeholder="Enter your theme"
-          [formControl]="customizeForm.controls['theme']" />
-        <div *ngIf="submitted && f.theme.errors">
-          <div class="Mauss-error" *ngIf="f.theme.errors.required">Theme is required</div>
-        </div>
-      </div><br>
-      <div class="form-group">
-        <div class="Mauss-label" for="firstName">3 colours here...</div>
-        <div id="even" class="example-list-to" (click)="openDialog()">
-          <div *ngFor="let color of selectedColor">
-            <div class="Pantone">
-              <div>
-                <img  [src]="getImage(color)" />
-              </div>
-            </div>
+  </div><br>
+  <div class="form-group">
+    <div class="Mauss-label" for="firstName">3 colours here...</div>
+    <div id="even" class="example-list-to" (click)="openDialog()">
+      <div *ngFor="let color of selectedColor">
+        <div class="Pantone">
+          <div>
+            <img [src]="getImage(color)" />
           </div>
         </div>
-      </div><br>
-      <div class="form-group">
-        <div class="Mauss-label" for="username">Please upload a few reference images</div>
-        <input id="image" style="display: none;" type="file" multiple (change)="onFileChanged($event)" #fileInput /><br>
-        <div class="image-style">
-          <ng-container *ngIf="filesSelected">
-            <img *ngFor="let file of imageSrc" style="width: 100px; height: 100px; padding:3px;" src="{{file}}"
-              id="output_image" />
-          </ng-container>
-        </div><br>
-
-        <button class="Mauss-Button" mat-raised-button (click)="fileInput.click()" color="primary">Select File</button>
-      </div>&nbsp;<br />
-      <div class="form-group">
-        <button style="width: 100%;" mat-raised-button (click)="save(customizeForm.value)"
-          class="Mauss-Button">Submit</button>
       </div>
     </div>
+  </div><br>
+  <div class="form-group">
+    <div class="Mauss-label" for="username">Please upload a few reference images</div>
+    <input id="image" style="display: none;" type="file" multiple (change)="onFileChanged($event)" #fileInput /><br>
+    <div class="image-style">
+      <ng-container *ngIf="filesSelected">
+        <img *ngFor="let file of imageSrc" style="width: 100px; height: 100px; padding:3px;" src="{{file}}"
+          id="output_image" />
+      </ng-container>
+    </div><br>
+
+    <button class="Mauss-Button" mat-raised-button (click)="fileInput.click()" color="primary">Select File</button>
+  </div>&nbsp;<br />
+  <div class="form-group">
+    <button style="width: 100%;" mat-raised-button (click)="save(customizeForm.value)"
+      class="Mauss-Button">Submit</button>
+  </div>
+</div>
 <br>

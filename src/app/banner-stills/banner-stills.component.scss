@@ -1,8 +1,7 @@
-
 $break-small: 320px;
 $break-medium: 600px;
 $break-large: 1200px;
-.imm{
+.imm {
   width: 100%;
   @media screen and (max-width: $break-medium) {
     width: 640px;
