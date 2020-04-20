@@ -8,3 +8,14 @@ $break-large: 1200px;
     height: 182px;
   }
 }
+.imm2 {
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 1493px;
+  height: 218px;
+  // background-clip: padding-box;
+  @media screen and (max-width: $break-medium) {
+    width: 640px;
+    height: 182px;
+  }
+}

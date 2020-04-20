@@ -1,1 +1,5 @@
-<img [src]="selectedBanner" class="imm" />
+<img *ngIf="!half" [src]="selectedBanner" class="imm" />
+
+<div *ngIf="half" [ngStyle]="{'background-image': 'url(' + selectedBanner + ')'}" class="imm2">
+
+</div>

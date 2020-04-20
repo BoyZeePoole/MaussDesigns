@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-banner-stills',
@@ -14,12 +14,14 @@ export class BannerStillsComponent implements OnInit {
     '/assets/banner/Banner_4_final.jpg',
     '/assets/banner/Banner_5_final.jpg',
   ];
+
+  @Input() half: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
-   this.selectedBanner = this.getRandomBanner();
+    this.selectedBanner = this.getRandomBanner();
   }
-  getRandomBanner() : string{
+  getRandomBanner(): string {
     let max = this.banners.length;
     let rndNumber = Math.floor(Math.random() * Math.floor(max));
     return this.banners[rndNumber];
