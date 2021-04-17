@@ -5,7 +5,7 @@ import { first } from 'rxjs/operators';
 import { AlertService } from '../services/alert.service';
 import { UserService } from '../services/user.service';
 import { MustMatch } from '../directives/custom.validators';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { CaptchaRequest } from '../models';
 // import { threadId } from 'worker_threads';
 

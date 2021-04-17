@@ -3,7 +3,7 @@ import { ProductService } from '../services/product.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PubSubService } from '../services/pup-sub.service';
 import { WishlistService } from '../services/wishlist.service';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Helper } from '../services/helper';
 import { ResponsiveService } from '../services/pup-sub.service';
 import { IProductOptions } from '../models/product-options';

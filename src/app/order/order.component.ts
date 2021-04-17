@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Helper } from '../services/helper';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ProductService } from '../services/product.service';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { SwiperOptions } from 'swiper';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { OrderService } from '../services/order.service';

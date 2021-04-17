@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { WishlistService } from '../services/wishlist.service';
 import { Helper } from '../services/helper';
 import { Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-wish-list',

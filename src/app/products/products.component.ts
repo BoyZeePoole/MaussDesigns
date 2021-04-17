@@ -4,7 +4,7 @@ import { ProductService } from '../services/product.service';
 import { GroupService } from '../services/group.service';
 import { Group, FileList } from '../models';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { FieldStructure } from '../models';
 @Component({
   selector: 'app-products',

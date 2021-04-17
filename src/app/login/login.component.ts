@@ -5,7 +5,7 @@ import { first } from 'rxjs/operators';
 import { UserService } from '../services/user.service';
 import { AlertService } from '../services/alert.service';
 import { AuthenticationService } from '../services/authentication.service';
-import {MatSnackBar} from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { CaptchaRequest } from '../models';
 
 
