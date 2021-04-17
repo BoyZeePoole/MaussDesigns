@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { MouseComponent } from './mouse.component';
 
@@ -6,7 +6,7 @@ describe('MouseComponent', () => {
   let component: MouseComponent;
   let fixture: ComponentFixture<MouseComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ MouseComponent ]
     })
