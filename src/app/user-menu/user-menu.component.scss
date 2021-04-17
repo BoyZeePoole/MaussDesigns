@@ -6,7 +6,7 @@
     padding-top: 21px;
     font-size: 13px;
     height: 43px;
-    margin-right: 67px;
+    margin-right: 667px;
   }
   ul {
     list-style: none;
@@ -17,7 +17,7 @@
     li {
       @media screen and (min-width: $break-large) {
         display: inline-block;
-        padding: 0 37px 10px 37px;
+        padding: 0 17px 10px 17px;
       }
     }
     @media screen and (min-width: $break-large) {
@@ -25,7 +25,7 @@
       margin: 0 auto;
       white-space: nowrap;
       text-align: right;
-      min-width: 1000px;
+      // min-width: 1000px;
       position: relative;
     }
   }

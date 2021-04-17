@@ -2,7 +2,7 @@
   <ul>
     <li>
       <a class="router-link" [routerLink]="['/home/wishlist']">
-          <span class="icon-heart"></span>&nbsp;My wishlist
+        <span class="icon-heart"></span>&nbsp;My wishlist
       </a>
     </li>
     <li>
@@ -20,8 +20,19 @@
         <span></span>My orders
       </a>
     </li>
-    <!-- <li>
-        Hello {{userName}}<br><br>
-    </li> -->
+    <li>
+      <a class="router-link" [routerLink]="['/home/registerlogin']">
+        <span class="icon-neutral2"></span>&nbsp;Login / Register
+      </a>
+    </li>
+  </ul>
+</div>
+<div *ngIf="!isLoggedIn" class="header-menu">
+  <ul>
+    <li>
+      <a class="router-link" [routerLink]="['/home/registerlogin']">
+        <span class="icon-neutral2"></span>&nbsp;Login / Register
+      </a>
+    </li>
   </ul>
 </div>
