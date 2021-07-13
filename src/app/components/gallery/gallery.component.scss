@@ -1,9 +1,5 @@
-$break-small: 320px;
-$break-medium: 600px;
-$break-large: 1200px;
 @import "../../fonts.scss";
-@import  "../../variables.scss";
-
+@import "../../variables.scss";
 
 .grid {
   display: grid;
@@ -24,7 +20,7 @@ $break-large: 1200px;
     margin: 0 auto;
   }
 }
-.search-title{
+.search-title {
   float: left;
   @media screen and (max-width: $break-medium) {
     float: right;
@@ -61,8 +57,8 @@ $break-large: 1200px;
     padding: 7px 12px;
     div {
       line-height: 13px;
-        color: $product-sub-title-color;
-        font-size: $product-sub-title-font-size;
+      color: $product-sub-title-color;
+      font-size: $product-sub-title-font-size;
     }
   }
   img {

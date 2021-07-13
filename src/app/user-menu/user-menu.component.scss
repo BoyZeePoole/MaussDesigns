@@ -2,17 +2,20 @@
 .header-menu {
   display: none;
   @media screen and (min-width: $break-large) {
-    display: block;
+    display: grid;
     padding-top: 21px;
     font-size: 13px;
-    height: 43px;
-    margin-right: 667px;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: auto;
+    // height: 43px;
+    // margin-right: 667px;
+    grid-template-areas: "left" "right";
   }
   ul {
     list-style: none;
     margin: 0 auto;
     white-space: nowrap;
-    text-align: right;
+    // text-align: right;
     position: relative;
     li {
       @media screen and (min-width: $break-large) {
@@ -24,7 +27,7 @@
       list-style: none;
       margin: 0 auto;
       white-space: nowrap;
-      text-align: right;
+      // text-align: right;
       // min-width: 1000px;
       position: relative;
     }

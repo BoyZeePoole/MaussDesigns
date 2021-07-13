@@ -1,14 +1,14 @@
 export const EndPoints = {
   userController: {
-    authenticate: '/users/authenticate',
-    getAllUsers: '/users/GetAll',
-    userRegister: '/users/Register',
+    authenticate: 'users/authenticate',
+    getAllUsers: 'users/GetAll',
+    userRegister: 'users/Register',
     login: 'api/login',
-    getUserById: '/users/GetUserByUserId',
-    register: '/users/register',
-    updateAccount: '/users/updateaccount',
-    update: '/users/Update/',
-    delete: '/users/Delete/',
+    getUserById: 'users/GetUserByUserId',
+    register: 'users/register',
+    updateAccount: 'users/updateaccount',
+    update: 'users/Update/',
+    delete: 'users/Delete/',
     getMenu: 'users/GetMenuByUserId'
   },
   clientProfileController: {

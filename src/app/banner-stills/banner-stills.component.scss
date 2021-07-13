@@ -4,8 +4,7 @@ $break-large: 1200px;
 .imm {
   width: 100%;
   @media screen and (max-width: $break-medium) {
-    width: 640px;
-    height: 182px;
+    width: 100%;
   }
 }
 .imm2 {

@@ -1,38 +1,42 @@
-<div *ngIf="isLoggedIn" class="header-menu">
-  <ul>
-    <li>
-      <a class="router-link" [routerLink]="['/home/wishlist']">
-        <span class="icon-heart"></span>&nbsp;My wishlist
-      </a>
-    </li>
-    <li>
-      <a class="router-link" [routerLink]="['/home/accountdetail']">
-        <span></span>My account
-      </a>
-    </li>
-    <li>
-      <a class="router-link" [routerLink]="['/home/address']">
-        <span></span>My address
-      </a>
-    </li>
-    <li>
-      <a class="router-link" [routerLink]="['/home/orderlist']">
-        <span></span>My orders
-      </a>
-    </li>
-    <li>
-      <a class="router-link" [routerLink]="['/home/registerlogin']">
-        <span class="icon-neutral2"></span>&nbsp;Login / Register
-      </a>
-    </li>
-  </ul>
-</div>
-<div *ngIf="!isLoggedIn" class="header-menu">
-  <ul>
-    <li>
-      <a class="router-link" [routerLink]="['/home/registerlogin']">
-        <span class="icon-neutral2"></span>&nbsp;Login / Register
-      </a>
-    </li>
-  </ul>
+<div class="header-menu">
+  <div class="left">
+    <ul>
+      <!-- <li>
+        <a class="router-link" [routerLink]="['/home/wishlist']">
+          <span class="icon-heart"></span>&nbsp;My wishlist
+        </a>
+      </li> -->
+      <li>
+        <a class="router-link" [routerLink]="['/home/splash']">
+          <span></span>About
+        </a>
+      </li>
+      <li>
+        <a class="router-link" [routerLink]="['/home/dashboard/1']">
+          <span></span>Bespoke Mobiles
+        </a>
+      </li>
+      <li>
+        <a class="router-link" [routerLink]="['/home/orderlist']">
+          <span></span>D.I.Y.
+        </a>
+      </li>
+      <li>
+        <a class="router-link" [routerLink]="['/home/orderlist']">
+          <span></span>Contact Us
+        </a>
+      </li>
+
+    </ul>
+  </div>
+  <div class="right">
+    <ul>
+      <li>
+        <a class="router-link" [routerLink]="['/home/registerlogin']">
+          <span class="icon-neutral2"></span>&nbsp;Login / Register
+        </a>
+      </li>
+    </ul>
+  </div>
+
 </div>

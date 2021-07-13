@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: $mauss-font-main;
-  src: url("assets/fonts/segoeui.ttf") format("truetype");
+  src: url("assets/fonts/segoeuil.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -59,9 +59,15 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
   }
 }
 .page {
-  padding: 0 15px 54px 15px;
-  @media screen and (min-width: $break-medium) {
-    padding: 13px 40px 10px 40px;
+  // max-width: 377px;
+  padding-left: 22px;
+  padding-right: 22px;
+
+  @media screen and (min-width: $break-large) {
+    // padding: 13px 40px 10px 40px;
+    max-width: 1220px;
+    margin: 0 auto;
+    position: relative;
   }
 }
 .banner-page {
@@ -81,7 +87,7 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
   font-family: $mauss-font-secondary;
   // font-weight: bold;
   font-size: $page-title-font-size;
-  padding: 31px 40px 8px 40px;
+  // padding: 31px 40px 8px 40px;
 }
 .Mauss-Form-sub-Title {
   font-family: $mauss-font-secondary;
@@ -256,15 +262,15 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 .word-page {
   margin: 0px auto;
   background: #fff;
-  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+  // -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+  // box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
   padding-bottom: 20px;
   @media screen and (min-width: $break-large) {
     min-height: 600px;
-    margin: 20px 100px 0 0;
+    margin: 0 0 0 0;
     background: #fff;
-    -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+    // -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+    // box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
   }
 }
 .mat-sidenav-container,
