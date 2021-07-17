@@ -85,9 +85,17 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 }
 .Mauss-Form-Title-A {
   font-family: $mauss-font-secondary;
+  font-size: $page-title-font-size-large;
+  text-align: center;
+  padding-top: 31px;
   // font-weight: bold;
-  font-size: $page-title-font-size;
-  // padding: 31px 40px 8px 40px;
+  //
+  @media screen and (min-width: $break-large) {
+    font-family: $mauss-font-secondary;
+    font-size: $page-title-font-size;
+    text-align: left;
+    padding-top: 11px;
+  }
 }
 .Mauss-Form-sub-Title {
   font-family: $mauss-font-secondary;
